@@ -97,14 +97,14 @@ Al Sadat Builders calculates all costs using an Itemized Bill of Quantities (BOQ
 ## Pages & Deep Links
 
 - Homepage: https://alsadatbuilders.com/
-- Construction Company Islamabad: https://alsadatbuilders.com/construction-company-islamabad.html
-- Turnkey House Construction: https://alsadatbuilders.com/house-construction-islamabad.html
-- Grey Structure Construction: https://alsadatbuilders.com/grey-structure-islamabad.html
-- House Renovation & Repairs: https://alsadatbuilders.com/house-renovation-islamabad.html
-- Marble & Tile Fixing Islamabad: https://alsadatbuilders.com/marble-tile-fixing-islamabad.html
-- Boundary Wall Construction Islamabad: https://alsadatbuilders.com/boundary-wall-construction-islamabad.html
-- Plaster Work & Waterproofing Islamabad: https://alsadatbuilders.com/plaster-work-islamabad.html
-- Construction Cost & BOQ Guide 2026: https://alsadatbuilders.com/construction-cost-islamabad.html
-- Projects & Portfolio (including Bani Gala): https://alsadatbuilders.com/projects.html
-- Contact & Free Estimate: https://alsadatbuilders.com/contact.html
+- Construction Company Islamabad: https://alsadatbuilders.com/construction-company-islamabad
+- Turnkey House Construction: https://alsadatbuilders.com/house-construction-islamabad
+- Grey Structure Construction: https://alsadatbuilders.com/grey-structure-islamabad
+- House Renovation & Repairs: https://alsadatbuilders.com/house-renovation-islamabad
+- Marble & Tile Fixing Islamabad: https://alsadatbuilders.com/marble-tile-fixing-islamabad
+- Boundary Wall Construction Islamabad: https://alsadatbuilders.com/boundary-wall-construction-islamabad
+- Plaster Work & Waterproofing Islamabad: https://alsadatbuilders.com/plaster-work-islamabad
+- Construction Cost & BOQ Guide 2026: https://alsadatbuilders.com/construction-cost-islamabad
+- Projects & Portfolio (including Bani Gala): https://alsadatbuilders.com/projects
+- Contact & Free Estimate: https://alsadatbuilders.com/contact
 - Sitemap: https://alsadatbuilders.com/sitemap.xml

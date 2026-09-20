@@ -35,11 +35,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Highlight Active Nav Link ---
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  // --- Highlight Active Nav Link (Supports Clean URLs & .html) ---
+  const rawPath = window.location.pathname.replace(/\/$/, '').replace(/\.html$/, '').split('/').pop() || '';
   document.querySelectorAll('.nav a, .mobile-nav-links a').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+    const rawHref = (link.getAttribute('href') || '').split('?')[0].split('#')[0];
+    const cleanHref = rawHref.replace(/^\//, '').replace(/\/$/, '').replace(/\.html$/, '');
+
+    if (
+      (rawPath === '' && (cleanHref === '' || cleanHref === 'index')) ||
+      (rawPath !== '' && cleanHref === rawPath)
+    ) {
       link.classList.add('active');
     }
   });
