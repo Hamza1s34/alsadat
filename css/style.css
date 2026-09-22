@@ -457,6 +457,29 @@ p { color: var(--gray-dark); line-height: 1.8; }
 
 .mobile-nav-links a:hover { color: var(--yellow-dark); }
 
+.mobile-nav-sub {
+  padding: 22px 0 8px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.mobile-nav-links a.mobile-nav-sub-link {
+  padding: 9px 0;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--gray-dark);
+  border-bottom: 1px dashed var(--border);
+}
+
+.mobile-nav-links a.mobile-nav-sub-link.active,
+.mobile-nav-links a.mobile-nav-sub-link:hover {
+  color: var(--yellow-dark);
+  font-weight: 700;
+}
+
 .mobile-nav-ctas {
   margin-top: 28px;
   display: flex;
@@ -1802,3 +1825,43 @@ p { color: var(--gray-dark); line-height: 1.8; }
   text-align: center;
   animation: heroSlideIn 0.4s ease;
 }
+
+/* ============================================================
+   AREA PAGES + HEADER FIT (added for area/sector landing pages)
+   ============================================================ */
+
+/* Service cards used as internal links */
+a.service-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a.service-card .service-link {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+a.area-chip {
+  text-decoration: none;
+}
+
+/* With the Areas dropdown added, tighten the nav before it collides
+   with the header CTAs on medium-width desktop viewports. */
+@media (max-width: 1200px) and (min-width: 901px) {
+  .nav {
+    gap: 2px;
+  }
+  .nav a {
+    padding: 8px 9px;
+    font-size: 0.84rem;
+  }
+  .header-cta .btn {
+    padding: 8px 12px !important;
+    font-size: 0.8rem !important;
+  }
+  .logo-text span {
+    display: none;
+  }
+}
+
