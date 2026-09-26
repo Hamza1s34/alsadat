@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fence Calculator — Posts, Panels, Rails, Pickets &amp; Concrete</title>
+  <meta name="description" content="Calculate fence posts, bays, panels, rails or pickets from the fence run and post spacing, plus the concrete needed to set each post. Works in feet and metres.">
+  <meta name="keywords" content="fence calculator, fence post calculator, how many fence posts, picket fence calculator, fence panel calculator, post hole concrete calculator, chain link fence calculator">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://alsadatbuilders.com/tools/fence-calculator">
+  <link rel="icon" type="image/png" href="/images/icon.png">
+  <link rel="apple-touch-icon" href="/images/icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alsadatbuilders.com/tools/fence-calculator">
+  <meta property="og:title" content="Fence Calculator — Posts, Panels, Rails, Pickets &amp; Concrete">
+  <meta property="og:description" content="Calculate fence posts, bays, panels, rails or pickets from the fence run and post spacing, plus the concrete needed to set each post. Works in feet and metres.">
+  <meta property="og:image" content="https://alsadatbuilders.com/images/logo.png">
+  <meta property="og:site_name" content="Al Sadat Builders">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fence Calculator — Posts, Panels, Rails, Pickets &amp; Concrete">
+  <meta name="twitter:description" content="Calculate fence posts, bays, panels, rails or pickets from the fence run and post spacing, plus the concrete needed to set each post. Works in feet and metres.">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/tools.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Fence Calculator",
+  "url": "https://alsadatbuilders.com/tools/fence-calculator",
+  "description": "Calculate fence posts, bays, panels, rails or pickets from the fence run and post spacing, plus the concrete needed to set each post. Works in feet and metres.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Al Sadat Builders",
+    "url": "https://alsadatbuilders.com/",
+    "founder": {
+      "@type": "Person",
+      "name": "Syed Mujtaba Shah"
+    }
+  }
+}
+  </script>
+
+  <!-- Breadcrumbs Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://alsadatbuilders.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Construction & Property Tools",
+      "item": "https://alsadatbuilders.com/tools/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Outdoor & Landscaping",
+      "item": "https://alsadatbuilders.com/tools/#cat-outdoor"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Fence Calculator",
+      "item": "https://alsadatbuilders.com/tools/fence-calculator"
+    }
+  ]
+}
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many fence posts do I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Divide the fence run by the post spacing, round up, and add one for the closing post. A 100 foot run at 8 foot spacing gives 12.5, which rounds to 13 bays, plus one post — 14 posts in total. Forgetting the extra post is the most common error in fence estimating."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How far apart should fence posts be?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "8 feet (about 2.4 metres) for most timber and panel fences. Chain link often goes to 10 feet, since the fabric is tensioned between posts. Shorter spans of 6 feet add posts and cost but are noticeably more rigid, and are worth it in exposed or windy locations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How deep should fence posts be set?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One third of the post's total length is a common rule, so an 8 foot post goes 2 feet 8 inches into the ground. At least 24 inches is usual for a 6 foot fence. The hole must also reach below the frost line, or frost heave will lift the post a little each winter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much concrete do I need per fence post?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "About 0.038 cubic metres — roughly two 25 kilogram bags of post-mix — for a 12 inch diameter hole 24 inches deep with a 4 inch post. Across 14 posts that is 0.54 cubic metres, or about 49 bags. Many people underestimate this badly; it is worth ordering in one go."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many pickets do I need for a picket fence?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Divide the fence run by the picket width plus the gap, and add one for the closing picket. At 4 inch pickets with a 2 inch gap each picket occupies 6 inches, so a 100 foot run takes 201 — 200 pickets would span 99 feet 10 inches and leave the last gap open. A tighter gap uses more pickets and blocks more wind, which matters on an exposed site."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How tall can I build a fence without permission?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It varies by country and by location within a country — often 6 feet at the rear and 3 or 4 feet at the front, with stricter limits on corners and next to highways. Check the current local rules before you build, and talk to neighbours if the fence is on a shared boundary."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-links">
+        <a href="tel:0335549384">📞 Call: 0335-5549384</a>
+        <a href="https://wa.me/923469607349" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 0346-9607349</a>
+        <a href="mailto:info@alsadatbuilders.com">✉️ info@alsadatbuilders.com</a>
+      </div>
+      <div class="top-bar-right">
+        <span>📍 Islamabad, Rawalpindi, Bani Gala &amp; All Major Societies</span>
+        <span>⏱️ Mon - Sat: 8:00 AM - 8:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Al Sadat Builders Home">
+        <img src="/images/icon.png" alt="Al Sadat Builders Icon" class="logo-icon-img">
+        <div class="logo-text">
+          <strong>AL SADAT BUILDERS</strong>
+          <span>30+ Years Construction Excellence</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <div class="nav-item">
+          <a href="/pages/construction-company-islamabad">Services ▾</a>
+          <div class="dropdown">
+            <a href="/pages/construction-company-islamabad">Construction in Islamabad</a>
+            <a href="/pages/house-construction-islamabad">House Construction</a>
+            <a href="/pages/grey-structure-islamabad">Grey Structure</a>
+            <a href="/pages/house-renovation-islamabad">Renovation &amp; Repairs</a>
+            <a href="/pages/marble-tile-fixing-islamabad">Marble &amp; Tile Fixing</a>
+            <a href="/pages/boundary-wall-construction-islamabad">Boundary Wall Construction</a>
+            <a href="/pages/plaster-work-islamabad">Plaster Work &amp; Waterproofing</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/pages/construction-company-cda-sectors-islamabad">Areas ▾</a>
+          <div class="dropdown">
+            <a href="/pages/construction-company-bani-gala">Bani Gala</a>
+            <a href="/pages/construction-company-dha-islamabad">DHA Islamabad</a>
+            <a href="/pages/construction-company-bahria-town-islamabad">Bahria Town</a>
+            <a href="/pages/construction-company-gulberg-greens-islamabad">Gulberg Greens</a>
+            <a href="/pages/construction-company-b-17-multi-gardens-islamabad">B-17 Multi Gardens</a>
+            <a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors</a>
+            <a href="/pages/construction-company-overseas-pakistanis">Overseas Pakistanis</a>
+            <a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors (F, G, E, I)</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/tools/">Tools ▾</a>
+          <div class="dropdown">
+            <a href="/tools/">All Free Tools</a>
+            <a href="/tools/#cat-area">🏞️ Area &amp; Land</a>
+            <a href="/tools/#cat-materials">🧱 Construction Materials</a>
+            <a href="/tools/#cat-flooring">🎨 Flooring &amp; Walls</a>
+            <a href="/tools/#cat-roofing">🏠 Roofing</a>
+            <a href="/tools/#cat-outdoor">🌳 Outdoor &amp; Landscaping</a>
+            <a href="/tools/#cat-land">🗺️ Pakistan Land Units</a>
+          </div>
+        </div>
+        <a href="/pages/construction-cost-islamabad">Construction Cost</a>
+        <a href="/pages/projects">Projects</a>
+        <a href="/pages/contact">Contact Us</a>
+      </nav>
+
+      <!-- Header CTAs -->
+      <div class="header-cta">
+        <a href="tel:0335549384" class="btn btn-dark" style="padding: 10px 18px; font-size: 0.88rem;">📞 Call Now</a>
+        <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20would%20like%20a%20free%20site%20visit%20and%20estimate." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 10px 18px; font-size: 0.88rem;">💬 WhatsApp</a>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="hamburger" aria-label="Toggle mobile menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav">
+    <div class="mobile-nav-header">
+      <div class="logo">
+        <img src="/images/icon.png" alt="Al Sadat Builders" class="logo-icon-img">
+        <div class="logo-text">
+          <strong>AL SADAT BUILDERS</strong>
+          <span>Islamabad, Rawalpindi &amp; Bani Gala</span>
+        </div>
+      </div>
+      <button class="mobile-nav-close" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="/">🏠 Home</a>
+      <a href="/tools/">🧮 Free Construction Tools</a>
+      <a href="/pages/construction-company-islamabad">🏗️ Construction Company Islamabad</a>
+      <a href="/pages/house-construction-islamabad">🏡 House Construction</a>
+      <a href="/pages/grey-structure-islamabad">🧱 Grey Structure</a>
+      <a href="/pages/house-renovation-islamabad">🔨 Renovation &amp; Remodeling</a>
+      <a href="/pages/marble-tile-fixing-islamabad">✨ Marble &amp; Tile Fixing</a>
+      <a href="/pages/boundary-wall-construction-islamabad">🧱 Boundary Wall Construction</a>
+      <a href="/pages/plaster-work-islamabad">🛡️ Plaster Work &amp; Waterproofing</a>
+      <a href="/pages/construction-cost-islamabad">📊 Construction Cost Guide</a>
+      <a href="/pages/projects">📸 Projects &amp; Portfolio</a>
+      <a href="/pages/construction-company-cda-sectors-islamabad">📍 Areas We Serve</a>
+      <div class="mobile-nav-sub">Calculators</div>
+      <a href="/tools/#cat-area" class="mobile-nav-sub-link">Area &amp; Land</a>
+      <a href="/tools/#cat-materials" class="mobile-nav-sub-link">Construction Materials</a>
+      <a href="/tools/#cat-flooring" class="mobile-nav-sub-link">Flooring &amp; Walls</a>
+      <a href="/tools/#cat-roofing" class="mobile-nav-sub-link">Roofing</a>
+      <a href="/tools/#cat-outdoor" class="mobile-nav-sub-link">Outdoor &amp; Landscaping</a>
+      <a href="/tools/#cat-land" class="mobile-nav-sub-link">Pakistan Land Units</a>
+      <div class="mobile-nav-sub">Popular Areas</div>
+      <a href="/pages/construction-company-bani-gala" class="mobile-nav-sub-link">⛰️ Bani Gala</a>
+      <a href="/pages/construction-company-dha-islamabad" class="mobile-nav-sub-link">🏛️ DHA Islamabad</a>
+      <a href="/pages/construction-company-bahria-town-islamabad" class="mobile-nav-sub-link">🏘️ Bahria Town</a>
+      <a href="/pages/construction-company-gulberg-greens-islamabad" class="mobile-nav-sub-link">🌿 Gulberg Greens</a>
+      <a href="/pages/construction-company-b-17-multi-gardens-islamabad" class="mobile-nav-sub-link">🏡 B-17 Multi Gardens</a>
+      <a href="/pages/construction-company-cda-sectors-islamabad" class="mobile-nav-sub-link">🏙️ CDA Sectors</a>
+      <a href="/pages/construction-company-overseas-pakistanis" class="mobile-nav-sub-link">✈️ Overseas Pakistanis</a>
+      <div class="mobile-nav-sub">CDA Sectors</div>
+      <a href="/pages/construction-company-f-6-islamabad" class="mobile-nav-sub-link">Sector F-6</a>
+      <a href="/pages/construction-company-f-7-islamabad" class="mobile-nav-sub-link">Sector F-7</a>
+      <a href="/pages/construction-company-f-8-islamabad" class="mobile-nav-sub-link">Sector F-8</a>
+      <a href="/pages/construction-company-f-10-islamabad" class="mobile-nav-sub-link">Sector F-10</a>
+      <a href="/pages/construction-company-f-11-islamabad" class="mobile-nav-sub-link">Sector F-11</a>
+      <a href="/pages/construction-company-g-6-islamabad" class="mobile-nav-sub-link">Sector G-6</a>
+      <a href="/pages/construction-company-g-9-islamabad" class="mobile-nav-sub-link">Sector G-9</a>
+      <a href="/pages/construction-company-g-10-islamabad" class="mobile-nav-sub-link">Sector G-10</a>
+      <a href="/pages/construction-company-g-11-islamabad" class="mobile-nav-sub-link">Sector G-11</a>
+      <a href="/pages/construction-company-e-11-islamabad" class="mobile-nav-sub-link">Sector E-11</a>
+      <a href="/pages/contact">📍 Contact &amp; Free Estimate</a>
+    </div>
+    <div class="mobile-nav-ctas">
+      <a href="tel:0335549384" class="btn btn-primary">📞 Call 0335-5549384</a>
+      <a href="https://wa.me/923469607349" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Tool Hero -->
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="tool-crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span>/</span> <a href="/tools/">Tools</a> <span>/</span> <a href="/tools/#cat-outdoor">Outdoor &amp; Landscaping</a> <span>/</span> <strong>Fence Calculator</strong>
+      </nav>
+      <h1>Fence Calculator</h1>
+      <p>Posts, bays, rails or pickets from your fence run — plus the concrete to set every post.</p>
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <section class="section">
+    <div class="container calc-layout">
+      <div class="calc-card">
+        <h2>Enter your measurements</h2>
+        <p class="calc-sub">Every result updates as you type — there is no button to press. Use <strong>Reset values</strong> to start again.</p>
+        <div id="calc-form"></div>
+      </div>
+      <div class="calc-results">
+        <h2>Results</h2>
+        <div id="calc-output" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section bg-off-white">
+    <div class="container">
+      <div class="tool-content">
+        <p>Fence quantities all follow from one decision: the post spacing. Set the posts and everything else is determined — the number of bays, the panels, the rails, the pickets, and the concrete for the holes. Change the spacing and every number changes with it.</p>
+        <p>This calculator handles panel fences, picket fences, post-and-rail and chain link. It also works out the concrete for the post holes, which is the quantity people most often forget and then guess at, usually low.</p>
+
+        <div class="formula-box"><strong>The formula</strong><p><strong>Posts</strong> = ⌈fence run ÷ post spacing⌉ + 1 &nbsp;·&nbsp; <strong>Bays</strong> = posts − 1</p><p><strong>Rails</strong> = bays × spacing × rails per bay &nbsp;·&nbsp; <strong>Pickets</strong> = run ÷ (picket width + gap)</p><p><strong>Concrete per post</strong> = (π × hole radius² × depth) − (post section² × depth)</p></div>
+        <h2>Post spacing sets everything else</h2>
+        <p>Most timber and panel fences use bays of 8 feet, or about 2.4 metres. Chain link often stretches to 10 feet because the fabric is tensioned between posts rather than supported by them. Some decorative or lightweight fence styles go to 6 feet, which adds posts and cost but makes the fence noticeably more rigid.</p><p>The end post matters as much as the spacings. A run of 100 feet at 8 foot bays divides exactly into 12½ bays, so you need 14 posts — 12 full bays plus a shorter final bay, and an extra post to close it. Dividing the run by the spacing and rounding down will leave you one post short every time, which is why the calculator always adds the closing post.</p><p>Angles and ends need more substantial posts than the ones in between. A run of posts in a straight line only has to hold the fence up; an end post has to resist the entire fence pulling on it, and a corner post has to resist it from two directions. By tradition these are set deeper and frequently braced.</p>
+
+        <h2>Post holes, depth and the one-third rule</h2>
+        <p>A common rule is that a third of the post's total length goes into the ground. An 8 foot post becomes 2 feet 8 inches in the ground with 5 foot 4 inches above. At least 24 inches is usual for a 6 foot fence, and more in sandy or loose ground.</p><p>The depth should also reach below the frost line where ground freezing is a factor. Frost heave lifts an inadequately set post a little each winter, and after a few seasons the fence is visibly leaning. In cold climates this can mean a hole deeper than the one-third rule suggests — check your local building guidance.</p><p>Hole diameter should be about three times the post's width. For a 4 inch post that is a 12 inch hole, which is what the calculator defaults to. A hole that is too tight cannot take enough concrete to hold the post; a hole that is too wide simply uses more material for the same result.</p>
+
+        <h2>Worked example</h2>
+        <p>A 100 foot fence run at 8 foot spacing needs 14 posts and creates 13 bays. With two rails per bay that is 200 linear feet of rail — two runs of 100 feet, one per rail line.</p><p>Note that this is <em>not</em> 13 bays × 8 feet × 2, which would give 208 feet. The run is 100 feet, so the last bay is 4 feet rather than 8, and rails are cut to the run, not to the nominal bay width. Estimating rails from bays × spacing over-orders by 4% on this run, and by more whenever the run divides awkwardly by the post spacing. As a panel fence it needs 13 panels.</p><p>Post holes at 12 inches diameter and 24 inches deep, with a 4 inch post. Each hole is π × 0.5² × 2 = 1.571 cubic feet, less the 0.222 cubic feet occupied by the post, so 1.349 cubic feet of concrete — 0.038 cubic metres per post, or 0.535 cubic metres across all 14 posts. At a bag yield of 0.011 cubic metres per 25 kilogram bag, that is 49 bags.</p><p>That last figure surprises people. Setting 14 posts properly takes the best part of a pallet of post-mix, and discovering it halfway through is the difference between finishing the job and making a second trip.</p>
+
+        <h2>Post-mix, dry mix and what actually holds a post</h2>
+        <p>Fast-setting post-mix is the convenient option: pour it dry into the hole around the post, add water, and leave it. It is more expensive per kilogram than mixing your own, and its advantage is speed and no mess. Where you have many posts, a 1 : 4 cement-to-ballast mix is considerably cheaper.</p><p>Whatever you use, the concrete's job is not to grip the post — it is to be a heavy, wide lump of mass that the post cannot move through. That is why the hole needs both depth and width, and why a wider hole with more concrete resists lateral load far better than a narrow one. Pack the concrete well as you fill; air pockets reduce the mass you are relying on.</p><p>Crown the concrete slightly above ground level so water runs away from the post rather than pooling at its base. And use posts rated for ground contact — timber that is only treated for above-ground use will rot at the soil line long before the rest of the fence fails.</p>
+
+        <h2>Fence height, planing permission and neighbours</h2>
+        <p>The default height is 6 feet, which is the common limit for a domestic boundary fence without planning permission in many jurisdictions — but the rules differ, and they differ again for a fence at the front of a property, on a corner, or next to a highway. Check locally before building. In many places a 6 foot fence is permitted at the rear but only 3 or 4 feet at the front.</p><p>Wind load rises steeply with height, and a solid 6 foot fence presents a great deal of it. In exposed locations, posts that are simply planted 2 feet into ordinary soil will not survive. Options are deeper holes, more posts, or a design that lets some wind through.</p><p>Finally, if the fence is on a boundary, talk to the neighbour first. It is cheaper and considerably more pleasant than a dispute, and in many places the fence becomes a shared asset with shared obligations.</p>
+
+        <div class="table-scroll">
+          <table class="data-table">
+            <caption>Posts and bays by fence run (8 ft spacing, all four types)</caption>
+            <thead><tr><th>Fence run</th><th>Posts</th><th>Bays</th><th>Rails at 2 per bay</th><th>Concrete (24 in hole, 4 in post)</th></tr></thead>
+            <tbody>
+          <tr><td><strong>20 ft</strong></td><td>4</td><td>3</td><td>40 lin ft</td><td>0.15 m³</td></tr>
+          <tr><td><strong>50 ft</strong></td><td>8</td><td>7</td><td>100 lin ft</td><td>0.31 m³</td></tr>
+          <tr><td><strong>100 ft</strong></td><td>14</td><td>13</td><td>200 lin ft</td><td>0.54 m³</td></tr>
+          <tr><td><strong>150 ft</strong></td><td>20</td><td>19</td><td>300 lin ft</td><td>0.76 m³</td></tr>
+          <tr><td><strong>200 ft</strong></td><td>26</td><td>25</td><td>400 lin ft</td><td>0.99 m³</td></tr>
+          <tr><td><strong>300 ft</strong></td><td>39</td><td>38</td><td>600 lin ft</td><td>1.49 m³</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ, related tools and a note about who publishes this -->
+  <section class="section">
+    <div class="container">
+      <div class="tool-content">
+        <h2>Frequently asked questions</h2>
+        <div class="tool-faq">
+          <details>
+            <summary>How many fence posts do I need?</summary>
+            <div class="faq-body">Divide the fence run by the post spacing, round up, and add one for the closing post. A 100 foot run at 8 foot spacing gives 12.5, which rounds to 13 bays, plus one post — 14 posts in total. Forgetting the extra post is the most common error in fence estimating.</div>
+          </details>
+          <details>
+            <summary>How far apart should fence posts be?</summary>
+            <div class="faq-body">8 feet (about 2.4 metres) for most timber and panel fences. Chain link often goes to 10 feet, since the fabric is tensioned between posts. Shorter spans of 6 feet add posts and cost but are noticeably more rigid, and are worth it in exposed or windy locations.</div>
+          </details>
+          <details>
+            <summary>How deep should fence posts be set?</summary>
+            <div class="faq-body">One third of the post's total length is a common rule, so an 8 foot post goes 2 feet 8 inches into the ground. At least 24 inches is usual for a 6 foot fence. The hole must also reach below the frost line, or frost heave will lift the post a little each winter.</div>
+          </details>
+          <details>
+            <summary>How much concrete do I need per fence post?</summary>
+            <div class="faq-body">About 0.038 cubic metres — roughly two 25 kilogram bags of post-mix — for a 12 inch diameter hole 24 inches deep with a 4 inch post. Across 14 posts that is 0.54 cubic metres, or about 49 bags. Many people underestimate this badly; it is worth ordering in one go.</div>
+          </details>
+          <details>
+            <summary>How many pickets do I need for a picket fence?</summary>
+            <div class="faq-body">Divide the fence run by the picket width plus the gap, and add one for the closing picket. At 4 inch pickets with a 2 inch gap each picket occupies 6 inches, so a 100 foot run takes 201 — 200 pickets would span 99 feet 10 inches and leave the last gap open. A tighter gap uses more pickets and blocks more wind, which matters on an exposed site.</div>
+          </details>
+          <details>
+            <summary>How tall can I build a fence without permission?</summary>
+            <div class="faq-body">It varies by country and by location within a country — often 6 feet at the rear and 3 or 4 feet at the front, with stricter limits on corners and next to highways. Check the current local rules before you build, and talk to neighbours if the fence is on a shared boundary.</div>
+          </details>
+        </div>
+
+        <h2>Related tools</h2>
+        <div class="related-grid">
+          <a class="related-link" href="/tools/concrete-calculator">
+            <span class="rl-icon">🧱</span>
+            <span class="rl-text">Concrete Calculator</span>
+          </a>
+          <a class="related-link" href="/tools/gravel-calculator">
+            <span class="rl-icon">🪨</span>
+            <span class="rl-text">Gravel Calculator</span>
+          </a>
+          <a class="related-link" href="/tools/square-footage-calculator">
+            <span class="rl-icon">📐</span>
+            <span class="rl-text">Square Footage Calculator</span>
+          </a>
+          <a class="related-link" href="/tools/tile-calculator">
+            <span class="rl-icon">◼️</span>
+            <span class="rl-text">Tile Calculator</span>
+          </a>
+        </div>
+
+        <div class="tool-cta">
+          <h3>About the company that publishes these tools</h3>
+          <p>Al Sadat Builders is a construction contractor based in Islamabad, Pakistan, led on site by <strong style="color:#fff;">Syed Mujtaba Shah</strong>. These calculators are free to use wherever you are — they print no currency and assume no country. If you are building in Islamabad, Rawalpindi or Bani Gala, we can survey the plot, price the job and hand you an itemised BOQ.</p>
+          <div class="tool-cta-btns">
+            <a href="/contact" class="btn btn-primary">Book a free site visit</a>
+            <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20was%20using%20the%20Fence%20Calculator%20on%20your%20website%20and%20would%20like%20to%20discuss%20a%20construction%20project." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">💬 WhatsApp us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <img src="/images/icon.png" alt="Al Sadat Builders" class="logo-icon-img">
+          <div class="logo-text">
+            <strong>AL SADAT BUILDERS</strong>
+            <span>30+ Years Construction Experience</span>
+          </div>
+        </div>
+        <p>
+          Construction company in Islamabad, Rawalpindi &amp; Bani Gala. Founded and led by <strong>Syed Mujtaba Shah</strong>. Turnkey residential villas, grey structures, renovation and finishing across CDA sectors, DHA, Bahria Town, Gulberg Greens and B-17.
+        </p>
+        <div class="footer-social">
+          <a href="https://wa.me/923469607349" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">💬</a>
+          <a href="tel:0335549384" aria-label="Call Us">📞</a>
+          <a href="mailto:info@alsadatbuilders.com" aria-label="Email Us">✉️</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/pages/construction-company-islamabad">Construction in Islamabad</a></li>
+          <li><a href="/pages/house-construction-islamabad">Turnkey House Construction</a></li>
+          <li><a href="/pages/grey-structure-islamabad">Grey Structure Construction</a></li>
+          <li><a href="/pages/house-renovation-islamabad">Renovation &amp; Remodeling</a></li>
+          <li><a href="/pages/marble-tile-fixing-islamabad">Marble &amp; Tile Fixing</a></li>
+          <li><a href="/pages/boundary-wall-construction-islamabad">Boundary Wall Construction</a></li>
+          <li><a href="/pages/plaster-work-islamabad">Plaster Work &amp; Waterproofing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Areas We Serve</h4>
+        <ul>
+          <li><a href="/pages/construction-company-bani-gala">Bani Gala</a></li>
+          <li><a href="/pages/construction-company-dha-islamabad">DHA Islamabad</a></li>
+          <li><a href="/pages/construction-company-bahria-town-islamabad">Bahria Town</a></li>
+          <li><a href="/pages/construction-company-gulberg-greens-islamabad">Gulberg Greens</a></li>
+          <li><a href="/pages/construction-company-b-17-multi-gardens-islamabad">B-17 Multi Gardens</a></li>
+          <li><a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors</a></li>
+          <li><a href="/pages/construction-company-overseas-pakistanis">Overseas Pakistanis</a></li>
+          <li><a href="/pages/construction-company-f-7-islamabad">F-7 Islamabad</a></li>
+          <li><a href="/pages/construction-company-f-8-islamabad">F-8 Islamabad</a></li>
+          <li><a href="/pages/construction-company-g-6-islamabad">G-6 Islamabad</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact &amp; Hours</h4>
+        <ul>
+          <li><strong>CEO:</strong> Syed Mujtaba Shah</li>
+          <li><a href="tel:0335549384">📞 0335-5549384</a></li>
+          <li><a href="https://wa.me/923469607349" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 0346-9607349</a></li>
+          <li><a href="mailto:info@alsadatbuilders.com">✉️ info@alsadatbuilders.com</a></li>
+          <li>📍 Islamabad, Rawalpindi &amp; Bani Gala</li>
+          <li>⏱️ Mon - Sat: 8:00 AM - 8:00 PM</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Al Sadat Builders. All rights reserved. Construction Company in Islamabad.</p>
+      <div class="footer-bottom-links">
+        <a href="/">Home</a>
+        <a href="/pages/construction-cost-islamabad">Cost Guide</a>
+        <a href="/pages/projects">Projects</a>
+        <a href="/pages/contact">Contact</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20would%20like%20to%20discuss%20a%20construction%20project." class="float-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <span class="tooltip">Chat with Syed Mujtaba Shah</span>
+    💬
+  </a>
+
+  <!-- JavaScript -->
+  <script src="/js/main.js"></script>
+
+  <!-- Calculator engine — builds the form and the results panel -->
+  <script src="/js/tools.js"></script>
+  <script>AlsadatTools.init('fence-calculator');</script>
+</body>
+</html>

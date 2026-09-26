@@ -8,6 +8,11 @@ shared navigation, footer and homepage area chips across the existing pages.
 
 Run from the project root:
     python3 scripts/build_site.py
+    python3 scripts/build_tools.py
+
+The second command rebuilds the /tools/ pages, which are rendered with the
+header and footer this file owns. Any change to the navigation here needs
+both, in that order, to reach the tool pages.
 """
 
 import json
@@ -20,6 +25,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from data_societies import SOCIETIES
 from data_sectors import SECTORS
+from data_tools import TOOL_CATEGORIES
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://alsadatbuilders.com"
@@ -120,6 +126,7 @@ def nav_areas_dropdown(active_slug):
 def mobile_nav_links(active_slug):
     lines = [
         ('/', '🏠 Home', ''),
+        ('/tools/', '🧮 Free Construction Tools', ''),
         ('/construction-company-islamabad', '🏗️ Construction Company Islamabad', ''),
         ('/house-construction-islamabad', '🏡 House Construction', ''),
         ('/grey-structure-islamabad', '🧱 Grey Structure', ''),
@@ -134,7 +141,13 @@ def mobile_nav_links(active_slug):
     out = []
     for href, label, _ in lines:
         cls = ' class="active"' if href.lstrip('/') == active_slug else ""
-        out.append('      <a href="%s"%s>%s</a>' % (page_link(href.lstrip('/')), cls, label))
+        # /tools/ is a canonical URL in its own right, not a proxied page slug,
+        # so it is linked as-is rather than through page_link().
+        target = href if href.startswith('/tools/') else page_link(href.lstrip('/'))
+        out.append('      <a href="%s"%s>%s</a>' % (target, cls, label))
+    out.append('      <div class="mobile-nav-sub">Calculators</div>')
+    for key, name, _icon, _desc in TOOL_CATEGORIES:
+        out.append('      <a href="/tools/#cat-%s" class="mobile-nav-sub-link">%s</a>' % (key, name))
     out.append('      <div class="mobile-nav-sub">Popular Areas</div>')
     for a in SOCIETY_AREAS + [OVERSEAS]:
         cls = ' class="active"' if a["slug"] == active_slug else ""
@@ -147,6 +160,21 @@ def mobile_nav_links(active_slug):
                    % (a["slug"], cls, a["name"]))
     out.append('      <a href="/pages/contact">📍 Contact &amp; Free Estimate</a>')
     return "\n".join(out)
+
+
+def nav_tools_dropdown():
+    """Desktop 'Tools' dropdown — the six calculator categories on /tools/."""
+    items = ['            <a href="/tools/">All Free Tools</a>']
+    for key, name, icon, _desc in TOOL_CATEGORIES:
+        items.append('            <a href="/tools/#cat-%s">%s %s</a>' % (key, icon, name))
+    return (
+        '        <div class="nav-item">\n'
+        '          <a href="/tools/">Tools ▾</a>\n'
+        '          <div class="dropdown">\n'
+        + "\n".join(items) + "\n"
+        '          </div>\n'
+        '        </div>'
+    )
 
 
 def page_link(slug):
@@ -178,6 +206,7 @@ CONTACT_VARS = dict(
 def header_html(active_slug=""):
     return Template(HEADER_TMPL).substitute(
         NAV_AREAS=nav_areas_dropdown(active_slug),
+        NAV_TOOLS=nav_tools_dropdown(),
         MOBILE_LINKS=mobile_nav_links(active_slug),
         **CONTACT_VARS
     )
@@ -236,6 +265,7 @@ HEADER_TMPL = """  <!-- Top Bar -->
           </div>
         </div>
 ${NAV_AREAS}
+${NAV_TOOLS}
         <a href="/pages/construction-cost-islamabad">Construction Cost</a>
         <a href="/pages/projects">Projects</a>
         <a href="/pages/contact">Contact Us</a>
@@ -904,6 +934,17 @@ def patch_existing_pages():
             if n == 0:
                 print("  ! nav anchor not found in %s" % fname)
 
+        # 1b. Desktop nav — insert the Tools dropdown directly after Areas
+        if 'href="/tools/">Tools' not in html:
+            html, n = re.subn(
+                r'([ \t]*)<a href="/pages/construction-cost-islamabad"[^>]*>Construction Cost</a>',
+                lambda m: nav_tools_dropdown() + "\n" + m.group(0),
+                html,
+                count=1,
+            )
+            if n == 0:
+                print("  ! tools nav anchor not found in %s" % fname)
+
         # 2. Mobile nav — rebuild the link list
         html = re.sub(
             r'(<div class="mobile-nav-links">)(.*?)(\n    </div>\s*\n\s*<div class="mobile-nav-ctas">)',
@@ -1007,6 +1048,18 @@ def write_sitemap():
     entries.append(("%s/%s" % (SITE, OVERSEAS["slug"]), "0.8", "monthly"))
     for a in SECTORS:
         entries.append(("%s/%s" % (SITE, a["slug"]), "0.8", "monthly"))
+
+    # The /tools/ hub and its calculator pages, taken from what build_tools.py
+    # has actually written to pages/tools/. Reading the directory rather than
+    # a hand-kept list means this builder cannot drop the tool URLs when it
+    # runs after the tools builder — which it will, on any later chrome change.
+    tools_dir = os.path.join(ROOT, PAGES_SUBDIR, "tools")
+    if os.path.isdir(tools_dir):
+        if os.path.exists(os.path.join(tools_dir, "index.html")):
+            entries.append(("%s/tools/" % SITE, "0.8", "weekly"))
+        for fn in sorted(os.listdir(tools_dir)):
+            if fn.endswith(".html") and fn != "index.html":
+                entries.append(("%s/tools/%s" % (SITE, fn[:-5]), "0.7", "monthly"))
 
     body = "\n".join(
         "  <url>\n"

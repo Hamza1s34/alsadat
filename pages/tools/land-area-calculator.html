@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Land Area Calculator — Acres, Hectares, Marla &amp; Kanal</title>
+  <meta name="description" content="Calculate land area from length and width, or enter an area you know, and see it in acres, hectares, square feet, square metres, marla and kanal.">
+  <meta name="keywords" content="land area calculator, plot area calculator, acres calculator, hectares calculator, land measurement, marla kanal calculator, land size conversion">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://alsadatbuilders.com/tools/land-area-calculator">
+  <link rel="icon" type="image/png" href="/images/icon.png">
+  <link rel="apple-touch-icon" href="/images/icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alsadatbuilders.com/tools/land-area-calculator">
+  <meta property="og:title" content="Land Area Calculator — Acres, Hectares, Marla &amp; Kanal">
+  <meta property="og:description" content="Calculate land area from length and width, or enter an area you know, and see it in acres, hectares, square feet, square metres, marla and kanal.">
+  <meta property="og:image" content="https://alsadatbuilders.com/images/logo.png">
+  <meta property="og:site_name" content="Al Sadat Builders">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Land Area Calculator — Acres, Hectares, Marla &amp; Kanal">
+  <meta name="twitter:description" content="Calculate land area from length and width, or enter an area you know, and see it in acres, hectares, square feet, square metres, marla and kanal.">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/tools.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Land Area Calculator",
+  "url": "https://alsadatbuilders.com/tools/land-area-calculator",
+  "description": "Calculate land area from length and width, or enter an area you know, and see it in acres, hectares, square feet, square metres, marla and kanal.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Al Sadat Builders",
+    "url": "https://alsadatbuilders.com/",
+    "founder": {
+      "@type": "Person",
+      "name": "Syed Mujtaba Shah"
+    }
+  }
+}
+  </script>
+
+  <!-- Breadcrumbs Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://alsadatbuilders.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Construction & Property Tools",
+      "item": "https://alsadatbuilders.com/tools/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Area & Land",
+      "item": "https://alsadatbuilders.com/tools/#cat-area"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Land Area Calculator",
+      "item": "https://alsadatbuilders.com/tools/land-area-calculator"
+    }
+  ]
+}
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate land area from length and width?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply length by width when both are in the same unit, then convert. If you measure in feet the answer is already square feet. This calculator lets you enter each dimension in a different unit — feet, metres, yards, inches or centimetres — and converts both before multiplying, so you can measure a long side with a tape in metres and a short side in feet without doing any arithmetic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many square feet is 1 kanal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "5,445 square feet, which is 605 square yards or 505.86 square metres. Kanal is fixed at 20 marla, and on the traditional 272.25 square foot marla standard that gives 20 × 272.25 = 5,445. If a society defines marla as 250 square feet, its kanal works out at 5,000 square feet instead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many acres is a 10 marla plot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At the traditional standard, 10 marla is 2,722.5 square feet, which is 0.0625 acres — one sixteenth of an acre, or half a kanal. Under the 250 square foot standard, 10 marla is 2,500 square feet, or 0.0574 acres."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between an acre and a hectare?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An acre is 43,560 square feet (4,046.86 m²) and a hectare is 10,000 square metres (107,639 square feet). A hectare is about 2.47 times larger than an acre. Use acres for land records in the US, UK and Commonwealth countries, and hectares for metric-system countries and scientific or planning documents."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I use the surveyed area or my own measurement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the surveyed area for anything legal or financial — a purchase, a mortgage or a planning application — because a licensed surveyor's figure is the one that stands. Use your own measurement for practical decisions like how much fencing or turf to buy, and expect it to differ slightly from the deed because boundaries are rarely perfectly straight."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-links">
+        <a href="tel:0335549384">📞 Call: 0335-5549384</a>
+        <a href="https://wa.me/923469607349" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 0346-9607349</a>
+        <a href="mailto:info@alsadatbuilders.com">✉️ info@alsadatbuilders.com</a>
+      </div>
+      <div class="top-bar-right">
+        <span>📍 Islamabad, Rawalpindi, Bani Gala &amp; All Major Societies</span>
+        <span>⏱️ Mon - Sat: 8:00 AM - 8:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Al Sadat Builders Home">
+        <img src="/images/icon.png" alt="Al Sadat Builders Icon" class="logo-icon-img">
+        <div class="logo-text">
+          <strong>AL SADAT BUILDERS</strong>
+          <span>30+ Years Construction Excellence</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <div class="nav-item">
+          <a href="/pages/construction-company-islamabad">Services ▾</a>
+          <div class="dropdown">
+            <a href="/pages/construction-company-islamabad">Construction in Islamabad</a>
+            <a href="/pages/house-construction-islamabad">House Construction</a>
+            <a href="/pages/grey-structure-islamabad">Grey Structure</a>
+            <a href="/pages/house-renovation-islamabad">Renovation &amp; Repairs</a>
+            <a href="/pages/marble-tile-fixing-islamabad">Marble &amp; Tile Fixing</a>
+            <a href="/pages/boundary-wall-construction-islamabad">Boundary Wall Construction</a>
+            <a href="/pages/plaster-work-islamabad">Plaster Work &amp; Waterproofing</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/pages/construction-company-cda-sectors-islamabad">Areas ▾</a>
+          <div class="dropdown">
+            <a href="/pages/construction-company-bani-gala">Bani Gala</a>
+            <a href="/pages/construction-company-dha-islamabad">DHA Islamabad</a>
+            <a href="/pages/construction-company-bahria-town-islamabad">Bahria Town</a>
+            <a href="/pages/construction-company-gulberg-greens-islamabad">Gulberg Greens</a>
+            <a href="/pages/construction-company-b-17-multi-gardens-islamabad">B-17 Multi Gardens</a>
+            <a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors</a>
+            <a href="/pages/construction-company-overseas-pakistanis">Overseas Pakistanis</a>
+            <a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors (F, G, E, I)</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/tools/">Tools ▾</a>
+          <div class="dropdown">
+            <a href="/tools/">All Free Tools</a>
+            <a href="/tools/#cat-area">🏞️ Area &amp; Land</a>
+            <a href="/tools/#cat-materials">🧱 Construction Materials</a>
+            <a href="/tools/#cat-flooring">🎨 Flooring &amp; Walls</a>
+            <a href="/tools/#cat-roofing">🏠 Roofing</a>
+            <a href="/tools/#cat-outdoor">🌳 Outdoor &amp; Landscaping</a>
+            <a href="/tools/#cat-land">🗺️ Pakistan Land Units</a>
+          </div>
+        </div>
+        <a href="/pages/construction-cost-islamabad">Construction Cost</a>
+        <a href="/pages/projects">Projects</a>
+        <a href="/pages/contact">Contact Us</a>
+      </nav>
+
+      <!-- Header CTAs -->
+      <div class="header-cta">
+        <a href="tel:0335549384" class="btn btn-dark" style="padding: 10px 18px; font-size: 0.88rem;">📞 Call Now</a>
+        <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20would%20like%20a%20free%20site%20visit%20and%20estimate." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 10px 18px; font-size: 0.88rem;">💬 WhatsApp</a>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="hamburger" aria-label="Toggle mobile menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav">
+    <div class="mobile-nav-header">
+      <div class="logo">
+        <img src="/images/icon.png" alt="Al Sadat Builders" class="logo-icon-img">
+        <div class="logo-text">
+          <strong>AL SADAT BUILDERS</strong>
+          <span>Islamabad, Rawalpindi &amp; Bani Gala</span>
+        </div>
+      </div>
+      <button class="mobile-nav-close" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="/">🏠 Home</a>
+      <a href="/tools/">🧮 Free Construction Tools</a>
+      <a href="/pages/construction-company-islamabad">🏗️ Construction Company Islamabad</a>
+      <a href="/pages/house-construction-islamabad">🏡 House Construction</a>
+      <a href="/pages/grey-structure-islamabad">🧱 Grey Structure</a>
+      <a href="/pages/house-renovation-islamabad">🔨 Renovation &amp; Remodeling</a>
+      <a href="/pages/marble-tile-fixing-islamabad">✨ Marble &amp; Tile Fixing</a>
+      <a href="/pages/boundary-wall-construction-islamabad">🧱 Boundary Wall Construction</a>
+      <a href="/pages/plaster-work-islamabad">🛡️ Plaster Work &amp; Waterproofing</a>
+      <a href="/pages/construction-cost-islamabad">📊 Construction Cost Guide</a>
+      <a href="/pages/projects">📸 Projects &amp; Portfolio</a>
+      <a href="/pages/construction-company-cda-sectors-islamabad">📍 Areas We Serve</a>
+      <div class="mobile-nav-sub">Calculators</div>
+      <a href="/tools/#cat-area" class="mobile-nav-sub-link">Area &amp; Land</a>
+      <a href="/tools/#cat-materials" class="mobile-nav-sub-link">Construction Materials</a>
+      <a href="/tools/#cat-flooring" class="mobile-nav-sub-link">Flooring &amp; Walls</a>
+      <a href="/tools/#cat-roofing" class="mobile-nav-sub-link">Roofing</a>
+      <a href="/tools/#cat-outdoor" class="mobile-nav-sub-link">Outdoor &amp; Landscaping</a>
+      <a href="/tools/#cat-land" class="mobile-nav-sub-link">Pakistan Land Units</a>
+      <div class="mobile-nav-sub">Popular Areas</div>
+      <a href="/pages/construction-company-bani-gala" class="mobile-nav-sub-link">⛰️ Bani Gala</a>
+      <a href="/pages/construction-company-dha-islamabad" class="mobile-nav-sub-link">🏛️ DHA Islamabad</a>
+      <a href="/pages/construction-company-bahria-town-islamabad" class="mobile-nav-sub-link">🏘️ Bahria Town</a>
+      <a href="/pages/construction-company-gulberg-greens-islamabad" class="mobile-nav-sub-link">🌿 Gulberg Greens</a>
+      <a href="/pages/construction-company-b-17-multi-gardens-islamabad" class="mobile-nav-sub-link">🏡 B-17 Multi Gardens</a>
+      <a href="/pages/construction-company-cda-sectors-islamabad" class="mobile-nav-sub-link">🏙️ CDA Sectors</a>
+      <a href="/pages/construction-company-overseas-pakistanis" class="mobile-nav-sub-link">✈️ Overseas Pakistanis</a>
+      <div class="mobile-nav-sub">CDA Sectors</div>
+      <a href="/pages/construction-company-f-6-islamabad" class="mobile-nav-sub-link">Sector F-6</a>
+      <a href="/pages/construction-company-f-7-islamabad" class="mobile-nav-sub-link">Sector F-7</a>
+      <a href="/pages/construction-company-f-8-islamabad" class="mobile-nav-sub-link">Sector F-8</a>
+      <a href="/pages/construction-company-f-10-islamabad" class="mobile-nav-sub-link">Sector F-10</a>
+      <a href="/pages/construction-company-f-11-islamabad" class="mobile-nav-sub-link">Sector F-11</a>
+      <a href="/pages/construction-company-g-6-islamabad" class="mobile-nav-sub-link">Sector G-6</a>
+      <a href="/pages/construction-company-g-9-islamabad" class="mobile-nav-sub-link">Sector G-9</a>
+      <a href="/pages/construction-company-g-10-islamabad" class="mobile-nav-sub-link">Sector G-10</a>
+      <a href="/pages/construction-company-g-11-islamabad" class="mobile-nav-sub-link">Sector G-11</a>
+      <a href="/pages/construction-company-e-11-islamabad" class="mobile-nav-sub-link">Sector E-11</a>
+      <a href="/pages/contact">📍 Contact &amp; Free Estimate</a>
+    </div>
+    <div class="mobile-nav-ctas">
+      <a href="tel:0335549384" class="btn btn-primary">📞 Call 0335-5549384</a>
+      <a href="https://wa.me/923469607349" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Tool Hero -->
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="tool-crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span>/</span> <a href="/tools/">Tools</a> <span>/</span> <a href="/tools/#cat-area">Area &amp; Land</a> <span>/</span> <strong>Land Area Calculator</strong>
+      </nav>
+      <h1>Land Area Calculator</h1>
+      <p>Measure a plot, field or site and see it in every land unit — acres and hectares for records, marla and kanal for the local market.</p>
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <section class="section">
+    <div class="container calc-layout">
+      <div class="calc-card">
+        <h2>Enter your measurements</h2>
+        <p class="calc-sub">Every result updates as you type — there is no button to press. Use <strong>Reset values</strong> to start again.</p>
+        <div id="calc-form"></div>
+      </div>
+      <div class="calc-results">
+        <h2>Results</h2>
+        <div id="calc-output" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section bg-off-white">
+    <div class="container">
+      <div class="tool-content">
+        <p>Land changes hands in units that have almost nothing to do with each other. A rural estate is priced in acres or hectares, a building plot is priced in marla or kanal in South Asia, and a mortgage or survey document will want square feet or square metres. This calculator takes one measurement and puts the answer in all of them at once, so you can check a listing against a title deed without converting by hand.</p>
+        <p>Enter the dimensions if you have them, or pick “I already know the area” and type in a figure from a survey, a deed or a listing. The tool also accepts a per-marla and a per-acre price so you can see whether two listings quoted in different units are actually the same price.</p>
+
+        <div class="formula-box"><strong>The formula</strong><p><strong>Rectangle:</strong> length × width &nbsp;·&nbsp; <strong>Triangle:</strong> ½ × base × perpendicular height &nbsp;·&nbsp; <strong>Trapezoid:</strong> ½ × (side A + side B) × the distance between them</p></div>
+        <h2>What an acre and a hectare actually are</h2>
+        <p>An acre is 43,560 square feet — historically the area a team of oxen could plough in a day. It is 4,046.8564 square metres, roughly 208 feet square, and it is still the working unit for rural and development land in the United States, the United Kingdom, Ireland and across the Commonwealth.</p><p>A hectare is 10,000 square metres — a square 100 metres on each side. It replaced the acre in most of the world because it fits the metric system cleanly, and it is what agricultural, forestry and planning documents use in Europe, Latin America, Africa and most of Asia. One hectare is 2.471054 acres.</p><p>Because both are large, buying a hectare when you meant an acre is an expensive misunderstanding: the hectare is nearly two and a half times bigger.</p>
+
+        <h2>Marla, kanal and the South Asian plot market</h2>
+        <p>A <strong>kanal</strong> is fixed at 20 marla and, traditionally, 605 square yards — 5,445 square feet. Eight kanal make an acre, and one kanal is one eighth of an acre. That relationship holds only because the traditional marla is 272.25 square feet.</p><p>A <strong>marla</strong> is the variable unit. Traditional revenue records and older city schemes use 272.25 square feet. Many modern housing societies round it to 250 square feet. Some regions and older schemes use 225. The same advertised “10 marla” plot can therefore be 2,722, 2,500 or 2,250 square feet — a difference of up to 21% in what you actually get. Always ask which standard the price is quoted against, and put it in writing.</p>
+
+        <h2>Worked example</h2>
+        <p>A plot measures 90 feet by 60 feet. That is 5,400 square feet, 600 square yards, 501.68 square metres, 19.83 marla at the traditional standard, 0.992 kanal and 0.124 acres. The calculator shows 21.6 marla at the 250 square foot standard — the same physical plot, described two different ways.</p><p>Suppose the seller is asking a price per marla. Enter it and the total land value appears; enter a price per acre instead and you get the other total. If both prices are quoted, comparing the two totals against the same plot is the quickest way to see which listing is genuinely cheaper.</p>
+
+        <h2>Converting a surveyed area</h2>
+        <p>Survey documents rarely give you a neat rectangle. They give a boundary description, a plan drawing, or an area already calculated by a licensed surveyor. If you have that final figure, use the “I already know the area” option and pick the unit the document uses — the calculator converts from there. If you only have a plan drawing with irregular boundaries, the practical approach is to divide the plot into triangles and trapezoids on paper, work out each one here, and add them up.</p>
+
+        <div class="table-scroll">
+          <table class="data-table">
+            <caption>Land unit reference</caption>
+            <thead><tr><th>Unit</th><th>Square feet</th><th>Square metres</th><th>Acres</th></tr></thead>
+            <tbody>
+          <tr><td><strong>1 square yard</strong></td><td>9</td><td>0.8361</td><td>0.000207</td></tr>
+          <tr><td><strong>1 marla (225 ft²)</strong></td><td>225</td><td>20.903</td><td>0.005165</td></tr>
+          <tr><td><strong>1 marla (250 ft²)</strong></td><td>250</td><td>23.226</td><td>0.005740</td></tr>
+          <tr><td><strong>1 marla (272.25 ft²)</strong></td><td>272.25</td><td>25.293</td><td>0.006250</td></tr>
+          <tr><td><strong>1 kanal</strong></td><td>5,445</td><td>505.86</td><td>0.125000</td></tr>
+          <tr><td><strong>1 acre</strong></td><td>43,560</td><td>4,046.86</td><td>1</td></tr>
+          <tr><td><strong>1 hectare</strong></td><td>107,639.1</td><td>10,000</td><td>2.471054</td></tr>
+          <tr><td><strong>1 square kilometre</strong></td><td>10,763,910</td><td>1,000,000</td><td>247.1054</td></tr>
+          <tr><td><strong>1 square mile</strong></td><td>27,878,400</td><td>2,589,988</td><td>640</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ, related tools and a note about who publishes this -->
+  <section class="section">
+    <div class="container">
+      <div class="tool-content">
+        <h2>Frequently asked questions</h2>
+        <div class="tool-faq">
+          <details>
+            <summary>How do I calculate land area from length and width?</summary>
+            <div class="faq-body">Multiply length by width when both are in the same unit, then convert. If you measure in feet the answer is already square feet. This calculator lets you enter each dimension in a different unit — feet, metres, yards, inches or centimetres — and converts both before multiplying, so you can measure a long side with a tape in metres and a short side in feet without doing any arithmetic.</div>
+          </details>
+          <details>
+            <summary>How many square feet is 1 kanal?</summary>
+            <div class="faq-body">5,445 square feet, which is 605 square yards or 505.86 square metres. Kanal is fixed at 20 marla, and on the traditional 272.25 square foot marla standard that gives 20 × 272.25 = 5,445. If a society defines marla as 250 square feet, its kanal works out at 5,000 square feet instead.</div>
+          </details>
+          <details>
+            <summary>How many acres is a 10 marla plot?</summary>
+            <div class="faq-body">At the traditional standard, 10 marla is 2,722.5 square feet, which is 0.0625 acres — one sixteenth of an acre, or half a kanal. Under the 250 square foot standard, 10 marla is 2,500 square feet, or 0.0574 acres.</div>
+          </details>
+          <details>
+            <summary>What is the difference between an acre and a hectare?</summary>
+            <div class="faq-body">An acre is 43,560 square feet (4,046.86 m²) and a hectare is 10,000 square metres (107,639 square feet). A hectare is about 2.47 times larger than an acre. Use acres for land records in the US, UK and Commonwealth countries, and hectares for metric-system countries and scientific or planning documents.</div>
+          </details>
+          <details>
+            <summary>Should I use the surveyed area or my own measurement?</summary>
+            <div class="faq-body">Use the surveyed area for anything legal or financial — a purchase, a mortgage or a planning application — because a licensed surveyor's figure is the one that stands. Use your own measurement for practical decisions like how much fencing or turf to buy, and expect it to differ slightly from the deed because boundaries are rarely perfectly straight.</div>
+          </details>
+        </div>
+
+        <h2>Related tools</h2>
+        <div class="related-grid">
+          <a class="related-link" href="/tools/plot-area-calculator">
+            <span class="rl-icon">🏡</span>
+            <span class="rl-text">Plot Area Calculator</span>
+          </a>
+          <a class="related-link" href="/tools/area-converter">
+            <span class="rl-icon">🔁</span>
+            <span class="rl-text">Area Converter</span>
+          </a>
+          <a class="related-link" href="/tools/square-footage-calculator">
+            <span class="rl-icon">📐</span>
+            <span class="rl-text">Square Footage Calculator</span>
+          </a>
+          <a class="related-link" href="/tools/marla-to-square-feet">
+            <span class="rl-icon">📐</span>
+            <span class="rl-text">Marla to Square Feet</span>
+          </a>
+        </div>
+
+        <div class="tool-cta">
+          <h3>About the company that publishes these tools</h3>
+          <p>Al Sadat Builders is a construction contractor based in Islamabad, Pakistan, led on site by <strong style="color:#fff;">Syed Mujtaba Shah</strong>. These calculators are free to use wherever you are — they print no currency and assume no country. If you are building in Islamabad, Rawalpindi or Bani Gala, we can survey the plot, price the job and hand you an itemised BOQ.</p>
+          <div class="tool-cta-btns">
+            <a href="/contact" class="btn btn-primary">Book a free site visit</a>
+            <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20was%20using%20the%20Land%20Area%20Calculator%20on%20your%20website%20and%20would%20like%20to%20discuss%20a%20construction%20project." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">💬 WhatsApp us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <img src="/images/icon.png" alt="Al Sadat Builders" class="logo-icon-img">
+          <div class="logo-text">
+            <strong>AL SADAT BUILDERS</strong>
+            <span>30+ Years Construction Experience</span>
+          </div>
+        </div>
+        <p>
+          Construction company in Islamabad, Rawalpindi &amp; Bani Gala. Founded and led by <strong>Syed Mujtaba Shah</strong>. Turnkey residential villas, grey structures, renovation and finishing across CDA sectors, DHA, Bahria Town, Gulberg Greens and B-17.
+        </p>
+        <div class="footer-social">
+          <a href="https://wa.me/923469607349" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">💬</a>
+          <a href="tel:0335549384" aria-label="Call Us">📞</a>
+          <a href="mailto:info@alsadatbuilders.com" aria-label="Email Us">✉️</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/pages/construction-company-islamabad">Construction in Islamabad</a></li>
+          <li><a href="/pages/house-construction-islamabad">Turnkey House Construction</a></li>
+          <li><a href="/pages/grey-structure-islamabad">Grey Structure Construction</a></li>
+          <li><a href="/pages/house-renovation-islamabad">Renovation &amp; Remodeling</a></li>
+          <li><a href="/pages/marble-tile-fixing-islamabad">Marble &amp; Tile Fixing</a></li>
+          <li><a href="/pages/boundary-wall-construction-islamabad">Boundary Wall Construction</a></li>
+          <li><a href="/pages/plaster-work-islamabad">Plaster Work &amp; Waterproofing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Areas We Serve</h4>
+        <ul>
+          <li><a href="/pages/construction-company-bani-gala">Bani Gala</a></li>
+          <li><a href="/pages/construction-company-dha-islamabad">DHA Islamabad</a></li>
+          <li><a href="/pages/construction-company-bahria-town-islamabad">Bahria Town</a></li>
+          <li><a href="/pages/construction-company-gulberg-greens-islamabad">Gulberg Greens</a></li>
+          <li><a href="/pages/construction-company-b-17-multi-gardens-islamabad">B-17 Multi Gardens</a></li>
+          <li><a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors</a></li>
+          <li><a href="/pages/construction-company-overseas-pakistanis">Overseas Pakistanis</a></li>
+          <li><a href="/pages/construction-company-f-7-islamabad">F-7 Islamabad</a></li>
+          <li><a href="/pages/construction-company-f-8-islamabad">F-8 Islamabad</a></li>
+          <li><a href="/pages/construction-company-g-6-islamabad">G-6 Islamabad</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact &amp; Hours</h4>
+        <ul>
+          <li><strong>CEO:</strong> Syed Mujtaba Shah</li>
+          <li><a href="tel:0335549384">📞 0335-5549384</a></li>
+          <li><a href="https://wa.me/923469607349" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 0346-9607349</a></li>
+          <li><a href="mailto:info@alsadatbuilders.com">✉️ info@alsadatbuilders.com</a></li>
+          <li>📍 Islamabad, Rawalpindi &amp; Bani Gala</li>
+          <li>⏱️ Mon - Sat: 8:00 AM - 8:00 PM</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Al Sadat Builders. All rights reserved. Construction Company in Islamabad.</p>
+      <div class="footer-bottom-links">
+        <a href="/">Home</a>
+        <a href="/pages/construction-cost-islamabad">Cost Guide</a>
+        <a href="/pages/projects">Projects</a>
+        <a href="/pages/contact">Contact</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20would%20like%20to%20discuss%20a%20construction%20project." class="float-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <span class="tooltip">Chat with Syed Mujtaba Shah</span>
+    💬
+  </a>
+
+  <!-- JavaScript -->
+  <script src="/js/main.js"></script>
+
+  <!-- Calculator engine — builds the form and the results panel -->
+  <script src="/js/tools.js"></script>
+  <script>AlsadatTools.init('land-area-calculator');</script>
+</body>
+</html>

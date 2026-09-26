@@ -49,6 +49,27 @@
 /marble-tile-fixing-islamabad                       /pages/marble-tile-fixing-islamabad  200
 /plaster-work-islamabad                             /pages/plaster-work-islamabad  200
 /projects                                           /pages/projects  200
+/tools  /pages/tools/  200
+/tools/  /pages/tools/  200
+/tools/acres-to-hectares  /pages/tools/acres-to-hectares  200
+/tools/area-converter  /pages/tools/area-converter  200
+/tools/brick-calculator  /pages/tools/brick-calculator  200
+/tools/concrete-calculator  /pages/tools/concrete-calculator  200
+/tools/fence-calculator  /pages/tools/fence-calculator  200
+/tools/flooring-calculator  /pages/tools/flooring-calculator  200
+/tools/gravel-calculator  /pages/tools/gravel-calculator  200
+/tools/hectares-to-acres  /pages/tools/hectares-to-acres  200
+/tools/kanal-to-marla  /pages/tools/kanal-to-marla  200
+/tools/land-area-calculator  /pages/tools/land-area-calculator  200
+/tools/marla-to-square-feet  /pages/tools/marla-to-square-feet  200
+/tools/paint-calculator  /pages/tools/paint-calculator  200
+/tools/plot-area-calculator  /pages/tools/plot-area-calculator  200
+/tools/roofing-calculator  /pages/tools/roofing-calculator  200
+/tools/square-feet-to-marla  /pages/tools/square-feet-to-marla  200
+/tools/square-feet-to-square-meters  /pages/tools/square-feet-to-square-meters  200
+/tools/square-footage-calculator  /pages/tools/square-footage-calculator  200
+/tools/square-meters-to-square-feet  /pages/tools/square-meters-to-square-feet  200
+/tools/tile-calculator  /pages/tools/tile-calculator  200
 
 # Homepage (/), /css/, /images/, /js/, /sitemap.xml, /robots.txt and /pages/*
 # are real files and are served normally -- no rules needed for those.

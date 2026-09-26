@@ -124,6 +124,41 @@ Al Sadat Builders calculates all costs using an Itemized Bill of Quantities (BOQ
 - Labour, finishing: PKR 400 – 550 / sq. ft. (labour only)
 - Source page: https://alsadatbuilders.com/construction-cost-islamabad
 
+## Free Construction & Property Calculators
+
+A hub of 19 free calculators at https://alsadatbuilders.com/tools/ — no sign-up, no currency assumed, usable in any country.
+
+### Area & Land
+- Area Converter: https://alsadatbuilders.com/tools/area-converter — Convert any area into eleven units at once, including marla and kanal.
+- Square Footage Calculator: https://alsadatbuilders.com/tools/square-footage-calculator — Square footage for rectangles, circles, triangles and trapezoids, with a cost estimate.
+- Land Area Calculator: https://alsadatbuilders.com/tools/land-area-calculator — Work out land area in acres, hectares, marla and kanal from a simple measurement.
+- Plot Area Calculator: https://alsadatbuilders.com/tools/plot-area-calculator — Plot area in marla, kanal and square feet — plus the perimeter for boundary walls.
+- Square Feet to Square Metres: https://alsadatbuilders.com/tools/square-feet-to-square-meters — Convert ft² to m² with the exact factor and a reference table.
+- Square Metres to Square Feet: https://alsadatbuilders.com/tools/square-meters-to-square-feet — Convert m² to ft² with the exact factor and a reference table.
+- Acres to Hectares: https://alsadatbuilders.com/tools/acres-to-hectares — Convert acres to hectares with the exact factor and a land reference table.
+- Hectares to Acres: https://alsadatbuilders.com/tools/hectares-to-acres — Convert hectares to acres with the exact factor and a land reference table.
+
+### Construction Materials
+- Concrete Calculator: https://alsadatbuilders.com/tools/concrete-calculator — Slabs, footings, columns and stairs — volume plus bags of cement, sand and aggregate.
+- Brick Calculator: https://alsadatbuilders.com/tools/brick-calculator — Bricks for a wall of any size and thickness, plus the mortar and cement for laying them.
+- Gravel Calculator: https://alsadatbuilders.com/tools/gravel-calculator — Gravel, crushed stone and river rock — volume in yd³ and weight in tonnes.
+
+### Flooring & Walls
+- Tile Calculator: https://alsadatbuilders.com/tools/tile-calculator — Floor and wall tiles by the box, with grout joints and cutting waste included.
+- Paint Calculator: https://alsadatbuilders.com/tools/paint-calculator — Litres or gallons per room, with doors, windows and coats deducted properly.
+- Flooring Calculator: https://alsadatbuilders.com/tools/flooring-calculator — Laminate, vinyl and hardwood boxes for a room, plus underlayment rolls.
+
+### Roofing
+- Roofing Calculator: https://alsadatbuilders.com/tools/roofing-calculator — Roof area and materials from the footprint and pitch — gable, hip, shed and flat.
+
+### Outdoor & Landscaping
+- Fence Calculator: https://alsadatbuilders.com/tools/fence-calculator — Posts, panels, rails or pickets from your fence run, plus post-hole concrete.
+
+### Pakistan Land Units
+- Marla to Square Feet: https://alsadatbuilders.com/tools/marla-to-square-feet — The conversion itself, with a table of the plot sizes buyers actually ask about.
+- Square Feet to Marla: https://alsadatbuilders.com/tools/square-feet-to-marla — A measured area read back into marla, compared across all three standards.
+- Kanal to Marla: https://alsadatbuilders.com/tools/kanal-to-marla — The 20-marla relationship, for larger parcels priced by the kanal.
+
 ## Pages & Deep Links
 
 - Homepage: https://alsadatbuilders.com/

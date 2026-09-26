@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brick Calculator — How Many Bricks Do I Need for a Wall?</title>
+  <meta name="description" content="Calculate how many bricks a wall needs from its length, height and thickness, with mortar volume, cement bags and sand. Standard or custom brick sizes.">
+  <meta name="keywords" content="brick calculator, how many bricks do i need, bricks per square metre, brick wall calculator, mortar calculator, bricks per m2, brick quantity calculator">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://alsadatbuilders.com/tools/brick-calculator">
+  <link rel="icon" type="image/png" href="/images/icon.png">
+  <link rel="apple-touch-icon" href="/images/icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alsadatbuilders.com/tools/brick-calculator">
+  <meta property="og:title" content="Brick Calculator — How Many Bricks Do I Need for a Wall?">
+  <meta property="og:description" content="Calculate how many bricks a wall needs from its length, height and thickness, with mortar volume, cement bags and sand. Standard or custom brick sizes.">
+  <meta property="og:image" content="https://alsadatbuilders.com/images/logo.png">
+  <meta property="og:site_name" content="Al Sadat Builders">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Brick Calculator — How Many Bricks Do I Need for a Wall?">
+  <meta name="twitter:description" content="Calculate how many bricks a wall needs from its length, height and thickness, with mortar volume, cement bags and sand. Standard or custom brick sizes.">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/tools.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Brick Calculator",
+  "url": "https://alsadatbuilders.com/tools/brick-calculator",
+  "description": "Calculate how many bricks a wall needs from its length, height and thickness, with mortar volume, cement bags and sand. Standard or custom brick sizes.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Al Sadat Builders",
+    "url": "https://alsadatbuilders.com/",
+    "founder": {
+      "@type": "Person",
+      "name": "Syed Mujtaba Shah"
+    }
+  }
+}
+  </script>
+
+  <!-- Breadcrumbs Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://alsadatbuilders.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Construction & Property Tools",
+      "item": "https://alsadatbuilders.com/tools/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Construction Materials",
+      "item": "https://alsadatbuilders.com/tools/#cat-materials"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Brick Calculator",
+      "item": "https://alsadatbuilders.com/tools/brick-calculator"
+    }
+  ]
+}
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many bricks are in a square metre of wall?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "About 50 for a half-brick (115 mm) wall and about 99 for a full one-brick (230 mm) wall, using a 230 × 115 × 75 mm brick with a 10 mm mortar joint. With modular 190 × 90 × 90 mm bricks the figures are 50 per square metre at 90 mm thick and 100 at 190 mm. Always check the wall thickness before ordering, because one answer is exactly double the other."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many bricks are in a cubic metre?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "About 392 for standard 230 × 115 × 75 mm bricks with 10 mm joints, or 500 for modular 190 × 90 × 90 mm bricks. These figures assume the bricks fill the cubic metre solidly, which real walls rarely do — a 230 mm wall's thickness is not a whole multiple of the jointed brick, which is why this calculator counts by wall face instead."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much mortar do I need for a brick wall?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Roughly 15–20% of the finished wall's volume. For 30 square metres of 230 mm wall, that is about 1.02 cubic metres of wet mortar, or 1.36 cubic metres of dry mix — around 7 bags of cement and 1.13 cubic metres of sand at a 1 : 5 mix. The calculator works this out from the brick count and the wall volume, so it accounts for your actual brick size."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much cement is in a 1 : 5 mortar mix?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One part cement to five parts sand by volume. A cubic metre of dry mortar at 1 : 5 contains about 0.167 cubic metres of cement, which is 240 kg, or just under 5 bags of 50 kg. Add the water gradually — the workability you want comes from the sand grading, not from extra water."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I add wastage to the brick count?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Five percent is reasonable for machine-made bricks delivered on pallets, and 8–10% for hand-made bricks, awkward access, or walls with many openings and corners that produce offcuts. Always keep the surplus rather than ordering to the exact figure — brick colour varies between kiln batches and a later repair from a different batch will be visible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the calculator work for blockwork?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Enter your block's dimensions under the custom brick size option. Concrete blocks are typically 440 × 215 × 100 mm or 390 × 190 × 190 mm, and with 10 mm joints they give rates of about 12.5 blocks per square metre for the larger face and 10 for the smaller. The mortar calculation works identically."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-links">
+        <a href="tel:0335549384">📞 Call: 0335-5549384</a>
+        <a href="https://wa.me/923469607349" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 0346-9607349</a>
+        <a href="mailto:info@alsadatbuilders.com">✉️ info@alsadatbuilders.com</a>
+      </div>
+      <div class="top-bar-right">
+        <span>📍 Islamabad, Rawalpindi, Bani Gala &amp; All Major Societies</span>
+        <span>⏱️ Mon - Sat: 8:00 AM - 8:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Al Sadat Builders Home">
+        <img src="/images/icon.png" alt="Al Sadat Builders Icon" class="logo-icon-img">
+        <div class="logo-text">
+          <strong>AL SADAT BUILDERS</strong>
+          <span>30+ Years Construction Excellence</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <div class="nav-item">
+          <a href="/pages/construction-company-islamabad">Services ▾</a>
+          <div class="dropdown">
+            <a href="/pages/construction-company-islamabad">Construction in Islamabad</a>
+            <a href="/pages/house-construction-islamabad">House Construction</a>
+            <a href="/pages/grey-structure-islamabad">Grey Structure</a>
+            <a href="/pages/house-renovation-islamabad">Renovation &amp; Repairs</a>
+            <a href="/pages/marble-tile-fixing-islamabad">Marble &amp; Tile Fixing</a>
+            <a href="/pages/boundary-wall-construction-islamabad">Boundary Wall Construction</a>
+            <a href="/pages/plaster-work-islamabad">Plaster Work &amp; Waterproofing</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/pages/construction-company-cda-sectors-islamabad">Areas ▾</a>
+          <div class="dropdown">
+            <a href="/pages/construction-company-bani-gala">Bani Gala</a>
+            <a href="/pages/construction-company-dha-islamabad">DHA Islamabad</a>
+            <a href="/pages/construction-company-bahria-town-islamabad">Bahria Town</a>
+            <a href="/pages/construction-company-gulberg-greens-islamabad">Gulberg Greens</a>
+            <a href="/pages/construction-company-b-17-multi-gardens-islamabad">B-17 Multi Gardens</a>
+            <a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors</a>
+            <a href="/pages/construction-company-overseas-pakistanis">Overseas Pakistanis</a>
+            <a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors (F, G, E, I)</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/tools/">Tools ▾</a>
+          <div class="dropdown">
+            <a href="/tools/">All Free Tools</a>
+            <a href="/tools/#cat-area">🏞️ Area &amp; Land</a>
+            <a href="/tools/#cat-materials">🧱 Construction Materials</a>
+            <a href="/tools/#cat-flooring">🎨 Flooring &amp; Walls</a>
+            <a href="/tools/#cat-roofing">🏠 Roofing</a>
+            <a href="/tools/#cat-outdoor">🌳 Outdoor &amp; Landscaping</a>
+            <a href="/tools/#cat-land">🗺️ Pakistan Land Units</a>
+          </div>
+        </div>
+        <a href="/pages/construction-cost-islamabad">Construction Cost</a>
+        <a href="/pages/projects">Projects</a>
+        <a href="/pages/contact">Contact Us</a>
+      </nav>
+
+      <!-- Header CTAs -->
+      <div class="header-cta">
+        <a href="tel:0335549384" class="btn btn-dark" style="padding: 10px 18px; font-size: 0.88rem;">📞 Call Now</a>
+        <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20would%20like%20a%20free%20site%20visit%20and%20estimate." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 10px 18px; font-size: 0.88rem;">💬 WhatsApp</a>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="hamburger" aria-label="Toggle mobile menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav">
+    <div class="mobile-nav-header">
+      <div class="logo">
+        <img src="/images/icon.png" alt="Al Sadat Builders" class="logo-icon-img">
+        <div class="logo-text">
+          <strong>AL SADAT BUILDERS</strong>
+          <span>Islamabad, Rawalpindi &amp; Bani Gala</span>
+        </div>
+      </div>
+      <button class="mobile-nav-close" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="/">🏠 Home</a>
+      <a href="/tools/">🧮 Free Construction Tools</a>
+      <a href="/pages/construction-company-islamabad">🏗️ Construction Company Islamabad</a>
+      <a href="/pages/house-construction-islamabad">🏡 House Construction</a>
+      <a href="/pages/grey-structure-islamabad">🧱 Grey Structure</a>
+      <a href="/pages/house-renovation-islamabad">🔨 Renovation &amp; Remodeling</a>
+      <a href="/pages/marble-tile-fixing-islamabad">✨ Marble &amp; Tile Fixing</a>
+      <a href="/pages/boundary-wall-construction-islamabad">🧱 Boundary Wall Construction</a>
+      <a href="/pages/plaster-work-islamabad">🛡️ Plaster Work &amp; Waterproofing</a>
+      <a href="/pages/construction-cost-islamabad">📊 Construction Cost Guide</a>
+      <a href="/pages/projects">📸 Projects &amp; Portfolio</a>
+      <a href="/pages/construction-company-cda-sectors-islamabad">📍 Areas We Serve</a>
+      <div class="mobile-nav-sub">Calculators</div>
+      <a href="/tools/#cat-area" class="mobile-nav-sub-link">Area &amp; Land</a>
+      <a href="/tools/#cat-materials" class="mobile-nav-sub-link">Construction Materials</a>
+      <a href="/tools/#cat-flooring" class="mobile-nav-sub-link">Flooring &amp; Walls</a>
+      <a href="/tools/#cat-roofing" class="mobile-nav-sub-link">Roofing</a>
+      <a href="/tools/#cat-outdoor" class="mobile-nav-sub-link">Outdoor &amp; Landscaping</a>
+      <a href="/tools/#cat-land" class="mobile-nav-sub-link">Pakistan Land Units</a>
+      <div class="mobile-nav-sub">Popular Areas</div>
+      <a href="/pages/construction-company-bani-gala" class="mobile-nav-sub-link">⛰️ Bani Gala</a>
+      <a href="/pages/construction-company-dha-islamabad" class="mobile-nav-sub-link">🏛️ DHA Islamabad</a>
+      <a href="/pages/construction-company-bahria-town-islamabad" class="mobile-nav-sub-link">🏘️ Bahria Town</a>
+      <a href="/pages/construction-company-gulberg-greens-islamabad" class="mobile-nav-sub-link">🌿 Gulberg Greens</a>
+      <a href="/pages/construction-company-b-17-multi-gardens-islamabad" class="mobile-nav-sub-link">🏡 B-17 Multi Gardens</a>
+      <a href="/pages/construction-company-cda-sectors-islamabad" class="mobile-nav-sub-link">🏙️ CDA Sectors</a>
+      <a href="/pages/construction-company-overseas-pakistanis" class="mobile-nav-sub-link">✈️ Overseas Pakistanis</a>
+      <div class="mobile-nav-sub">CDA Sectors</div>
+      <a href="/pages/construction-company-f-6-islamabad" class="mobile-nav-sub-link">Sector F-6</a>
+      <a href="/pages/construction-company-f-7-islamabad" class="mobile-nav-sub-link">Sector F-7</a>
+      <a href="/pages/construction-company-f-8-islamabad" class="mobile-nav-sub-link">Sector F-8</a>
+      <a href="/pages/construction-company-f-10-islamabad" class="mobile-nav-sub-link">Sector F-10</a>
+      <a href="/pages/construction-company-f-11-islamabad" class="mobile-nav-sub-link">Sector F-11</a>
+      <a href="/pages/construction-company-g-6-islamabad" class="mobile-nav-sub-link">Sector G-6</a>
+      <a href="/pages/construction-company-g-9-islamabad" class="mobile-nav-sub-link">Sector G-9</a>
+      <a href="/pages/construction-company-g-10-islamabad" class="mobile-nav-sub-link">Sector G-10</a>
+      <a href="/pages/construction-company-g-11-islamabad" class="mobile-nav-sub-link">Sector G-11</a>
+      <a href="/pages/construction-company-e-11-islamabad" class="mobile-nav-sub-link">Sector E-11</a>
+      <a href="/pages/contact">📍 Contact &amp; Free Estimate</a>
+    </div>
+    <div class="mobile-nav-ctas">
+      <a href="tel:0335549384" class="btn btn-primary">📞 Call 0335-5549384</a>
+      <a href="https://wa.me/923469607349" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Tool Hero -->
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="tool-crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span>/</span> <a href="/tools/">Tools</a> <span>/</span> <a href="/tools/#cat-materials">Construction Materials</a> <span>/</span> <strong>Brick Calculator</strong>
+      </nav>
+      <h1>Brick Calculator</h1>
+      <p>Bricks for a wall of any size and thickness — plus the mortar, cement and sand to lay them.</p>
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <section class="section">
+    <div class="container calc-layout">
+      <div class="calc-card">
+        <h2>Enter your measurements</h2>
+        <p class="calc-sub">Every result updates as you type — there is no button to press. Use <strong>Reset values</strong> to start again.</p>
+        <div id="calc-form"></div>
+      </div>
+      <div class="calc-results">
+        <h2>Results</h2>
+        <div id="calc-output" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section bg-off-white">
+    <div class="container">
+      <div class="tool-content">
+        <p>Brick counts are usually quoted as a rate per square metre or per square foot of wall face, and the rate depends on how thick the wall is. A half-brick wall showing one face of each brick needs roughly half as many bricks per square metre as a full one-brick wall built from two leaves. This calculator works from the wall's actual dimensions and thickness, and lets you set the brick size so it matches what your supplier is actually delivering.</p>
+        <p>Because bricks always come with mortar, the mortar volume is calculated too, along with the cement and sand needed to mix it. That matters because the cement for mortar is frequently forgotten at ordering time and then bought in a rush at a higher price.</p>
+
+        <div class="formula-box"><strong>The formula</strong><p><strong>Bricks per m² of wall face</strong> = number of brick leaves ÷ ((brick length + joint) × (brick height + joint))</p><p><strong>Number of leaves</strong> = wall thickness ÷ (brick width + joint), rounded to a whole number. <strong>Mortar</strong> = wall volume − the volume of the bricks themselves, then × 1.33 for the dry mix.</p></div>
+        <h2>Why we count by wall face, not by volume</h2>
+        <p>A common shortcut is to divide the wall's volume by the volume of one brick. It is quick and it is wrong for most walls, because a wall is built from whole leaves of brickwork and its thickness is never an exact multiple of a single brick plus its joint. A 230 mm wall built from 115 mm bricks is two leaves with a collar joint between them — the volume method treats that collar as part of the bricks and comes out roughly 9% low.</p><p>Counting by face area avoids the problem entirely. Each leaf of brickwork shows one brick face per module, so the rate per square metre is simply the reciprocal of the module area, multiplied by the number of leaves. It is the method estimators use, and it is why a 230 mm wall comes out at about 100 bricks per square metre while a 115 mm wall comes out at about 50.</p>
+
+        <h2>Standard, modular and imperial bricks</h2>
+        <p>Brick sizes are not universal, and using the wrong one throws the count off by a large margin. The two you will meet most often:</p><ul><li><strong>Standard 230 × 115 × 75 mm</strong> (about 9 × 4½ × 3 in) — the traditional brick across South Asia, the Middle East and much of Africa. At a 10 mm joint it gives roughly 50 bricks per m² as a half-brick wall, or 100 per m² at one brick thick.</li><li><strong>Modular 190 × 90 × 90 mm</strong> — the metric brick used in Europe, Australia and North America, designed so that four bricks plus joints make exactly 800 mm. At a 10 mm joint it gives 50 bricks per m² for a 90 mm wall, and 100 per m² for a 190 mm wall.</li></ul><p>US bricks follow a different convention again — the nominal dimensions include the mortar joint, so a “2¼ × 4 × 8 inch” brick is really 2¼ × 3⅝ × 7⅝ with a ⅜ inch joint. If your supplier quotes nominal sizes, the joint is already baked in; select the closest option and check the per-square-metre rate the calculator shows against the supplier's own figure before ordering.</p>
+
+        <h2>Worked example</h2>
+        <p>A garden wall 10 metres long and 3 metres high in 230 mm brickwork. The wall face is 30 square metres. With 230 × 115 × 75 mm bricks at a 10 mm joint, the calculator returns 99 bricks per square metre, which is 2,942 bricks — about 3,090 once the 5% breakage allowance is added.</p><p>The same 30 square metres at 115 mm thick is a single leaf and needs 1,471 bricks, almost exactly half. That difference is the whole point of checking the wall thickness before ordering: guessing wrong on a garden wall is a four-figure mistake in any currency.</p><p>The mortar for the 230 mm wall works out at about 1.02 cubic metres wet, or 1.36 cubic metres of dry mix — roughly 7 bags of 50 kg cement and 1.13 cubic metres of sand at a 1 : 5 mix.</p>
+
+        <h2>How much waste to allow</h2>
+        <p>Allow 5% for machine-made bricks delivered on pallets and handled carefully. Allow 8–10% where bricks are hand-made, where they are unloaded and carried across a site by hand, or where the wall has many openings, corners and returns that generate cut bricks.</p><p>Keep the surplus. Brick colour and texture vary between kiln batches, and a wall repaired two years later from a different batch will show the join. A few hundred spare bricks stored dry and covered will save a great deal of trouble, and they cost almost nothing relative to the wall.</p>
+
+        <h2>Mortar mix and joint thickness</h2>
+        <p>A 1 : 5 cement-to-sand mix is the general-purpose choice for most brickwork. Go to 1 : 4 for load-bearing walls and anything exposed to driving rain, because the extra cement improves both strength and weather resistance. Drop to 1 : 6 only for internal non-load-bearing partitions, where strength is not the issue and a softer, more workable mix is easier to lay.</p><p>Keep the joint at about 10 mm. Thicker joints use more mortar and are weaker; thinner joints leave less room for the brick's own dimensional variation, which matters more with hand-made bricks. Consistency across the wall matters as much as the nominal figure — a wall with joints varying between 8 and 15 mm is both weaker and visibly uneven.</p>
+
+        <div class="table-scroll">
+          <table class="data-table">
+            <caption>Bricks per square metre by wall thickness (230 × 115 × 75 mm brick, 10 mm joint)</caption>
+            <thead><tr><th>Wall thickness</th><th>Leaves</th><th>Bricks per m²</th><th>Bricks per ft²</th></tr></thead>
+            <tbody>
+          <tr><td><strong>112 mm (4.5 in)</strong></td><td>1</td><td>50</td><td>4.6</td></tr>
+          <tr><td><strong>230 mm (9 in)</strong></td><td>2</td><td>99</td><td>9.2</td></tr>
+          <tr><td><strong>340 mm (13.5 in)</strong></td><td>3</td><td>148</td><td>13.7</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ, related tools and a note about who publishes this -->
+  <section class="section">
+    <div class="container">
+      <div class="tool-content">
+        <h2>Frequently asked questions</h2>
+        <div class="tool-faq">
+          <details>
+            <summary>How many bricks are in a square metre of wall?</summary>
+            <div class="faq-body">About 50 for a half-brick (115 mm) wall and about 99 for a full one-brick (230 mm) wall, using a 230 × 115 × 75 mm brick with a 10 mm mortar joint. With modular 190 × 90 × 90 mm bricks the figures are 50 per square metre at 90 mm thick and 100 at 190 mm. Always check the wall thickness before ordering, because one answer is exactly double the other.</div>
+          </details>
+          <details>
+            <summary>How many bricks are in a cubic metre?</summary>
+            <div class="faq-body">About 392 for standard 230 × 115 × 75 mm bricks with 10 mm joints, or 500 for modular 190 × 90 × 90 mm bricks. These figures assume the bricks fill the cubic metre solidly, which real walls rarely do — a 230 mm wall's thickness is not a whole multiple of the jointed brick, which is why this calculator counts by wall face instead.</div>
+          </details>
+          <details>
+            <summary>How much mortar do I need for a brick wall?</summary>
+            <div class="faq-body">Roughly 15–20% of the finished wall's volume. For 30 square metres of 230 mm wall, that is about 1.02 cubic metres of wet mortar, or 1.36 cubic metres of dry mix — around 7 bags of cement and 1.13 cubic metres of sand at a 1 : 5 mix. The calculator works this out from the brick count and the wall volume, so it accounts for your actual brick size.</div>
+          </details>
+          <details>
+            <summary>How much cement is in a 1 : 5 mortar mix?</summary>
+            <div class="faq-body">One part cement to five parts sand by volume. A cubic metre of dry mortar at 1 : 5 contains about 0.167 cubic metres of cement, which is 240 kg, or just under 5 bags of 50 kg. Add the water gradually — the workability you want comes from the sand grading, not from extra water.</div>
+          </details>
+          <details>
+            <summary>Should I add wastage to the brick count?</summary>
+            <div class="faq-body">Yes. Five percent is reasonable for machine-made bricks delivered on pallets, and 8–10% for hand-made bricks, awkward access, or walls with many openings and corners that produce offcuts. Always keep the surplus rather than ordering to the exact figure — brick colour varies between kiln batches and a later repair from a different batch will be visible.</div>
+          </details>
+          <details>
+            <summary>Does the calculator work for blockwork?</summary>
+            <div class="faq-body">Yes. Enter your block's dimensions under the custom brick size option. Concrete blocks are typically 440 × 215 × 100 mm or 390 × 190 × 190 mm, and with 10 mm joints they give rates of about 12.5 blocks per square metre for the larger face and 10 for the smaller. The mortar calculation works identically.</div>
+          </details>
+        </div>
+
+        <h2>Related tools</h2>
+        <div class="related-grid">
+          <a class="related-link" href="/tools/concrete-calculator">
+            <span class="rl-icon">🧱</span>
+            <span class="rl-text">Concrete Calculator</span>
+          </a>
+          <a class="related-link" href="/tools/gravel-calculator">
+            <span class="rl-icon">🪨</span>
+            <span class="rl-text">Gravel Calculator</span>
+          </a>
+          <a class="related-link" href="/tools/square-footage-calculator">
+            <span class="rl-icon">📐</span>
+            <span class="rl-text">Square Footage Calculator</span>
+          </a>
+          <a class="related-link" href="/tools/tile-calculator">
+            <span class="rl-icon">◼️</span>
+            <span class="rl-text">Tile Calculator</span>
+          </a>
+        </div>
+
+        <div class="tool-cta">
+          <h3>About the company that publishes these tools</h3>
+          <p>Al Sadat Builders is a construction contractor based in Islamabad, Pakistan, led on site by <strong style="color:#fff;">Syed Mujtaba Shah</strong>. These calculators are free to use wherever you are — they print no currency and assume no country. If you are building in Islamabad, Rawalpindi or Bani Gala, we can survey the plot, price the job and hand you an itemised BOQ.</p>
+          <div class="tool-cta-btns">
+            <a href="/contact" class="btn btn-primary">Book a free site visit</a>
+            <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20was%20using%20the%20Brick%20Calculator%20on%20your%20website%20and%20would%20like%20to%20discuss%20a%20construction%20project." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">💬 WhatsApp us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <img src="/images/icon.png" alt="Al Sadat Builders" class="logo-icon-img">
+          <div class="logo-text">
+            <strong>AL SADAT BUILDERS</strong>
+            <span>30+ Years Construction Experience</span>
+          </div>
+        </div>
+        <p>
+          Construction company in Islamabad, Rawalpindi &amp; Bani Gala. Founded and led by <strong>Syed Mujtaba Shah</strong>. Turnkey residential villas, grey structures, renovation and finishing across CDA sectors, DHA, Bahria Town, Gulberg Greens and B-17.
+        </p>
+        <div class="footer-social">
+          <a href="https://wa.me/923469607349" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">💬</a>
+          <a href="tel:0335549384" aria-label="Call Us">📞</a>
+          <a href="mailto:info@alsadatbuilders.com" aria-label="Email Us">✉️</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/pages/construction-company-islamabad">Construction in Islamabad</a></li>
+          <li><a href="/pages/house-construction-islamabad">Turnkey House Construction</a></li>
+          <li><a href="/pages/grey-structure-islamabad">Grey Structure Construction</a></li>
+          <li><a href="/pages/house-renovation-islamabad">Renovation &amp; Remodeling</a></li>
+          <li><a href="/pages/marble-tile-fixing-islamabad">Marble &amp; Tile Fixing</a></li>
+          <li><a href="/pages/boundary-wall-construction-islamabad">Boundary Wall Construction</a></li>
+          <li><a href="/pages/plaster-work-islamabad">Plaster Work &amp; Waterproofing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Areas We Serve</h4>
+        <ul>
+          <li><a href="/pages/construction-company-bani-gala">Bani Gala</a></li>
+          <li><a href="/pages/construction-company-dha-islamabad">DHA Islamabad</a></li>
+          <li><a href="/pages/construction-company-bahria-town-islamabad">Bahria Town</a></li>
+          <li><a href="/pages/construction-company-gulberg-greens-islamabad">Gulberg Greens</a></li>
+          <li><a href="/pages/construction-company-b-17-multi-gardens-islamabad">B-17 Multi Gardens</a></li>
+          <li><a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors</a></li>
+          <li><a href="/pages/construction-company-overseas-pakistanis">Overseas Pakistanis</a></li>
+          <li><a href="/pages/construction-company-f-7-islamabad">F-7 Islamabad</a></li>
+          <li><a href="/pages/construction-company-f-8-islamabad">F-8 Islamabad</a></li>
+          <li><a href="/pages/construction-company-g-6-islamabad">G-6 Islamabad</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact &amp; Hours</h4>
+        <ul>
+          <li><strong>CEO:</strong> Syed Mujtaba Shah</li>
+          <li><a href="tel:0335549384">📞 0335-5549384</a></li>
+          <li><a href="https://wa.me/923469607349" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 0346-9607349</a></li>
+          <li><a href="mailto:info@alsadatbuilders.com">✉️ info@alsadatbuilders.com</a></li>
+          <li>📍 Islamabad, Rawalpindi &amp; Bani Gala</li>
+          <li>⏱️ Mon - Sat: 8:00 AM - 8:00 PM</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Al Sadat Builders. All rights reserved. Construction Company in Islamabad.</p>
+      <div class="footer-bottom-links">
+        <a href="/">Home</a>
+        <a href="/pages/construction-cost-islamabad">Cost Guide</a>
+        <a href="/pages/projects">Projects</a>
+        <a href="/pages/contact">Contact</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20would%20like%20to%20discuss%20a%20construction%20project." class="float-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <span class="tooltip">Chat with Syed Mujtaba Shah</span>
+    💬
+  </a>
+
+  <!-- JavaScript -->
+  <script src="/js/main.js"></script>
+
+  <!-- Calculator engine — builds the form and the results panel -->
+  <script src="/js/tools.js"></script>
+  <script>AlsadatTools.init('brick-calculator');</script>
+</body>
+</html>

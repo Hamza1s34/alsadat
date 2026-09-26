@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gravel Calculator — How Much Gravel Do I Need?</title>
+  <meta name="description" content="Calculate how much gravel, crushed stone or pea gravel you need for a driveway, path or bed. Volume in yd³ and m³, weight in tonnes and US tons.">
+  <meta name="keywords" content="gravel calculator, how much gravel do i need, gravel tonnage calculator, crushed stone calculator, cubic yards of gravel, pea gravel calculator, driveway gravel calculator">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://alsadatbuilders.com/tools/gravel-calculator">
+  <link rel="icon" type="image/png" href="/images/icon.png">
+  <link rel="apple-touch-icon" href="/images/icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alsadatbuilders.com/tools/gravel-calculator">
+  <meta property="og:title" content="Gravel Calculator — How Much Gravel Do I Need?">
+  <meta property="og:description" content="Calculate how much gravel, crushed stone or pea gravel you need for a driveway, path or bed. Volume in yd³ and m³, weight in tonnes and US tons.">
+  <meta property="og:image" content="https://alsadatbuilders.com/images/logo.png">
+  <meta property="og:site_name" content="Al Sadat Builders">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gravel Calculator — How Much Gravel Do I Need?">
+  <meta name="twitter:description" content="Calculate how much gravel, crushed stone or pea gravel you need for a driveway, path or bed. Volume in yd³ and m³, weight in tonnes and US tons.">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/tools.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Gravel Calculator",
+  "url": "https://alsadatbuilders.com/tools/gravel-calculator",
+  "description": "Calculate how much gravel, crushed stone or pea gravel you need for a driveway, path or bed. Volume in yd³ and m³, weight in tonnes and US tons.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Al Sadat Builders",
+    "url": "https://alsadatbuilders.com/",
+    "founder": {
+      "@type": "Person",
+      "name": "Syed Mujtaba Shah"
+    }
+  }
+}
+  </script>
+
+  <!-- Breadcrumbs Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://alsadatbuilders.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Construction & Property Tools",
+      "item": "https://alsadatbuilders.com/tools/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Construction Materials",
+      "item": "https://alsadatbuilders.com/tools/#cat-materials"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Gravel Calculator",
+      "item": "https://alsadatbuilders.com/tools/gravel-calculator"
+    }
+  ]
+}
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does a cubic yard of gravel weigh?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "About 1.4 US tons, or 1.28 metric tonnes, for gravel at a bulk density of 1.68 tonnes per cubic metre. Pea gravel is lighter at roughly 1.2 US tons per cubic yard, and crushed stone sits in between. Because the weight varies with moisture and stone size, treat it as an estimate and confirm with your supplier for a large order."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many cubic yards of gravel do I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Work out the area, multiply by the depth in feet to get cubic feet, then divide by 27. A 20 × 10 foot driveway at 3 inches deep is 200 × 0.25 = 50 cubic feet, which is 1.85 cubic yards. Add 10% for wastage on a driveway, since the sub-base is never perfectly level."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How deep should gravel be for a driveway?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Four inches of surface gravel over a compacted sub-base is typical for a domestic driveway, rising to six inches where vehicles park regularly. Laid in two passes with compaction between them, that gives a stable surface. If you are driving on it, do not skip the sub-base — a layer of larger crushed stone underneath is what carries the load."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many tonnes of gravel in a cubic metre?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "About 1.68 tonnes for gravel at its typical bulk density, 1.6 for crushed stone, 1.52 for river rock and 1.45 for pea gravel. Bulk density accounts for the air gaps between the stones, which is why it is so much lower than the density of solid rock."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much area does a tonne of gravel cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At a 2 inch depth, one tonne of gravel covers roughly 12 square metres, or about 130 square feet. At 4 inches it covers about 6 square metres, or 65 square feet. Coverage halves as depth doubles, so always fix the depth before you decide the quantity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use pea gravel on a driveway?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is not a good choice. Pea gravel is rounded, so the stones roll over each other instead of locking together, and a driveway surface made from it will rut and migrate under vehicle weight. Use angular crushed stone for anything driven on, and keep pea gravel for paths, beds and play areas."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-links">
+        <a href="tel:0335549384">📞 Call: 0335-5549384</a>
+        <a href="https://wa.me/923469607349" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 0346-9607349</a>
+        <a href="mailto:info@alsadatbuilders.com">✉️ info@alsadatbuilders.com</a>
+      </div>
+      <div class="top-bar-right">
+        <span>📍 Islamabad, Rawalpindi, Bani Gala &amp; All Major Societies</span>
+        <span>⏱️ Mon - Sat: 8:00 AM - 8:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Al Sadat Builders Home">
+        <img src="/images/icon.png" alt="Al Sadat Builders Icon" class="logo-icon-img">
+        <div class="logo-text">
+          <strong>AL SADAT BUILDERS</strong>
+          <span>30+ Years Construction Excellence</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <div class="nav-item">
+          <a href="/pages/construction-company-islamabad">Services ▾</a>
+          <div class="dropdown">
+            <a href="/pages/construction-company-islamabad">Construction in Islamabad</a>
+            <a href="/pages/house-construction-islamabad">House Construction</a>
+            <a href="/pages/grey-structure-islamabad">Grey Structure</a>
+            <a href="/pages/house-renovation-islamabad">Renovation &amp; Repairs</a>
+            <a href="/pages/marble-tile-fixing-islamabad">Marble &amp; Tile Fixing</a>
+            <a href="/pages/boundary-wall-construction-islamabad">Boundary Wall Construction</a>
+            <a href="/pages/plaster-work-islamabad">Plaster Work &amp; Waterproofing</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/pages/construction-company-cda-sectors-islamabad">Areas ▾</a>
+          <div class="dropdown">
+            <a href="/pages/construction-company-bani-gala">Bani Gala</a>
+            <a href="/pages/construction-company-dha-islamabad">DHA Islamabad</a>
+            <a href="/pages/construction-company-bahria-town-islamabad">Bahria Town</a>
+            <a href="/pages/construction-company-gulberg-greens-islamabad">Gulberg Greens</a>
+            <a href="/pages/construction-company-b-17-multi-gardens-islamabad">B-17 Multi Gardens</a>
+            <a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors</a>
+            <a href="/pages/construction-company-overseas-pakistanis">Overseas Pakistanis</a>
+            <a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors (F, G, E, I)</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/tools/">Tools ▾</a>
+          <div class="dropdown">
+            <a href="/tools/">All Free Tools</a>
+            <a href="/tools/#cat-area">🏞️ Area &amp; Land</a>
+            <a href="/tools/#cat-materials">🧱 Construction Materials</a>
+            <a href="/tools/#cat-flooring">🎨 Flooring &amp; Walls</a>
+            <a href="/tools/#cat-roofing">🏠 Roofing</a>
+            <a href="/tools/#cat-outdoor">🌳 Outdoor &amp; Landscaping</a>
+            <a href="/tools/#cat-land">🗺️ Pakistan Land Units</a>
+          </div>
+        </div>
+        <a href="/pages/construction-cost-islamabad">Construction Cost</a>
+        <a href="/pages/projects">Projects</a>
+        <a href="/pages/contact">Contact Us</a>
+      </nav>
+
+      <!-- Header CTAs -->
+      <div class="header-cta">
+        <a href="tel:0335549384" class="btn btn-dark" style="padding: 10px 18px; font-size: 0.88rem;">📞 Call Now</a>
+        <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20would%20like%20a%20free%20site%20visit%20and%20estimate." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 10px 18px; font-size: 0.88rem;">💬 WhatsApp</a>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="hamburger" aria-label="Toggle mobile menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav">
+    <div class="mobile-nav-header">
+      <div class="logo">
+        <img src="/images/icon.png" alt="Al Sadat Builders" class="logo-icon-img">
+        <div class="logo-text">
+          <strong>AL SADAT BUILDERS</strong>
+          <span>Islamabad, Rawalpindi &amp; Bani Gala</span>
+        </div>
+      </div>
+      <button class="mobile-nav-close" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="/">🏠 Home</a>
+      <a href="/tools/">🧮 Free Construction Tools</a>
+      <a href="/pages/construction-company-islamabad">🏗️ Construction Company Islamabad</a>
+      <a href="/pages/house-construction-islamabad">🏡 House Construction</a>
+      <a href="/pages/grey-structure-islamabad">🧱 Grey Structure</a>
+      <a href="/pages/house-renovation-islamabad">🔨 Renovation &amp; Remodeling</a>
+      <a href="/pages/marble-tile-fixing-islamabad">✨ Marble &amp; Tile Fixing</a>
+      <a href="/pages/boundary-wall-construction-islamabad">🧱 Boundary Wall Construction</a>
+      <a href="/pages/plaster-work-islamabad">🛡️ Plaster Work &amp; Waterproofing</a>
+      <a href="/pages/construction-cost-islamabad">📊 Construction Cost Guide</a>
+      <a href="/pages/projects">📸 Projects &amp; Portfolio</a>
+      <a href="/pages/construction-company-cda-sectors-islamabad">📍 Areas We Serve</a>
+      <div class="mobile-nav-sub">Calculators</div>
+      <a href="/tools/#cat-area" class="mobile-nav-sub-link">Area &amp; Land</a>
+      <a href="/tools/#cat-materials" class="mobile-nav-sub-link">Construction Materials</a>
+      <a href="/tools/#cat-flooring" class="mobile-nav-sub-link">Flooring &amp; Walls</a>
+      <a href="/tools/#cat-roofing" class="mobile-nav-sub-link">Roofing</a>
+      <a href="/tools/#cat-outdoor" class="mobile-nav-sub-link">Outdoor &amp; Landscaping</a>
+      <a href="/tools/#cat-land" class="mobile-nav-sub-link">Pakistan Land Units</a>
+      <div class="mobile-nav-sub">Popular Areas</div>
+      <a href="/pages/construction-company-bani-gala" class="mobile-nav-sub-link">⛰️ Bani Gala</a>
+      <a href="/pages/construction-company-dha-islamabad" class="mobile-nav-sub-link">🏛️ DHA Islamabad</a>
+      <a href="/pages/construction-company-bahria-town-islamabad" class="mobile-nav-sub-link">🏘️ Bahria Town</a>
+      <a href="/pages/construction-company-gulberg-greens-islamabad" class="mobile-nav-sub-link">🌿 Gulberg Greens</a>
+      <a href="/pages/construction-company-b-17-multi-gardens-islamabad" class="mobile-nav-sub-link">🏡 B-17 Multi Gardens</a>
+      <a href="/pages/construction-company-cda-sectors-islamabad" class="mobile-nav-sub-link">🏙️ CDA Sectors</a>
+      <a href="/pages/construction-company-overseas-pakistanis" class="mobile-nav-sub-link">✈️ Overseas Pakistanis</a>
+      <div class="mobile-nav-sub">CDA Sectors</div>
+      <a href="/pages/construction-company-f-6-islamabad" class="mobile-nav-sub-link">Sector F-6</a>
+      <a href="/pages/construction-company-f-7-islamabad" class="mobile-nav-sub-link">Sector F-7</a>
+      <a href="/pages/construction-company-f-8-islamabad" class="mobile-nav-sub-link">Sector F-8</a>
+      <a href="/pages/construction-company-f-10-islamabad" class="mobile-nav-sub-link">Sector F-10</a>
+      <a href="/pages/construction-company-f-11-islamabad" class="mobile-nav-sub-link">Sector F-11</a>
+      <a href="/pages/construction-company-g-6-islamabad" class="mobile-nav-sub-link">Sector G-6</a>
+      <a href="/pages/construction-company-g-9-islamabad" class="mobile-nav-sub-link">Sector G-9</a>
+      <a href="/pages/construction-company-g-10-islamabad" class="mobile-nav-sub-link">Sector G-10</a>
+      <a href="/pages/construction-company-g-11-islamabad" class="mobile-nav-sub-link">Sector G-11</a>
+      <a href="/pages/construction-company-e-11-islamabad" class="mobile-nav-sub-link">Sector E-11</a>
+      <a href="/pages/contact">📍 Contact &amp; Free Estimate</a>
+    </div>
+    <div class="mobile-nav-ctas">
+      <a href="tel:0335549384" class="btn btn-primary">📞 Call 0335-5549384</a>
+      <a href="https://wa.me/923469607349" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Tool Hero -->
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="tool-crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span>/</span> <a href="/tools/">Tools</a> <span>/</span> <a href="/tools/#cat-materials">Construction Materials</a> <span>/</span> <strong>Gravel Calculator</strong>
+      </nav>
+      <h1>Gravel Calculator</h1>
+      <p>Volume in cubic yards and cubic metres, and the weight in tonnes, so you can order whichever way your supplier sells.</p>
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <section class="section">
+    <div class="container calc-layout">
+      <div class="calc-card">
+        <h2>Enter your measurements</h2>
+        <p class="calc-sub">Every result updates as you type — there is no button to press. Use <strong>Reset values</strong> to start again.</p>
+        <div id="calc-form"></div>
+      </div>
+      <div class="calc-results">
+        <h2>Results</h2>
+        <div id="calc-output" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section bg-off-white">
+    <div class="container">
+      <div class="tool-content">
+        <p>Gravel is the material where people most often order the wrong quantity, because suppliers sell it two different ways. Some sell by volume — cubic yards or cubic metres of loose material; others sell by weight — tonnes or US tons. This calculator gives you both, linked by the bulk density of the material you pick.</p>
+        <p>It covers rectangular, circular and triangular areas, takes a depth in inches or centimetres, and supports the common gravels and stone with their typical densities. There is also a bag option if you are buying in bags rather than having a load tipped.</p>
+
+        <div class="formula-box"><strong>The formula</strong><p><strong>Volume = area × depth</strong> &nbsp;·&nbsp; <strong>Weight = volume × bulk density</strong></p><p>Typical bulk densities: gravel 1.68 t/m³ · crushed stone 1.60 t/m³ · river rock 1.52 t/m³ · pea gravel 1.45 t/m³ · sand 1.60 t/m³</p></div>
+        <h2>Bulk density is not the density of rock</h2>
+        <p>A solid cubic metre of granite weighs about 2.7 tonnes. A cubic metre of granite gravel weighs around 1.6 tonnes, and a cubic metre of pea gravel less still. The difference is the air in the gaps between the stones — anything from 30% to 45% of the total volume with loose, rounded material.</p><p>That is why bulk density, not the material's true density, is the number to use. It also means the weight of a given volume shifts with moisture and with how the material has settled in the pile: wet gravel can be 10–15% heavier than the same gravel dry, and material that has been sitting in a stockpile is more compacted than freshly tipped material.</p><p>Treat the weight this calculator delivers as an estimate for budgeting and comparison. For a large order, ask the supplier for their own conversion figure for that specific aggregate.</p>
+
+        <h2>How deep should gravel be?</h2>
+        <p>Depth is where most driveway and path projects go wrong, and it depends on what the gravel is doing:</p><ul><li><strong>Decorative bed or mulch replacement:</strong> 2 inches (50 mm) is enough to cover the soil and suppress weeds.</li><li><strong>Garden path on a firm base:</strong> 2–3 inches (50–75 mm).</li><li><strong>Foot traffic over soft ground:</strong> 3–4 inches (75–100 mm).</li><li><strong>Driveway over a prepared sub-base:</strong> 4 inches (100 mm) of surface gravel on top of a compacted base course.</li><li><strong>Driveway where vehicles park:</strong> 4–6 inches, laid in two passes and compacted between them.</li></ul><p>A driveway is very rarely just gravel. It is a compacted sub-base of larger crushed stone — typically 4–6 inches of 40 mm stone — with a 2–4 inch surface layer of smaller, finer gravel on top. Pouring decorative pea gravel directly onto soil and driving on it will simply push the stone down into the mud.</p>
+
+        <h2>Worked example</h2>
+        <p>A driveway 20 feet long and 10 feet wide, covered 3 inches deep. The area is 200 square feet, the depth is 0.25 feet, giving 50 cubic feet — 1.85 cubic yards, or 1.416 cubic metres. At a bulk density of 1.68 tonnes per cubic metre for gravel, that is 2.38 tonnes, or 2.62 US tons, or about 2,380 kilograms.</p><p>With a 10% wastage allowance — sensible for a driveway, where the sub-base is never perfectly flat — the order becomes about 1.56 cubic metres or 2.62 tonnes. Most suppliers round to the nearest half tonne, so you would ask for 2.5 or 3 tonnes.</p>
+
+        <h2>Choosing between the types</h2>
+        <p><strong>Pea gravel</strong> is small, rounded and smooth. It drains well, feels good underfoot and looks tidy, and it is the right choice for decorative beds, paths and play areas. It is also the worst choice for a driveway, because rounded stones do not interlock and the surface will shift and rut under vehicle weight.</p><p><strong>Crushed stone</strong> has angular faces that lock together when compacted, giving a stable, load-bearing surface. This is what driveways are built from. <strong>River rock</strong> sits between the two: larger than pea gravel, still rounded, and used for dry stream beds, borders and areas where appearance matters more than load.</p><p>For a driveway surface, a 20 mm crushed stone with fines — often called MOT Type 1, crusher run or road base — compacts to a firm, near-solid surface. For a top dressing, a clean 10–14 mm crushed stone gives a looser decorative finish that needs occasional raking.</p>
+
+        <div class="table-scroll">
+          <table class="data-table">
+            <caption>Gravel required per 100 square feet</caption>
+            <thead><tr><th>Depth</th><th>Cubic feet</th><th>Cubic yards</th><th>Approx. weight (gravel at 1.68 t/m³)</th></tr></thead>
+            <tbody>
+          <tr><td><strong>1 in</strong></td><td>8.33 ft³</td><td>0.31 yd³</td><td>0.40 t</td></tr>
+          <tr><td><strong>2 in</strong></td><td>16.67 ft³</td><td>0.62 yd³</td><td>0.79 t</td></tr>
+          <tr><td><strong>3 in</strong></td><td>25.00 ft³</td><td>0.93 yd³</td><td>1.19 t</td></tr>
+          <tr><td><strong>4 in</strong></td><td>33.33 ft³</td><td>1.23 yd³</td><td>1.59 t</td></tr>
+          <tr><td><strong>6 in</strong></td><td>50.00 ft³</td><td>1.85 yd³</td><td>2.38 t</td></tr>
+          <tr><td><strong>12 in</strong></td><td>100.00 ft³</td><td>3.70 yd³</td><td>4.76 t</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ, related tools and a note about who publishes this -->
+  <section class="section">
+    <div class="container">
+      <div class="tool-content">
+        <h2>Frequently asked questions</h2>
+        <div class="tool-faq">
+          <details>
+            <summary>How much does a cubic yard of gravel weigh?</summary>
+            <div class="faq-body">About 1.4 US tons, or 1.28 metric tonnes, for gravel at a bulk density of 1.68 tonnes per cubic metre. Pea gravel is lighter at roughly 1.2 US tons per cubic yard, and crushed stone sits in between. Because the weight varies with moisture and stone size, treat it as an estimate and confirm with your supplier for a large order.</div>
+          </details>
+          <details>
+            <summary>How many cubic yards of gravel do I need?</summary>
+            <div class="faq-body">Work out the area, multiply by the depth in feet to get cubic feet, then divide by 27. A 20 × 10 foot driveway at 3 inches deep is 200 × 0.25 = 50 cubic feet, which is 1.85 cubic yards. Add 10% for wastage on a driveway, since the sub-base is never perfectly level.</div>
+          </details>
+          <details>
+            <summary>How deep should gravel be for a driveway?</summary>
+            <div class="faq-body">Four inches of surface gravel over a compacted sub-base is typical for a domestic driveway, rising to six inches where vehicles park regularly. Laid in two passes with compaction between them, that gives a stable surface. If you are driving on it, do not skip the sub-base — a layer of larger crushed stone underneath is what carries the load.</div>
+          </details>
+          <details>
+            <summary>How many tonnes of gravel in a cubic metre?</summary>
+            <div class="faq-body">About 1.68 tonnes for gravel at its typical bulk density, 1.6 for crushed stone, 1.52 for river rock and 1.45 for pea gravel. Bulk density accounts for the air gaps between the stones, which is why it is so much lower than the density of solid rock.</div>
+          </details>
+          <details>
+            <summary>How much area does a tonne of gravel cover?</summary>
+            <div class="faq-body">At a 2 inch depth, one tonne of gravel covers roughly 12 square metres, or about 130 square feet. At 4 inches it covers about 6 square metres, or 65 square feet. Coverage halves as depth doubles, so always fix the depth before you decide the quantity.</div>
+          </details>
+          <details>
+            <summary>Can I use pea gravel on a driveway?</summary>
+            <div class="faq-body">It is not a good choice. Pea gravel is rounded, so the stones roll over each other instead of locking together, and a driveway surface made from it will rut and migrate under vehicle weight. Use angular crushed stone for anything driven on, and keep pea gravel for paths, beds and play areas.</div>
+          </details>
+        </div>
+
+        <h2>Related tools</h2>
+        <div class="related-grid">
+          <a class="related-link" href="/tools/concrete-calculator">
+            <span class="rl-icon">🧱</span>
+            <span class="rl-text">Concrete Calculator</span>
+          </a>
+          <a class="related-link" href="/tools/brick-calculator">
+            <span class="rl-icon">🧱</span>
+            <span class="rl-text">Brick Calculator</span>
+          </a>
+          <a class="related-link" href="/tools/square-footage-calculator">
+            <span class="rl-icon">📐</span>
+            <span class="rl-text">Square Footage Calculator</span>
+          </a>
+          <a class="related-link" href="/tools/fence-calculator">
+            <span class="rl-icon">🚧</span>
+            <span class="rl-text">Fence Calculator</span>
+          </a>
+        </div>
+
+        <div class="tool-cta">
+          <h3>About the company that publishes these tools</h3>
+          <p>Al Sadat Builders is a construction contractor based in Islamabad, Pakistan, led on site by <strong style="color:#fff;">Syed Mujtaba Shah</strong>. These calculators are free to use wherever you are — they print no currency and assume no country. If you are building in Islamabad, Rawalpindi or Bani Gala, we can survey the plot, price the job and hand you an itemised BOQ.</p>
+          <div class="tool-cta-btns">
+            <a href="/contact" class="btn btn-primary">Book a free site visit</a>
+            <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20was%20using%20the%20Gravel%20Calculator%20on%20your%20website%20and%20would%20like%20to%20discuss%20a%20construction%20project." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">💬 WhatsApp us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <img src="/images/icon.png" alt="Al Sadat Builders" class="logo-icon-img">
+          <div class="logo-text">
+            <strong>AL SADAT BUILDERS</strong>
+            <span>30+ Years Construction Experience</span>
+          </div>
+        </div>
+        <p>
+          Construction company in Islamabad, Rawalpindi &amp; Bani Gala. Founded and led by <strong>Syed Mujtaba Shah</strong>. Turnkey residential villas, grey structures, renovation and finishing across CDA sectors, DHA, Bahria Town, Gulberg Greens and B-17.
+        </p>
+        <div class="footer-social">
+          <a href="https://wa.me/923469607349" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">💬</a>
+          <a href="tel:0335549384" aria-label="Call Us">📞</a>
+          <a href="mailto:info@alsadatbuilders.com" aria-label="Email Us">✉️</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/pages/construction-company-islamabad">Construction in Islamabad</a></li>
+          <li><a href="/pages/house-construction-islamabad">Turnkey House Construction</a></li>
+          <li><a href="/pages/grey-structure-islamabad">Grey Structure Construction</a></li>
+          <li><a href="/pages/house-renovation-islamabad">Renovation &amp; Remodeling</a></li>
+          <li><a href="/pages/marble-tile-fixing-islamabad">Marble &amp; Tile Fixing</a></li>
+          <li><a href="/pages/boundary-wall-construction-islamabad">Boundary Wall Construction</a></li>
+          <li><a href="/pages/plaster-work-islamabad">Plaster Work &amp; Waterproofing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Areas We Serve</h4>
+        <ul>
+          <li><a href="/pages/construction-company-bani-gala">Bani Gala</a></li>
+          <li><a href="/pages/construction-company-dha-islamabad">DHA Islamabad</a></li>
+          <li><a href="/pages/construction-company-bahria-town-islamabad">Bahria Town</a></li>
+          <li><a href="/pages/construction-company-gulberg-greens-islamabad">Gulberg Greens</a></li>
+          <li><a href="/pages/construction-company-b-17-multi-gardens-islamabad">B-17 Multi Gardens</a></li>
+          <li><a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors</a></li>
+          <li><a href="/pages/construction-company-overseas-pakistanis">Overseas Pakistanis</a></li>
+          <li><a href="/pages/construction-company-f-7-islamabad">F-7 Islamabad</a></li>
+          <li><a href="/pages/construction-company-f-8-islamabad">F-8 Islamabad</a></li>
+          <li><a href="/pages/construction-company-g-6-islamabad">G-6 Islamabad</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact &amp; Hours</h4>
+        <ul>
+          <li><strong>CEO:</strong> Syed Mujtaba Shah</li>
+          <li><a href="tel:0335549384">📞 0335-5549384</a></li>
+          <li><a href="https://wa.me/923469607349" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 0346-9607349</a></li>
+          <li><a href="mailto:info@alsadatbuilders.com">✉️ info@alsadatbuilders.com</a></li>
+          <li>📍 Islamabad, Rawalpindi &amp; Bani Gala</li>
+          <li>⏱️ Mon - Sat: 8:00 AM - 8:00 PM</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Al Sadat Builders. All rights reserved. Construction Company in Islamabad.</p>
+      <div class="footer-bottom-links">
+        <a href="/">Home</a>
+        <a href="/pages/construction-cost-islamabad">Cost Guide</a>
+        <a href="/pages/projects">Projects</a>
+        <a href="/pages/contact">Contact</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20would%20like%20to%20discuss%20a%20construction%20project." class="float-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <span class="tooltip">Chat with Syed Mujtaba Shah</span>
+    💬
+  </a>
+
+  <!-- JavaScript -->
+  <script src="/js/main.js"></script>
+
+  <!-- Calculator engine — builds the form and the results panel -->
+  <script src="/js/tools.js"></script>
+  <script>AlsadatTools.init('gravel-calculator');</script>
+</body>
+</html>

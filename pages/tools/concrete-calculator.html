@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concrete Calculator — Slabs, Footings, Columns &amp; Stairs</title>
+  <meta name="description" content="Work out how much concrete a slab, footing, column or stair needs, in m³ and yd³, with cement bags, sand, aggregate and water for your chosen mix.">
+  <meta name="keywords" content="concrete calculator, concrete volume calculator, cement bags calculator, concrete slab calculator, cubic yards concrete, concrete mix ratio calculator, footing calculator">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://alsadatbuilders.com/tools/concrete-calculator">
+  <link rel="icon" type="image/png" href="/images/icon.png">
+  <link rel="apple-touch-icon" href="/images/icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alsadatbuilders.com/tools/concrete-calculator">
+  <meta property="og:title" content="Concrete Calculator — Slabs, Footings, Columns &amp; Stairs">
+  <meta property="og:description" content="Work out how much concrete a slab, footing, column or stair needs, in m³ and yd³, with cement bags, sand, aggregate and water for your chosen mix.">
+  <meta property="og:image" content="https://alsadatbuilders.com/images/logo.png">
+  <meta property="og:site_name" content="Al Sadat Builders">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Concrete Calculator — Slabs, Footings, Columns &amp; Stairs">
+  <meta name="twitter:description" content="Work out how much concrete a slab, footing, column or stair needs, in m³ and yd³, with cement bags, sand, aggregate and water for your chosen mix.">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/tools.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Concrete Calculator",
+  "url": "https://alsadatbuilders.com/tools/concrete-calculator",
+  "description": "Work out how much concrete a slab, footing, column or stair needs, in m³ and yd³, with cement bags, sand, aggregate and water for your chosen mix.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Al Sadat Builders",
+    "url": "https://alsadatbuilders.com/",
+    "founder": {
+      "@type": "Person",
+      "name": "Syed Mujtaba Shah"
+    }
+  }
+}
+  </script>
+
+  <!-- Breadcrumbs Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://alsadatbuilders.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Construction & Property Tools",
+      "item": "https://alsadatbuilders.com/tools/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Construction Materials",
+      "item": "https://alsadatbuilders.com/tools/#cat-materials"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Concrete Calculator",
+      "item": "https://alsadatbuilders.com/tools/concrete-calculator"
+    }
+  ]
+}
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many bags of cement are in 1 cubic metre of concrete?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "About 8.06 bags of 50 kg at the M20 mix (1 : 1.5 : 3), which is the usual figure for reinforced domestic work. At M15 (1 : 2 : 4) it drops to about 6.34 bags. M25 and above are design mixes, so the figure depends on the ratio your engineer specifies — enter that ratio in the calculator and it will work out the bags for you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why doesn't the calculator give a ratio for M25?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because M25 and above are specified as design mixes rather than nominal ones. The proportions come from testing the actual cement, sand and aggregate being used on the job, not from a published table, so quoting a fixed ratio would be misleading. Historic tables do list M25 as 1 : 1 : 2, and that is a fair starting point, but at this grade the concrete is carrying real structural load and the mix should come from a qualified engineer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How wise is it to estimate concrete from a calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For ordering quantities, very — the volumes and bag counts are reliable, and ordering slightly long is far cheaper than running short mid-pour. What a calculator cannot do is choose your grade, because that depends on the loads the element will carry, the reinforcement, the soil and the exposure conditions. Use these figures to buy materials; use your engineer's specification to decide what to buy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate concrete for a slab?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply length by width by thickness, keeping all three in the same unit. A 20 × 20 foot slab at 4 inches thick is 20 × 20 × (4 ÷ 12) = 133.33 cubic feet, which is 3.775 cubic metres or 4.94 cubic yards. Enter the dimensions here and pick your unit from the dropdown beside each field — the thickness field defaults to inches because slab depths are almost always quoted that way."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many cubic yards are in a cubic metre?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1 cubic metre is 1.30795 cubic yards, and 1 cubic yard is 0.764555 cubic metres. So a 3 cubic metre pour is 3.92 cubic yards. If you are converting a quote from a metric supplier to compare with an imperial one, this is the factor to apply."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the 1.54 factor in concrete calculation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It converts wet concrete volume to dry ingredient volume. One cubic metre of finished concrete requires about 1.54 cubic metres of loose dry cement, sand and aggregate, because the dry materials consolidate and the water leaves voids as the mix cures. Every nominal-mix calculation uses it; without it your material quantities would be roughly a third too low."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much water goes into a cubic metre of concrete?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At a water-to-cement ratio of 0.5, roughly 200 litres for the 403 kg of cement in one cubic metre of M20. The ratio matters more than the volume: extra water makes concrete easier to place and permanently weaker, so add water only as the mix design allows and never to loosen a mix that is stiffening up."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I add a waste allowance to the concrete volume?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Five percent is a sensible default for a flat, well-prepared sub-base and a ready-mix delivery. Use 10% if the ground is uneven, if the pour is small, or if you are mixing on site — spillage and leftover material are proportionally larger on small jobs."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-links">
+        <a href="tel:0335549384">📞 Call: 0335-5549384</a>
+        <a href="https://wa.me/923469607349" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 0346-9607349</a>
+        <a href="mailto:info@alsadatbuilders.com">✉️ info@alsadatbuilders.com</a>
+      </div>
+      <div class="top-bar-right">
+        <span>📍 Islamabad, Rawalpindi, Bani Gala &amp; All Major Societies</span>
+        <span>⏱️ Mon - Sat: 8:00 AM - 8:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Al Sadat Builders Home">
+        <img src="/images/icon.png" alt="Al Sadat Builders Icon" class="logo-icon-img">
+        <div class="logo-text">
+          <strong>AL SADAT BUILDERS</strong>
+          <span>30+ Years Construction Excellence</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <div class="nav-item">
+          <a href="/pages/construction-company-islamabad">Services ▾</a>
+          <div class="dropdown">
+            <a href="/pages/construction-company-islamabad">Construction in Islamabad</a>
+            <a href="/pages/house-construction-islamabad">House Construction</a>
+            <a href="/pages/grey-structure-islamabad">Grey Structure</a>
+            <a href="/pages/house-renovation-islamabad">Renovation &amp; Repairs</a>
+            <a href="/pages/marble-tile-fixing-islamabad">Marble &amp; Tile Fixing</a>
+            <a href="/pages/boundary-wall-construction-islamabad">Boundary Wall Construction</a>
+            <a href="/pages/plaster-work-islamabad">Plaster Work &amp; Waterproofing</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/pages/construction-company-cda-sectors-islamabad">Areas ▾</a>
+          <div class="dropdown">
+            <a href="/pages/construction-company-bani-gala">Bani Gala</a>
+            <a href="/pages/construction-company-dha-islamabad">DHA Islamabad</a>
+            <a href="/pages/construction-company-bahria-town-islamabad">Bahria Town</a>
+            <a href="/pages/construction-company-gulberg-greens-islamabad">Gulberg Greens</a>
+            <a href="/pages/construction-company-b-17-multi-gardens-islamabad">B-17 Multi Gardens</a>
+            <a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors</a>
+            <a href="/pages/construction-company-overseas-pakistanis">Overseas Pakistanis</a>
+            <a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors (F, G, E, I)</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/tools/">Tools ▾</a>
+          <div class="dropdown">
+            <a href="/tools/">All Free Tools</a>
+            <a href="/tools/#cat-area">🏞️ Area &amp; Land</a>
+            <a href="/tools/#cat-materials">🧱 Construction Materials</a>
+            <a href="/tools/#cat-flooring">🎨 Flooring &amp; Walls</a>
+            <a href="/tools/#cat-roofing">🏠 Roofing</a>
+            <a href="/tools/#cat-outdoor">🌳 Outdoor &amp; Landscaping</a>
+            <a href="/tools/#cat-land">🗺️ Pakistan Land Units</a>
+          </div>
+        </div>
+        <a href="/pages/construction-cost-islamabad">Construction Cost</a>
+        <a href="/pages/projects">Projects</a>
+        <a href="/pages/contact">Contact Us</a>
+      </nav>
+
+      <!-- Header CTAs -->
+      <div class="header-cta">
+        <a href="tel:0335549384" class="btn btn-dark" style="padding: 10px 18px; font-size: 0.88rem;">📞 Call Now</a>
+        <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20would%20like%20a%20free%20site%20visit%20and%20estimate." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 10px 18px; font-size: 0.88rem;">💬 WhatsApp</a>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="hamburger" aria-label="Toggle mobile menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav">
+    <div class="mobile-nav-header">
+      <div class="logo">
+        <img src="/images/icon.png" alt="Al Sadat Builders" class="logo-icon-img">
+        <div class="logo-text">
+          <strong>AL SADAT BUILDERS</strong>
+          <span>Islamabad, Rawalpindi &amp; Bani Gala</span>
+        </div>
+      </div>
+      <button class="mobile-nav-close" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="/">🏠 Home</a>
+      <a href="/tools/">🧮 Free Construction Tools</a>
+      <a href="/pages/construction-company-islamabad">🏗️ Construction Company Islamabad</a>
+      <a href="/pages/house-construction-islamabad">🏡 House Construction</a>
+      <a href="/pages/grey-structure-islamabad">🧱 Grey Structure</a>
+      <a href="/pages/house-renovation-islamabad">🔨 Renovation &amp; Remodeling</a>
+      <a href="/pages/marble-tile-fixing-islamabad">✨ Marble &amp; Tile Fixing</a>
+      <a href="/pages/boundary-wall-construction-islamabad">🧱 Boundary Wall Construction</a>
+      <a href="/pages/plaster-work-islamabad">🛡️ Plaster Work &amp; Waterproofing</a>
+      <a href="/pages/construction-cost-islamabad">📊 Construction Cost Guide</a>
+      <a href="/pages/projects">📸 Projects &amp; Portfolio</a>
+      <a href="/pages/construction-company-cda-sectors-islamabad">📍 Areas We Serve</a>
+      <div class="mobile-nav-sub">Calculators</div>
+      <a href="/tools/#cat-area" class="mobile-nav-sub-link">Area &amp; Land</a>
+      <a href="/tools/#cat-materials" class="mobile-nav-sub-link">Construction Materials</a>
+      <a href="/tools/#cat-flooring" class="mobile-nav-sub-link">Flooring &amp; Walls</a>
+      <a href="/tools/#cat-roofing" class="mobile-nav-sub-link">Roofing</a>
+      <a href="/tools/#cat-outdoor" class="mobile-nav-sub-link">Outdoor &amp; Landscaping</a>
+      <a href="/tools/#cat-land" class="mobile-nav-sub-link">Pakistan Land Units</a>
+      <div class="mobile-nav-sub">Popular Areas</div>
+      <a href="/pages/construction-company-bani-gala" class="mobile-nav-sub-link">⛰️ Bani Gala</a>
+      <a href="/pages/construction-company-dha-islamabad" class="mobile-nav-sub-link">🏛️ DHA Islamabad</a>
+      <a href="/pages/construction-company-bahria-town-islamabad" class="mobile-nav-sub-link">🏘️ Bahria Town</a>
+      <a href="/pages/construction-company-gulberg-greens-islamabad" class="mobile-nav-sub-link">🌿 Gulberg Greens</a>
+      <a href="/pages/construction-company-b-17-multi-gardens-islamabad" class="mobile-nav-sub-link">🏡 B-17 Multi Gardens</a>
+      <a href="/pages/construction-company-cda-sectors-islamabad" class="mobile-nav-sub-link">🏙️ CDA Sectors</a>
+      <a href="/pages/construction-company-overseas-pakistanis" class="mobile-nav-sub-link">✈️ Overseas Pakistanis</a>
+      <div class="mobile-nav-sub">CDA Sectors</div>
+      <a href="/pages/construction-company-f-6-islamabad" class="mobile-nav-sub-link">Sector F-6</a>
+      <a href="/pages/construction-company-f-7-islamabad" class="mobile-nav-sub-link">Sector F-7</a>
+      <a href="/pages/construction-company-f-8-islamabad" class="mobile-nav-sub-link">Sector F-8</a>
+      <a href="/pages/construction-company-f-10-islamabad" class="mobile-nav-sub-link">Sector F-10</a>
+      <a href="/pages/construction-company-f-11-islamabad" class="mobile-nav-sub-link">Sector F-11</a>
+      <a href="/pages/construction-company-g-6-islamabad" class="mobile-nav-sub-link">Sector G-6</a>
+      <a href="/pages/construction-company-g-9-islamabad" class="mobile-nav-sub-link">Sector G-9</a>
+      <a href="/pages/construction-company-g-10-islamabad" class="mobile-nav-sub-link">Sector G-10</a>
+      <a href="/pages/construction-company-g-11-islamabad" class="mobile-nav-sub-link">Sector G-11</a>
+      <a href="/pages/construction-company-e-11-islamabad" class="mobile-nav-sub-link">Sector E-11</a>
+      <a href="/pages/contact">📍 Contact &amp; Free Estimate</a>
+    </div>
+    <div class="mobile-nav-ctas">
+      <a href="tel:0335549384" class="btn btn-primary">📞 Call 0335-5549384</a>
+      <a href="https://wa.me/923469607349" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Tool Hero -->
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="tool-crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span>/</span> <a href="/tools/">Tools</a> <span>/</span> <a href="/tools/#cat-materials">Construction Materials</a> <span>/</span> <strong>Concrete Calculator</strong>
+      </nav>
+      <h1>Concrete Calculator</h1>
+      <p>Volume in cubic metres and cubic yards, plus cement bags, sand, aggregate and water at the mix you choose.</p>
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <section class="section">
+    <div class="container calc-layout">
+      <div class="calc-card">
+        <h2>Enter your measurements</h2>
+        <p class="calc-sub">Every result updates as you type — there is no button to press. Use <strong>Reset values</strong> to start again.</p>
+        <div id="calc-form"></div>
+      </div>
+      <div class="calc-results">
+        <h2>Results</h2>
+        <div id="calc-output" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section bg-off-white">
+    <div class="container">
+      <div class="tool-content">
+        <p>Concrete is ordered before you can see whether you got it right. Order short and you are left with a cold joint and a panicked second delivery; order long and you are paying to dispose of set material. This calculator works out the volume of a slab, footing, column or stair, converts it into the units a supplier will quote in, and breaks the volume down into the cement, sand, aggregate and water you need for the mix you selected.</p>
+        <p>It handles rectangular slabs and footings, round and square columns, and staircase steps. Results are given in cubic metres, cubic feet and cubic yards, because the same pour is quoted differently in different countries — ready-mix plants in metric markets sell by the cubic metre, while suppliers in the United States quote cubic yards.</p>
+        <p>One scope note before you start: the stair option measures the stepped profile of the flight only. The waist slab underneath it — the sloping slab that carries the steps — is a separate volume and has to be calculated as a slab and added. It is easy to miss, and missing it under-orders the concrete by a third or more on a typical staircase. The same applies to any landing.</p>
+
+        <div class="formula-box"><strong>The formula</strong><p><strong>Slab or footing:</strong> length × width × thickness &nbsp;·&nbsp; <strong>Round column:</strong> π × radius² × height &nbsp;·&nbsp; <strong>Square column:</strong> width × depth × height &nbsp;·&nbsp; <strong>Stairs:</strong> ½ × riser × tread × width × number of steps</p><p>The wet volume is then multiplied by 1.54 to get the dry ingredient volume.</p></div>
+        <h2>Why the calculator multiplies by 1.54</h2>
+        <p>Concrete is ordered as a wet volume — the space it will fill — but cement, sand and aggregate are bought as dry materials. Dry materials do not pack to the same volume as the wet concrete they become: the aggregate settles, the cement and sand fill the gaps between stones, and the water occupies space that then leaves as the mix cures.</p><p>The correction factor is conventionally 1.54, meaning you need about 1.54 cubic metres of loose dry material to make 1 cubic metre of finished concrete. Without it, every quantity would come out roughly a third too low. It is a rule of thumb rather than a physical constant, which is another reason to round generously when ordering.</p>
+
+        <h2>Choosing a grade</h2>
+        <p>The grade describes the compressive strength in newtons per square millimetre, and for the lower grades it also fixes the ratio of cement to sand to aggregate. The ratios this calculator applies are the standard nominal mixes:</p><ul><li><strong>M5 (1 : 5 : 10)</strong> — bedding, fill, non-structural levelling</li><li><strong>M7.5 (1 : 4 : 8)</strong> — lean concrete, blinding under foundations</li><li><strong>M10 (1 : 3 : 6)</strong> — mass fill, kerb backing, light footings</li><li><strong>M15 (1 : 2 : 4)</strong> — general footings, floors, slabs on grade</li><li><strong>M20 (1 : 1.5 : 3)</strong> — reinforced slabs, beams and columns; the default for most domestic structural work</li><li><strong>M25 and above</strong> — design mix</li></ul><p>M25 and everything above it is where the nominal table stops being useful. These grades are specified as <em>design mixes</em>: the proportions are calculated and tested against the materials actually being delivered to your site, not read off a chart. That is why the calculator asks you to enter a ratio rather than guessing one for you — take it from your engineer's mix design. Historic tables sometimes list M25 as 1 : 1 : 2, and it is a reasonable ballpark, but concrete at that grade is doing real structural work and the mix should come from someone who has tested the aggregate.</p><p>Nominal mixes like the rest are fine for domestic and small commercial work. For anything structural beyond that, a designed mix specified by your engineer and verified by cube tests will be both safer and, often, cheaper — nominal mixes deliberately over-specify cement.</p>
+
+        <h2>Worked example</h2>
+        <p>A slab 20 feet by 20 feet at 4 inches thick is 400 square feet at one third of a foot, giving 133.33 cubic feet — which is 3.775 cubic metres or 4.94 cubic yards. At M20, that needs 31 bags of 50 kg cement, 1.59 cubic metres of sand, 3.17 cubic metres of coarse aggregate and 761 litres of water.</p><p>The same slab at M15 — a reasonable choice for a slab on grade with light loading — drops the cement to 24 bags, because M15 uses 1 part cement to 6 parts aggregate where M20 uses 1 to 4.5. On a large pour that difference is worth real money, which is exactly why the grade should be specified by someone qualified rather than chosen by habit.</p><p>Note how modest the sand and aggregate volumes are next to the cement count. Only about 1.06 of those 3.775 cubic metres is cement; the rest of the volume is sand, stone and water. That is why cement dominates the cost even though it is the smallest ingredient by volume.</p>
+
+        <h2>Wastage, over-order and the practical margin</h2>
+        <p>The default 5% wastage allowance covers spillage, an uneven sub-base and the small amount left in the chute. Raise it if your excavation is not flat, if the pour is small, or if you are mixing on site rather than taking ready-mix — in those cases 10% is more realistic.</p><p>For a ready-mix delivery, find out the minimum load and the part-load charge before you order. Many plants have a three cubic metre minimum and charge a surcharge below it, which can make two small pours more expensive than one larger one. If your slab is close to the boundary between two truck sizes, it is usually worth ordering the smaller load and mixing a little extra by hand rather than paying for a part-load of the larger.</p>
+
+        <h2>Curing is not optional</h2>
+        <p>Concrete gains strength by hydrating, and it only hydrates while there is water available. A slab that dries out in its first week can lose a large part of its design strength even though it looks perfectly fine. Keep the surface damp for at least seven days — a week for ordinary work, longer for structural elements or hot weather — by covering it with polythene, hessian or a curing compound.</p><p>In hot climates that matters more, not less. High temperatures accelerate the loss of moisture and increase the risk of plastic shrinkage cracking, so pour early in the day, keep the mix as cool as you reasonably can, and start curing the moment the surface will take it.</p>
+
+        <div class="table-scroll">
+          <table class="data-table">
+            <caption>Concrete volume for common slabs</caption>
+            <thead><tr><th>Slab size</th><th>At 4 in thick</th><th>At 6 in thick</th><th>Cubic yards at 4 in</th></tr></thead>
+            <tbody>
+          <tr><td><strong>10 × 10 ft</strong></td><td>1.26 m³</td><td>1.88 m³</td><td>1.65 yd³</td></tr>
+          <tr><td><strong>10 × 20 ft</strong></td><td>2.52 m³</td><td>3.77 m³</td><td>3.29 yd³</td></tr>
+          <tr><td><strong>12 × 12 ft</strong></td><td>1.81 m³</td><td>2.72 m³</td><td>2.37 yd³</td></tr>
+          <tr><td><strong>20 × 20 ft</strong></td><td>3.77 m³</td><td>5.66 m³</td><td>4.94 yd³</td></tr>
+          <tr><td><strong>20 × 30 ft</strong></td><td>5.66 m³</td><td>8.50 m³</td><td>7.41 yd³</td></tr>
+          <tr><td><strong>30 × 40 ft</strong></td><td>11.33 m³</td><td>16.99 m³</td><td>14.81 yd³</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ, related tools and a note about who publishes this -->
+  <section class="section">
+    <div class="container">
+      <div class="tool-content">
+        <h2>Frequently asked questions</h2>
+        <div class="tool-faq">
+          <details>
+            <summary>How many bags of cement are in 1 cubic metre of concrete?</summary>
+            <div class="faq-body">About 8.06 bags of 50 kg at the M20 mix (1 : 1.5 : 3), which is the usual figure for reinforced domestic work. At M15 (1 : 2 : 4) it drops to about 6.34 bags. M25 and above are design mixes, so the figure depends on the ratio your engineer specifies — enter that ratio in the calculator and it will work out the bags for you.</div>
+          </details>
+          <details>
+            <summary>Why doesn't the calculator give a ratio for M25?</summary>
+            <div class="faq-body">Because M25 and above are specified as design mixes rather than nominal ones. The proportions come from testing the actual cement, sand and aggregate being used on the job, not from a published table, so quoting a fixed ratio would be misleading. Historic tables do list M25 as 1 : 1 : 2, and that is a fair starting point, but at this grade the concrete is carrying real structural load and the mix should come from a qualified engineer.</div>
+          </details>
+          <details>
+            <summary>How wise is it to estimate concrete from a calculator?</summary>
+            <div class="faq-body">For ordering quantities, very — the volumes and bag counts are reliable, and ordering slightly long is far cheaper than running short mid-pour. What a calculator cannot do is choose your grade, because that depends on the loads the element will carry, the reinforcement, the soil and the exposure conditions. Use these figures to buy materials; use your engineer's specification to decide what to buy.</div>
+          </details>
+          <details>
+            <summary>How do I calculate concrete for a slab?</summary>
+            <div class="faq-body">Multiply length by width by thickness, keeping all three in the same unit. A 20 × 20 foot slab at 4 inches thick is 20 × 20 × (4 ÷ 12) = 133.33 cubic feet, which is 3.775 cubic metres or 4.94 cubic yards. Enter the dimensions here and pick your unit from the dropdown beside each field — the thickness field defaults to inches because slab depths are almost always quoted that way.</div>
+          </details>
+          <details>
+            <summary>How many cubic yards are in a cubic metre?</summary>
+            <div class="faq-body">1 cubic metre is 1.30795 cubic yards, and 1 cubic yard is 0.764555 cubic metres. So a 3 cubic metre pour is 3.92 cubic yards. If you are converting a quote from a metric supplier to compare with an imperial one, this is the factor to apply.</div>
+          </details>
+          <details>
+            <summary>What is the 1.54 factor in concrete calculation?</summary>
+            <div class="faq-body">It converts wet concrete volume to dry ingredient volume. One cubic metre of finished concrete requires about 1.54 cubic metres of loose dry cement, sand and aggregate, because the dry materials consolidate and the water leaves voids as the mix cures. Every nominal-mix calculation uses it; without it your material quantities would be roughly a third too low.</div>
+          </details>
+          <details>
+            <summary>How much water goes into a cubic metre of concrete?</summary>
+            <div class="faq-body">At a water-to-cement ratio of 0.5, roughly 200 litres for the 403 kg of cement in one cubic metre of M20. The ratio matters more than the volume: extra water makes concrete easier to place and permanently weaker, so add water only as the mix design allows and never to loosen a mix that is stiffening up.</div>
+          </details>
+          <details>
+            <summary>Should I add a waste allowance to the concrete volume?</summary>
+            <div class="faq-body">Yes. Five percent is a sensible default for a flat, well-prepared sub-base and a ready-mix delivery. Use 10% if the ground is uneven, if the pour is small, or if you are mixing on site — spillage and leftover material are proportionally larger on small jobs.</div>
+          </details>
+        </div>
+
+        <h2>Related tools</h2>
+        <div class="related-grid">
+          <a class="related-link" href="/tools/brick-calculator">
+            <span class="rl-icon">🧱</span>
+            <span class="rl-text">Brick Calculator</span>
+          </a>
+          <a class="related-link" href="/tools/gravel-calculator">
+            <span class="rl-icon">🪨</span>
+            <span class="rl-text">Gravel Calculator</span>
+          </a>
+          <a class="related-link" href="/tools/square-footage-calculator">
+            <span class="rl-icon">📐</span>
+            <span class="rl-text">Square Footage Calculator</span>
+          </a>
+          <a class="related-link" href="/tools/tile-calculator">
+            <span class="rl-icon">◼️</span>
+            <span class="rl-text">Tile Calculator</span>
+          </a>
+        </div>
+
+        <div class="tool-cta">
+          <h3>About the company that publishes these tools</h3>
+          <p>Al Sadat Builders is a construction contractor based in Islamabad, Pakistan, led on site by <strong style="color:#fff;">Syed Mujtaba Shah</strong>. These calculators are free to use wherever you are — they print no currency and assume no country. If you are building in Islamabad, Rawalpindi or Bani Gala, we can survey the plot, price the job and hand you an itemised BOQ.</p>
+          <div class="tool-cta-btns">
+            <a href="/contact" class="btn btn-primary">Book a free site visit</a>
+            <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20was%20using%20the%20Concrete%20Calculator%20on%20your%20website%20and%20would%20like%20to%20discuss%20a%20construction%20project." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">💬 WhatsApp us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <img src="/images/icon.png" alt="Al Sadat Builders" class="logo-icon-img">
+          <div class="logo-text">
+            <strong>AL SADAT BUILDERS</strong>
+            <span>30+ Years Construction Experience</span>
+          </div>
+        </div>
+        <p>
+          Construction company in Islamabad, Rawalpindi &amp; Bani Gala. Founded and led by <strong>Syed Mujtaba Shah</strong>. Turnkey residential villas, grey structures, renovation and finishing across CDA sectors, DHA, Bahria Town, Gulberg Greens and B-17.
+        </p>
+        <div class="footer-social">
+          <a href="https://wa.me/923469607349" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">💬</a>
+          <a href="tel:0335549384" aria-label="Call Us">📞</a>
+          <a href="mailto:info@alsadatbuilders.com" aria-label="Email Us">✉️</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/pages/construction-company-islamabad">Construction in Islamabad</a></li>
+          <li><a href="/pages/house-construction-islamabad">Turnkey House Construction</a></li>
+          <li><a href="/pages/grey-structure-islamabad">Grey Structure Construction</a></li>
+          <li><a href="/pages/house-renovation-islamabad">Renovation &amp; Remodeling</a></li>
+          <li><a href="/pages/marble-tile-fixing-islamabad">Marble &amp; Tile Fixing</a></li>
+          <li><a href="/pages/boundary-wall-construction-islamabad">Boundary Wall Construction</a></li>
+          <li><a href="/pages/plaster-work-islamabad">Plaster Work &amp; Waterproofing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Areas We Serve</h4>
+        <ul>
+          <li><a href="/pages/construction-company-bani-gala">Bani Gala</a></li>
+          <li><a href="/pages/construction-company-dha-islamabad">DHA Islamabad</a></li>
+          <li><a href="/pages/construction-company-bahria-town-islamabad">Bahria Town</a></li>
+          <li><a href="/pages/construction-company-gulberg-greens-islamabad">Gulberg Greens</a></li>
+          <li><a href="/pages/construction-company-b-17-multi-gardens-islamabad">B-17 Multi Gardens</a></li>
+          <li><a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors</a></li>
+          <li><a href="/pages/construction-company-overseas-pakistanis">Overseas Pakistanis</a></li>
+          <li><a href="/pages/construction-company-f-7-islamabad">F-7 Islamabad</a></li>
+          <li><a href="/pages/construction-company-f-8-islamabad">F-8 Islamabad</a></li>
+          <li><a href="/pages/construction-company-g-6-islamabad">G-6 Islamabad</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact &amp; Hours</h4>
+        <ul>
+          <li><strong>CEO:</strong> Syed Mujtaba Shah</li>
+          <li><a href="tel:0335549384">📞 0335-5549384</a></li>
+          <li><a href="https://wa.me/923469607349" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 0346-9607349</a></li>
+          <li><a href="mailto:info@alsadatbuilders.com">✉️ info@alsadatbuilders.com</a></li>
+          <li>📍 Islamabad, Rawalpindi &amp; Bani Gala</li>
+          <li>⏱️ Mon - Sat: 8:00 AM - 8:00 PM</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Al Sadat Builders. All rights reserved. Construction Company in Islamabad.</p>
+      <div class="footer-bottom-links">
+        <a href="/">Home</a>
+        <a href="/pages/construction-cost-islamabad">Cost Guide</a>
+        <a href="/pages/projects">Projects</a>
+        <a href="/pages/contact">Contact</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20would%20like%20to%20discuss%20a%20construction%20project." class="float-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <span class="tooltip">Chat with Syed Mujtaba Shah</span>
+    💬
+  </a>
+
+  <!-- JavaScript -->
+  <script src="/js/main.js"></script>
+
+  <!-- Calculator engine — builds the form and the results panel -->
+  <script src="/js/tools.js"></script>
+  <script>AlsadatTools.init('concrete-calculator');</script>
+</body>
+</html>

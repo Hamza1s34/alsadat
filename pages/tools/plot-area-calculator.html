@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plot Area Calculator — Marla, Kanal &amp; Perimeter</title>
+  <meta name="description" content="Work out a plot's area in square feet, marla and kanal, plus the boundary length for a wall or fence. Handles plots that narrow at one end.">
+  <meta name="keywords" content="plot area calculator, plot size calculator, marla calculator, kanal calculator, plot perimeter, boundary wall length, irregular plot area">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://alsadatbuilders.com/tools/plot-area-calculator">
+  <link rel="icon" type="image/png" href="/images/icon.png">
+  <link rel="apple-touch-icon" href="/images/icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alsadatbuilders.com/tools/plot-area-calculator">
+  <meta property="og:title" content="Plot Area Calculator — Marla, Kanal &amp; Perimeter">
+  <meta property="og:description" content="Work out a plot's area in square feet, marla and kanal, plus the boundary length for a wall or fence. Handles plots that narrow at one end.">
+  <meta property="og:image" content="https://alsadatbuilders.com/images/logo.png">
+  <meta property="og:site_name" content="Al Sadat Builders">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Plot Area Calculator — Marla, Kanal &amp; Perimeter">
+  <meta name="twitter:description" content="Work out a plot's area in square feet, marla and kanal, plus the boundary length for a wall or fence. Handles plots that narrow at one end.">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/tools.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Plot Area Calculator",
+  "url": "https://alsadatbuilders.com/tools/plot-area-calculator",
+  "description": "Work out a plot's area in square feet, marla and kanal, plus the boundary length for a wall or fence. Handles plots that narrow at one end.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Al Sadat Builders",
+    "url": "https://alsadatbuilders.com/",
+    "founder": {
+      "@type": "Person",
+      "name": "Syed Mujtaba Shah"
+    }
+  }
+}
+  </script>
+
+  <!-- Breadcrumbs Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://alsadatbuilders.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Construction & Property Tools",
+      "item": "https://alsadatbuilders.com/tools/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Area & Land",
+      "item": "https://alsadatbuilders.com/tools/#cat-area"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Plot Area Calculator",
+      "item": "https://alsadatbuilders.com/tools/plot-area-calculator"
+    }
+  ]
+}
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate plot area in marla?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "First work out the area in square feet — length times width for a rectangular plot. Then divide by the marla standard used where the plot is. At the traditional 272.25 square feet, a 2,722 square foot plot is 10 marla. This calculator shows the marla figure for the standard you pick, so you can see how the same plot reads under all three common definitions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I find the perimeter of an irregular plot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Add up the length of each actual edge. For a plot that is wider at one end than the other, the two sloping sides are diagonals, not the depth of the plot — the calculator measures each as the hypotenuse of the width difference and the plot depth, which is why the perimeter comes out slightly longer than simply doubling the average width plus the depth."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What size boundary wall do I need for a 10 marla plot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Take the perimeter from this calculator and add for gate piers. A 10 marla plot at 250 square feet is typically around 25 × 100 feet, giving a perimeter of 250 feet. Add the return walls at any gate and allow for the thickness of the piers themselves before ordering block, brick or concrete."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my plot measured differently from the seller's listing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Listings often quote a rounded or nominal size — “10 marla” rather than an exact measurement — and the marla standard behind it may not be stated. Between the 272.25 and 225 square foot standards that is a difference of more than 20%. Measure the plot yourself or use the surveyed dimensions, and ask in writing which standard the price assumes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the shape of a plot affect its value?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It affects what you can build. A narrow frontage limits the width of the house and the garage, and a deep narrow plot needs more wall and more driveway per square foot of land. Two plots of identical area can have very different buildable potential, which is why the perimeter this calculator returns is worth reading alongside the area."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-links">
+        <a href="tel:0335549384">📞 Call: 0335-5549384</a>
+        <a href="https://wa.me/923469607349" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 0346-9607349</a>
+        <a href="mailto:info@alsadatbuilders.com">✉️ info@alsadatbuilders.com</a>
+      </div>
+      <div class="top-bar-right">
+        <span>📍 Islamabad, Rawalpindi, Bani Gala &amp; All Major Societies</span>
+        <span>⏱️ Mon - Sat: 8:00 AM - 8:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Al Sadat Builders Home">
+        <img src="/images/icon.png" alt="Al Sadat Builders Icon" class="logo-icon-img">
+        <div class="logo-text">
+          <strong>AL SADAT BUILDERS</strong>
+          <span>30+ Years Construction Excellence</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <div class="nav-item">
+          <a href="/pages/construction-company-islamabad">Services ▾</a>
+          <div class="dropdown">
+            <a href="/pages/construction-company-islamabad">Construction in Islamabad</a>
+            <a href="/pages/house-construction-islamabad">House Construction</a>
+            <a href="/pages/grey-structure-islamabad">Grey Structure</a>
+            <a href="/pages/house-renovation-islamabad">Renovation &amp; Repairs</a>
+            <a href="/pages/marble-tile-fixing-islamabad">Marble &amp; Tile Fixing</a>
+            <a href="/pages/boundary-wall-construction-islamabad">Boundary Wall Construction</a>
+            <a href="/pages/plaster-work-islamabad">Plaster Work &amp; Waterproofing</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/pages/construction-company-cda-sectors-islamabad">Areas ▾</a>
+          <div class="dropdown">
+            <a href="/pages/construction-company-bani-gala">Bani Gala</a>
+            <a href="/pages/construction-company-dha-islamabad">DHA Islamabad</a>
+            <a href="/pages/construction-company-bahria-town-islamabad">Bahria Town</a>
+            <a href="/pages/construction-company-gulberg-greens-islamabad">Gulberg Greens</a>
+            <a href="/pages/construction-company-b-17-multi-gardens-islamabad">B-17 Multi Gardens</a>
+            <a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors</a>
+            <a href="/pages/construction-company-overseas-pakistanis">Overseas Pakistanis</a>
+            <a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors (F, G, E, I)</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/tools/">Tools ▾</a>
+          <div class="dropdown">
+            <a href="/tools/">All Free Tools</a>
+            <a href="/tools/#cat-area">🏞️ Area &amp; Land</a>
+            <a href="/tools/#cat-materials">🧱 Construction Materials</a>
+            <a href="/tools/#cat-flooring">🎨 Flooring &amp; Walls</a>
+            <a href="/tools/#cat-roofing">🏠 Roofing</a>
+            <a href="/tools/#cat-outdoor">🌳 Outdoor &amp; Landscaping</a>
+            <a href="/tools/#cat-land">🗺️ Pakistan Land Units</a>
+          </div>
+        </div>
+        <a href="/pages/construction-cost-islamabad">Construction Cost</a>
+        <a href="/pages/projects">Projects</a>
+        <a href="/pages/contact">Contact Us</a>
+      </nav>
+
+      <!-- Header CTAs -->
+      <div class="header-cta">
+        <a href="tel:0335549384" class="btn btn-dark" style="padding: 10px 18px; font-size: 0.88rem;">📞 Call Now</a>
+        <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20would%20like%20a%20free%20site%20visit%20and%20estimate." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 10px 18px; font-size: 0.88rem;">💬 WhatsApp</a>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="hamburger" aria-label="Toggle mobile menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav">
+    <div class="mobile-nav-header">
+      <div class="logo">
+        <img src="/images/icon.png" alt="Al Sadat Builders" class="logo-icon-img">
+        <div class="logo-text">
+          <strong>AL SADAT BUILDERS</strong>
+          <span>Islamabad, Rawalpindi &amp; Bani Gala</span>
+        </div>
+      </div>
+      <button class="mobile-nav-close" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="/">🏠 Home</a>
+      <a href="/tools/">🧮 Free Construction Tools</a>
+      <a href="/pages/construction-company-islamabad">🏗️ Construction Company Islamabad</a>
+      <a href="/pages/house-construction-islamabad">🏡 House Construction</a>
+      <a href="/pages/grey-structure-islamabad">🧱 Grey Structure</a>
+      <a href="/pages/house-renovation-islamabad">🔨 Renovation &amp; Remodeling</a>
+      <a href="/pages/marble-tile-fixing-islamabad">✨ Marble &amp; Tile Fixing</a>
+      <a href="/pages/boundary-wall-construction-islamabad">🧱 Boundary Wall Construction</a>
+      <a href="/pages/plaster-work-islamabad">🛡️ Plaster Work &amp; Waterproofing</a>
+      <a href="/pages/construction-cost-islamabad">📊 Construction Cost Guide</a>
+      <a href="/pages/projects">📸 Projects &amp; Portfolio</a>
+      <a href="/pages/construction-company-cda-sectors-islamabad">📍 Areas We Serve</a>
+      <div class="mobile-nav-sub">Calculators</div>
+      <a href="/tools/#cat-area" class="mobile-nav-sub-link">Area &amp; Land</a>
+      <a href="/tools/#cat-materials" class="mobile-nav-sub-link">Construction Materials</a>
+      <a href="/tools/#cat-flooring" class="mobile-nav-sub-link">Flooring &amp; Walls</a>
+      <a href="/tools/#cat-roofing" class="mobile-nav-sub-link">Roofing</a>
+      <a href="/tools/#cat-outdoor" class="mobile-nav-sub-link">Outdoor &amp; Landscaping</a>
+      <a href="/tools/#cat-land" class="mobile-nav-sub-link">Pakistan Land Units</a>
+      <div class="mobile-nav-sub">Popular Areas</div>
+      <a href="/pages/construction-company-bani-gala" class="mobile-nav-sub-link">⛰️ Bani Gala</a>
+      <a href="/pages/construction-company-dha-islamabad" class="mobile-nav-sub-link">🏛️ DHA Islamabad</a>
+      <a href="/pages/construction-company-bahria-town-islamabad" class="mobile-nav-sub-link">🏘️ Bahria Town</a>
+      <a href="/pages/construction-company-gulberg-greens-islamabad" class="mobile-nav-sub-link">🌿 Gulberg Greens</a>
+      <a href="/pages/construction-company-b-17-multi-gardens-islamabad" class="mobile-nav-sub-link">🏡 B-17 Multi Gardens</a>
+      <a href="/pages/construction-company-cda-sectors-islamabad" class="mobile-nav-sub-link">🏙️ CDA Sectors</a>
+      <a href="/pages/construction-company-overseas-pakistanis" class="mobile-nav-sub-link">✈️ Overseas Pakistanis</a>
+      <div class="mobile-nav-sub">CDA Sectors</div>
+      <a href="/pages/construction-company-f-6-islamabad" class="mobile-nav-sub-link">Sector F-6</a>
+      <a href="/pages/construction-company-f-7-islamabad" class="mobile-nav-sub-link">Sector F-7</a>
+      <a href="/pages/construction-company-f-8-islamabad" class="mobile-nav-sub-link">Sector F-8</a>
+      <a href="/pages/construction-company-f-10-islamabad" class="mobile-nav-sub-link">Sector F-10</a>
+      <a href="/pages/construction-company-f-11-islamabad" class="mobile-nav-sub-link">Sector F-11</a>
+      <a href="/pages/construction-company-g-6-islamabad" class="mobile-nav-sub-link">Sector G-6</a>
+      <a href="/pages/construction-company-g-9-islamabad" class="mobile-nav-sub-link">Sector G-9</a>
+      <a href="/pages/construction-company-g-10-islamabad" class="mobile-nav-sub-link">Sector G-10</a>
+      <a href="/pages/construction-company-g-11-islamabad" class="mobile-nav-sub-link">Sector G-11</a>
+      <a href="/pages/construction-company-e-11-islamabad" class="mobile-nav-sub-link">Sector E-11</a>
+      <a href="/pages/contact">📍 Contact &amp; Free Estimate</a>
+    </div>
+    <div class="mobile-nav-ctas">
+      <a href="tel:0335549384" class="btn btn-primary">📞 Call 0335-5549384</a>
+      <a href="https://wa.me/923469607349" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Tool Hero -->
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="tool-crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span>/</span> <a href="/tools/">Tools</a> <span>/</span> <a href="/tools/#cat-area">Area &amp; Land</a> <span>/</span> <strong>Plot Area Calculator</strong>
+      </nav>
+      <h1>Plot Area Calculator</h1>
+      <p>Plot area in every unit, plus the perimeter you will actually need for a boundary wall or fence.</p>
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <section class="section">
+    <div class="container calc-layout">
+      <div class="calc-card">
+        <h2>Enter your measurements</h2>
+        <p class="calc-sub">Every result updates as you type — there is no button to press. Use <strong>Reset values</strong> to start again.</p>
+        <div id="calc-form"></div>
+      </div>
+      <div class="calc-results">
+        <h2>Results</h2>
+        <div id="calc-output" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section bg-off-white">
+    <div class="container">
+      <div class="tool-content">
+        <p>This calculator is built for a building plot rather than a field. Alongside the area in square feet, square metres, square yards, marla, kanal, acres and hectares, it returns the <strong>perimeter</strong> — the total run along the edges of the plot, which is the number you need before you can price a boundary wall, a fence or the foundation strip.</p>
+        <p>Plots are rarely perfect rectangles. Tick the box for a plot that narrows or widens at one end and the calculator switches to the trapezoid formula, measuring the sloping side properly instead of averaging the two widths and hoping the error is small.</p>
+
+        <div class="formula-box"><strong>The formula</strong><p><strong>Rectangular plot:</strong> length × width &nbsp;·&nbsp; <strong>Plot wider at one end:</strong> ½ × (width A + width B) × length &nbsp;·&nbsp; <strong>Perimeter:</strong> the sum of the actual edges, with the sloping side measured as a true diagonal</p></div>
+        <h2>Why the perimeter matters as much as the area</h2>
+        <p>Two plots with the same area can have very different perimeters. A 50 × 90 foot plot and a 30 × 150 foot plot are both 4,500 square feet, but the first has a perimeter of 280 feet and the second 360 feet. If you are building a boundary wall at a cost per running foot, the narrow long plot costs nearly 30% more to enclose for exactly the same land area.</p><p>Perimeter also drives the foundation and damp-proof course for the wall, the number of gate piers, and how much of the plot is lost to the wall's own footprint — which matters when local rules cap how much of the plot you may cover.</p>
+
+        <h2>Measuring a plot that is not rectangular</h2>
+        <p>Stand at the road and measure the frontage. Then walk to the back and measure the rear width. Measure the depth along the side boundary — the perpendicular distance between the front and rear lines, not the distance along the sloping side. Enter those three figures, tick the irregular box, and the calculator applies the trapezoid formula.</p><p>For a plot with a cut corner, or one boundary that runs at an angle, the practical approach is to split the plot into a rectangle plus a triangle on paper, work out each shape here, and add the two areas. It takes an extra minute and gives a figure you can defend.</p>
+
+        <h2>Worked example</h2>
+        <p>A plot measures 50 feet wide by 90 feet deep. The area is 4,500 square feet — 16.53 marla at the traditional standard, 18 marla at 250 square feet, 0.827 kanal, and 0.1033 acres. The perimeter is 280 feet, so a boundary wall in blockwork needs 280 running feet of wall plus gate piers.</p><p>Now suppose the same plot is 50 feet at the front and 44 feet at the back, still 90 feet deep. It becomes a trapezoid: ½ × (50 + 44) × 90 = 4,230 square feet, or 15.54 marla — about 6% less land than the rectangle it looked like on the plan. The sloping side is measured as a true diagonal, giving a perimeter of 279.8 feet.</p>
+
+        <h2>Area, covered area and local byelaws</h2>
+        <p>Almost everywhere, the permitted covered area is set as a fraction of the plot area — a floor area ratio or coverage limit. That makes the figure you calculate here the input to a planning question, not just a pricing question. Compute the area first, then check your local authority's table for the maximum ground coverage and the maximum total floor area, because those limits are usually expressed as a percentage of exactly this number.</p>
+
+        <div class="table-scroll">
+          <table class="data-table">
+            <caption>Common plot sizes</caption>
+            <thead><tr><th>Plot description</th><th>Square feet</th><th>Square metres</th><th>Kanal</th></tr></thead>
+            <tbody>
+          <tr><td><strong>5 marla (250 ft² standard)</strong></td><td>1,250 ft²</td><td>116.13 m²</td><td>0.230</td></tr>
+          <tr><td><strong>5 marla (272.25 ft² standard)</strong></td><td>1,361 ft²</td><td>126.46 m²</td><td>0.250</td></tr>
+          <tr><td><strong>10 marla (250 ft² standard)</strong></td><td>2,500 ft²</td><td>232.26 m²</td><td>0.459</td></tr>
+          <tr><td><strong>10 marla (272.25 ft² standard)</strong></td><td>2,722 ft²</td><td>252.93 m²</td><td>0.500</td></tr>
+          <tr><td><strong>1 kanal</strong></td><td>5,445 ft²</td><td>505.86 m²</td><td>1.000</td></tr>
+          <tr><td><strong>2 kanal</strong></td><td>10,890 ft²</td><td>1,011.7 m²</td><td>2.000</td></tr>
+          <tr><td><strong>1 acre</strong></td><td>43,560 ft²</td><td>4,046.9 m²</td><td>8.000</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ, related tools and a note about who publishes this -->
+  <section class="section">
+    <div class="container">
+      <div class="tool-content">
+        <h2>Frequently asked questions</h2>
+        <div class="tool-faq">
+          <details>
+            <summary>How do I calculate plot area in marla?</summary>
+            <div class="faq-body">First work out the area in square feet — length times width for a rectangular plot. Then divide by the marla standard used where the plot is. At the traditional 272.25 square feet, a 2,722 square foot plot is 10 marla. This calculator shows the marla figure for the standard you pick, so you can see how the same plot reads under all three common definitions.</div>
+          </details>
+          <details>
+            <summary>How do I find the perimeter of an irregular plot?</summary>
+            <div class="faq-body">Add up the length of each actual edge. For a plot that is wider at one end than the other, the two sloping sides are diagonals, not the depth of the plot — the calculator measures each as the hypotenuse of the width difference and the plot depth, which is why the perimeter comes out slightly longer than simply doubling the average width plus the depth.</div>
+          </details>
+          <details>
+            <summary>What size boundary wall do I need for a 10 marla plot?</summary>
+            <div class="faq-body">Take the perimeter from this calculator and add for gate piers. A 10 marla plot at 250 square feet is typically around 25 × 100 feet, giving a perimeter of 250 feet. Add the return walls at any gate and allow for the thickness of the piers themselves before ordering block, brick or concrete.</div>
+          </details>
+          <details>
+            <summary>Why is my plot measured differently from the seller's listing?</summary>
+            <div class="faq-body">Listings often quote a rounded or nominal size — “10 marla” rather than an exact measurement — and the marla standard behind it may not be stated. Between the 272.25 and 225 square foot standards that is a difference of more than 20%. Measure the plot yourself or use the surveyed dimensions, and ask in writing which standard the price assumes.</div>
+          </details>
+          <details>
+            <summary>Does the shape of a plot affect its value?</summary>
+            <div class="faq-body">It affects what you can build. A narrow frontage limits the width of the house and the garage, and a deep narrow plot needs more wall and more driveway per square foot of land. Two plots of identical area can have very different buildable potential, which is why the perimeter this calculator returns is worth reading alongside the area.</div>
+          </details>
+        </div>
+
+        <h2>Related tools</h2>
+        <div class="related-grid">
+          <a class="related-link" href="/tools/land-area-calculator">
+            <span class="rl-icon">🌍</span>
+            <span class="rl-text">Land Area Calculator</span>
+          </a>
+          <a class="related-link" href="/tools/area-converter">
+            <span class="rl-icon">🔁</span>
+            <span class="rl-text">Area Converter</span>
+          </a>
+          <a class="related-link" href="/tools/square-footage-calculator">
+            <span class="rl-icon">📐</span>
+            <span class="rl-text">Square Footage Calculator</span>
+          </a>
+          <a class="related-link" href="/tools/fence-calculator">
+            <span class="rl-icon">🚧</span>
+            <span class="rl-text">Fence Calculator</span>
+          </a>
+        </div>
+
+        <div class="tool-cta">
+          <h3>About the company that publishes these tools</h3>
+          <p>Al Sadat Builders is a construction contractor based in Islamabad, Pakistan, led on site by <strong style="color:#fff;">Syed Mujtaba Shah</strong>. These calculators are free to use wherever you are — they print no currency and assume no country. If you are building in Islamabad, Rawalpindi or Bani Gala, we can survey the plot, price the job and hand you an itemised BOQ.</p>
+          <div class="tool-cta-btns">
+            <a href="/contact" class="btn btn-primary">Book a free site visit</a>
+            <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20was%20using%20the%20Plot%20Area%20Calculator%20on%20your%20website%20and%20would%20like%20to%20discuss%20a%20construction%20project." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">💬 WhatsApp us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <img src="/images/icon.png" alt="Al Sadat Builders" class="logo-icon-img">
+          <div class="logo-text">
+            <strong>AL SADAT BUILDERS</strong>
+            <span>30+ Years Construction Experience</span>
+          </div>
+        </div>
+        <p>
+          Construction company in Islamabad, Rawalpindi &amp; Bani Gala. Founded and led by <strong>Syed Mujtaba Shah</strong>. Turnkey residential villas, grey structures, renovation and finishing across CDA sectors, DHA, Bahria Town, Gulberg Greens and B-17.
+        </p>
+        <div class="footer-social">
+          <a href="https://wa.me/923469607349" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">💬</a>
+          <a href="tel:0335549384" aria-label="Call Us">📞</a>
+          <a href="mailto:info@alsadatbuilders.com" aria-label="Email Us">✉️</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/pages/construction-company-islamabad">Construction in Islamabad</a></li>
+          <li><a href="/pages/house-construction-islamabad">Turnkey House Construction</a></li>
+          <li><a href="/pages/grey-structure-islamabad">Grey Structure Construction</a></li>
+          <li><a href="/pages/house-renovation-islamabad">Renovation &amp; Remodeling</a></li>
+          <li><a href="/pages/marble-tile-fixing-islamabad">Marble &amp; Tile Fixing</a></li>
+          <li><a href="/pages/boundary-wall-construction-islamabad">Boundary Wall Construction</a></li>
+          <li><a href="/pages/plaster-work-islamabad">Plaster Work &amp; Waterproofing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Areas We Serve</h4>
+        <ul>
+          <li><a href="/pages/construction-company-bani-gala">Bani Gala</a></li>
+          <li><a href="/pages/construction-company-dha-islamabad">DHA Islamabad</a></li>
+          <li><a href="/pages/construction-company-bahria-town-islamabad">Bahria Town</a></li>
+          <li><a href="/pages/construction-company-gulberg-greens-islamabad">Gulberg Greens</a></li>
+          <li><a href="/pages/construction-company-b-17-multi-gardens-islamabad">B-17 Multi Gardens</a></li>
+          <li><a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors</a></li>
+          <li><a href="/pages/construction-company-overseas-pakistanis">Overseas Pakistanis</a></li>
+          <li><a href="/pages/construction-company-f-7-islamabad">F-7 Islamabad</a></li>
+          <li><a href="/pages/construction-company-f-8-islamabad">F-8 Islamabad</a></li>
+          <li><a href="/pages/construction-company-g-6-islamabad">G-6 Islamabad</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact &amp; Hours</h4>
+        <ul>
+          <li><strong>CEO:</strong> Syed Mujtaba Shah</li>
+          <li><a href="tel:0335549384">📞 0335-5549384</a></li>
+          <li><a href="https://wa.me/923469607349" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 0346-9607349</a></li>
+          <li><a href="mailto:info@alsadatbuilders.com">✉️ info@alsadatbuilders.com</a></li>
+          <li>📍 Islamabad, Rawalpindi &amp; Bani Gala</li>
+          <li>⏱️ Mon - Sat: 8:00 AM - 8:00 PM</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Al Sadat Builders. All rights reserved. Construction Company in Islamabad.</p>
+      <div class="footer-bottom-links">
+        <a href="/">Home</a>
+        <a href="/pages/construction-cost-islamabad">Cost Guide</a>
+        <a href="/pages/projects">Projects</a>
+        <a href="/pages/contact">Contact</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20would%20like%20to%20discuss%20a%20construction%20project." class="float-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <span class="tooltip">Chat with Syed Mujtaba Shah</span>
+    💬
+  </a>
+
+  <!-- JavaScript -->
+  <script src="/js/main.js"></script>
+
+  <!-- Calculator engine — builds the form and the results panel -->
+  <script src="/js/tools.js"></script>
+  <script>AlsadatTools.init('plot-area-calculator');</script>
+</body>
+</html>

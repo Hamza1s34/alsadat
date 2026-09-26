@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Square Footage Calculator — Rectangle, Circle &amp; Triangle</title>
+  <meta name="description" content="Work out square footage from length and width, or from a circle, triangle or trapezoid. Get the area in ft², m², yd² and acres, with cost per ft².">
+  <meta name="keywords" content="square footage calculator, square foot calculator, how to calculate square feet, area calculator, room square footage, cost per square foot">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://alsadatbuilders.com/tools/square-footage-calculator">
+  <link rel="icon" type="image/png" href="/images/icon.png">
+  <link rel="apple-touch-icon" href="/images/icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alsadatbuilders.com/tools/square-footage-calculator">
+  <meta property="og:title" content="Square Footage Calculator — Rectangle, Circle &amp; Triangle">
+  <meta property="og:description" content="Work out square footage from length and width, or from a circle, triangle or trapezoid. Get the area in ft², m², yd² and acres, with cost per ft².">
+  <meta property="og:image" content="https://alsadatbuilders.com/images/logo.png">
+  <meta property="og:site_name" content="Al Sadat Builders">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Square Footage Calculator — Rectangle, Circle &amp; Triangle">
+  <meta name="twitter:description" content="Work out square footage from length and width, or from a circle, triangle or trapezoid. Get the area in ft², m², yd² and acres, with cost per ft².">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/tools.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Square Footage Calculator",
+  "url": "https://alsadatbuilders.com/tools/square-footage-calculator",
+  "description": "Work out square footage from length and width, or from a circle, triangle or trapezoid. Get the area in ft², m², yd² and acres, with cost per ft².",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Al Sadat Builders",
+    "url": "https://alsadatbuilders.com/",
+    "founder": {
+      "@type": "Person",
+      "name": "Syed Mujtaba Shah"
+    }
+  }
+}
+  </script>
+
+  <!-- Breadcrumbs Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://alsadatbuilders.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Construction & Property Tools",
+      "item": "https://alsadatbuilders.com/tools/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Area & Land",
+      "item": "https://alsadatbuilders.com/tools/#cat-area"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Square Footage Calculator",
+      "item": "https://alsadatbuilders.com/tools/square-footage-calculator"
+    }
+  ]
+}
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate square feet from inches?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply the length in inches by the width in inches, then divide by 144. There are 144 square inches in a square foot. This calculator does it for you — set the unit dropdowns beside the length and width fields to inches and enter the raw measurements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I work out the square footage of an irregular room?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Break it into shapes you can measure. An L-shaped room is two rectangles: measure each and add them. A room that is wider at one end than the other is a trapezoid — measure both widths and the distance between them and use the trapezoid shape here. For a curved bay or an angled corner, a triangle plus a rectangle is usually close enough."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is square footage the same as square metres?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. One square metre is 10.7639104 square feet, so a 100 square metre apartment is about 1,076 square feet. If a floor plan is in square metres and a price is quoted per square foot, convert first — the two numbers differ by more than ten times, which is an easy and expensive mistake to make."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my calculated area different from the listing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Listings often quote a built-up or carpet area rather than a true floor area, and rules on what those include vary by country and by developer. Walls, balconies, stairwells and shared corridors are treated differently in each. Treat your own measurement as the accurate one for ordering materials, and the listing figure as a marketing number."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I add a waste allowance for flooring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and this calculator gives you the bare area. Add 5–10% for a straightforward rectangular room with a simple laying pattern, and 10–15% for a diagonal or herringbone pattern, a room with many corners, or a large-format tile where every cut wastes more of the tile. The dedicated flooring and tile calculators on this site apply the allowance for you."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-links">
+        <a href="tel:0335549384">📞 Call: 0335-5549384</a>
+        <a href="https://wa.me/923469607349" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 0346-9607349</a>
+        <a href="mailto:info@alsadatbuilders.com">✉️ info@alsadatbuilders.com</a>
+      </div>
+      <div class="top-bar-right">
+        <span>📍 Islamabad, Rawalpindi, Bani Gala &amp; All Major Societies</span>
+        <span>⏱️ Mon - Sat: 8:00 AM - 8:00 PM</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Al Sadat Builders Home">
+        <img src="/images/icon.png" alt="Al Sadat Builders Icon" class="logo-icon-img">
+        <div class="logo-text">
+          <strong>AL SADAT BUILDERS</strong>
+          <span>30+ Years Construction Excellence</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav" aria-label="Primary Navigation">
+        <a href="/">Home</a>
+        <div class="nav-item">
+          <a href="/pages/construction-company-islamabad">Services ▾</a>
+          <div class="dropdown">
+            <a href="/pages/construction-company-islamabad">Construction in Islamabad</a>
+            <a href="/pages/house-construction-islamabad">House Construction</a>
+            <a href="/pages/grey-structure-islamabad">Grey Structure</a>
+            <a href="/pages/house-renovation-islamabad">Renovation &amp; Repairs</a>
+            <a href="/pages/marble-tile-fixing-islamabad">Marble &amp; Tile Fixing</a>
+            <a href="/pages/boundary-wall-construction-islamabad">Boundary Wall Construction</a>
+            <a href="/pages/plaster-work-islamabad">Plaster Work &amp; Waterproofing</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/pages/construction-company-cda-sectors-islamabad">Areas ▾</a>
+          <div class="dropdown">
+            <a href="/pages/construction-company-bani-gala">Bani Gala</a>
+            <a href="/pages/construction-company-dha-islamabad">DHA Islamabad</a>
+            <a href="/pages/construction-company-bahria-town-islamabad">Bahria Town</a>
+            <a href="/pages/construction-company-gulberg-greens-islamabad">Gulberg Greens</a>
+            <a href="/pages/construction-company-b-17-multi-gardens-islamabad">B-17 Multi Gardens</a>
+            <a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors</a>
+            <a href="/pages/construction-company-overseas-pakistanis">Overseas Pakistanis</a>
+            <a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors (F, G, E, I)</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="/tools/">Tools ▾</a>
+          <div class="dropdown">
+            <a href="/tools/">All Free Tools</a>
+            <a href="/tools/#cat-area">🏞️ Area &amp; Land</a>
+            <a href="/tools/#cat-materials">🧱 Construction Materials</a>
+            <a href="/tools/#cat-flooring">🎨 Flooring &amp; Walls</a>
+            <a href="/tools/#cat-roofing">🏠 Roofing</a>
+            <a href="/tools/#cat-outdoor">🌳 Outdoor &amp; Landscaping</a>
+            <a href="/tools/#cat-land">🗺️ Pakistan Land Units</a>
+          </div>
+        </div>
+        <a href="/pages/construction-cost-islamabad">Construction Cost</a>
+        <a href="/pages/projects">Projects</a>
+        <a href="/pages/contact">Contact Us</a>
+      </nav>
+
+      <!-- Header CTAs -->
+      <div class="header-cta">
+        <a href="tel:0335549384" class="btn btn-dark" style="padding: 10px 18px; font-size: 0.88rem;">📞 Call Now</a>
+        <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20would%20like%20a%20free%20site%20visit%20and%20estimate." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 10px 18px; font-size: 0.88rem;">💬 WhatsApp</a>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="hamburger" aria-label="Toggle mobile menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav">
+    <div class="mobile-nav-header">
+      <div class="logo">
+        <img src="/images/icon.png" alt="Al Sadat Builders" class="logo-icon-img">
+        <div class="logo-text">
+          <strong>AL SADAT BUILDERS</strong>
+          <span>Islamabad, Rawalpindi &amp; Bani Gala</span>
+        </div>
+      </div>
+      <button class="mobile-nav-close" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="/">🏠 Home</a>
+      <a href="/tools/">🧮 Free Construction Tools</a>
+      <a href="/pages/construction-company-islamabad">🏗️ Construction Company Islamabad</a>
+      <a href="/pages/house-construction-islamabad">🏡 House Construction</a>
+      <a href="/pages/grey-structure-islamabad">🧱 Grey Structure</a>
+      <a href="/pages/house-renovation-islamabad">🔨 Renovation &amp; Remodeling</a>
+      <a href="/pages/marble-tile-fixing-islamabad">✨ Marble &amp; Tile Fixing</a>
+      <a href="/pages/boundary-wall-construction-islamabad">🧱 Boundary Wall Construction</a>
+      <a href="/pages/plaster-work-islamabad">🛡️ Plaster Work &amp; Waterproofing</a>
+      <a href="/pages/construction-cost-islamabad">📊 Construction Cost Guide</a>
+      <a href="/pages/projects">📸 Projects &amp; Portfolio</a>
+      <a href="/pages/construction-company-cda-sectors-islamabad">📍 Areas We Serve</a>
+      <div class="mobile-nav-sub">Calculators</div>
+      <a href="/tools/#cat-area" class="mobile-nav-sub-link">Area &amp; Land</a>
+      <a href="/tools/#cat-materials" class="mobile-nav-sub-link">Construction Materials</a>
+      <a href="/tools/#cat-flooring" class="mobile-nav-sub-link">Flooring &amp; Walls</a>
+      <a href="/tools/#cat-roofing" class="mobile-nav-sub-link">Roofing</a>
+      <a href="/tools/#cat-outdoor" class="mobile-nav-sub-link">Outdoor &amp; Landscaping</a>
+      <a href="/tools/#cat-land" class="mobile-nav-sub-link">Pakistan Land Units</a>
+      <div class="mobile-nav-sub">Popular Areas</div>
+      <a href="/pages/construction-company-bani-gala" class="mobile-nav-sub-link">⛰️ Bani Gala</a>
+      <a href="/pages/construction-company-dha-islamabad" class="mobile-nav-sub-link">🏛️ DHA Islamabad</a>
+      <a href="/pages/construction-company-bahria-town-islamabad" class="mobile-nav-sub-link">🏘️ Bahria Town</a>
+      <a href="/pages/construction-company-gulberg-greens-islamabad" class="mobile-nav-sub-link">🌿 Gulberg Greens</a>
+      <a href="/pages/construction-company-b-17-multi-gardens-islamabad" class="mobile-nav-sub-link">🏡 B-17 Multi Gardens</a>
+      <a href="/pages/construction-company-cda-sectors-islamabad" class="mobile-nav-sub-link">🏙️ CDA Sectors</a>
+      <a href="/pages/construction-company-overseas-pakistanis" class="mobile-nav-sub-link">✈️ Overseas Pakistanis</a>
+      <div class="mobile-nav-sub">CDA Sectors</div>
+      <a href="/pages/construction-company-f-6-islamabad" class="mobile-nav-sub-link">Sector F-6</a>
+      <a href="/pages/construction-company-f-7-islamabad" class="mobile-nav-sub-link">Sector F-7</a>
+      <a href="/pages/construction-company-f-8-islamabad" class="mobile-nav-sub-link">Sector F-8</a>
+      <a href="/pages/construction-company-f-10-islamabad" class="mobile-nav-sub-link">Sector F-10</a>
+      <a href="/pages/construction-company-f-11-islamabad" class="mobile-nav-sub-link">Sector F-11</a>
+      <a href="/pages/construction-company-g-6-islamabad" class="mobile-nav-sub-link">Sector G-6</a>
+      <a href="/pages/construction-company-g-9-islamabad" class="mobile-nav-sub-link">Sector G-9</a>
+      <a href="/pages/construction-company-g-10-islamabad" class="mobile-nav-sub-link">Sector G-10</a>
+      <a href="/pages/construction-company-g-11-islamabad" class="mobile-nav-sub-link">Sector G-11</a>
+      <a href="/pages/construction-company-e-11-islamabad" class="mobile-nav-sub-link">Sector E-11</a>
+      <a href="/pages/contact">📍 Contact &amp; Free Estimate</a>
+    </div>
+    <div class="mobile-nav-ctas">
+      <a href="tel:0335549384" class="btn btn-primary">📞 Call 0335-5549384</a>
+      <a href="https://wa.me/923469607349" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- Tool Hero -->
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="tool-crumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a> <span>/</span> <a href="/tools/">Tools</a> <span>/</span> <a href="/tools/#cat-area">Area &amp; Land</a> <span>/</span> <strong>Square Footage Calculator</strong>
+      </nav>
+      <h1>Square Footage Calculator</h1>
+      <p>Enter any shape and get square footage — plus square metres, square yards, acres and a cost estimate if you have a price per square foot.</p>
+    </div>
+  </section>
+
+  <!-- Calculator -->
+  <section class="section">
+    <div class="container calc-layout">
+      <div class="calc-card">
+        <h2>Enter your measurements</h2>
+        <p class="calc-sub">Every result updates as you type — there is no button to press. Use <strong>Reset values</strong> to start again.</p>
+        <div id="calc-form"></div>
+      </div>
+      <div class="calc-results">
+        <h2>Results</h2>
+        <div id="calc-output" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section bg-off-white">
+    <div class="container">
+      <div class="tool-content">
+        <p>Square footage is the unit nearly every flooring, painting, roofing and real-estate figure is quoted in. This calculator works out the area of a rectangle, a circle, a triangle or a trapezoid, converts your measurements to feet first so you can mix units between fields, and gives you the result in square feet along with square metres, square yards, acres and hectares.</p>
+        <p>If you know the price per square foot — for flooring, land, or a builder's rate — enter it and the total cost appears alongside the area. The price is deliberately left as a plain number with no currency attached, so the tool works the same whether you are pricing in dollars, euros, pounds, rupees or dirhams.</p>
+
+        <div class="formula-box"><strong>The formula</strong><p><strong>Rectangle:</strong> length × width &nbsp;·&nbsp; <strong>Circle:</strong> π × (diameter ÷ 2)² &nbsp;·&nbsp; <strong>Triangle:</strong> ½ × base × perpendicular height &nbsp;·&nbsp; <strong>Trapezoid:</strong> ½ × (side A + side B) × the distance between them</p></div>
+        <h2>Choosing the right shape</h2>
+        <p>Most rooms are rectangles, so length × width is usually all you need. Reach for the other shapes when the space is not a clean rectangle:</p><ul><li><strong>Trapezoid</strong> is the one people miss. A room that is wider at one end than the other is a trapezoid, not a rectangle. Measure both widths and the distance between them, and the area will be smaller than simply multiplying the average width by the length — the calculator does that averaging properly.</li><li><strong>Circle</strong> takes the diameter, not the radius, because that is what you can actually measure across a round room or a circular patio.</li><li><strong>Triangle</strong> uses the perpendicular height — the straight-line distance from the base to the opposite corner — not the length of either sloping side.</li></ul><p>For an L-shaped room, split it into two rectangles, work out each one and add them. The calculator's “how many identical areas” field multiplies one shape, so it is the wrong tool for two different rectangles — use it twice instead.</p>
+
+        <h2>Measure twice, and measure in the middle</h2>
+        <p>Rooms are rarely perfectly square even when the drawing says they are. Measure the length at both ends and the width at both sides; if the two readings differ by more than an inch or two, treat the room as a trapezoid so the error is captured rather than averaged away. Measure at floor level rather than skirting-board height, and take the figure from wall to wall, not to the edge of the carpet.</p><p>For a whole house, measure each room separately and add the results. A single measurement around the outside of the building gives you the footprint including internal and external walls, which is a larger and different number from the usable floor area.</p>
+
+        <h2>Worked example</h2>
+        <p>A room measures 15 feet 6 inches by 12 feet 3 inches. Convert to decimal feet first — 15.5 by 12.25 — and the calculator returns 189.88 square feet, or 17.64 square metres. At a flooring price of 4 per square foot, the material cost comes out at 759.50 in the same currency.</p><p>A plot 32 feet wide at the road and 28 feet wide at the back, with 90 feet between the two widths, is a trapezoid: ½ × (32 + 28) × 90 = 2,700 square feet. At the 272.25 square foot marla standard that is 9.92 marla, and the calculator shows the figure for the 250 and 225 standards too.</p>
+
+        <h2>Square footage is not floor area</h2>
+        <p>The number this calculator produces is a flat, two-dimensional area. It is what you need for flooring, paint, roof covering and land pricing. It is <em>not</em> the same as the built-up area or the sellable area on a floor plan, which are measured differently and may exclude or include walls, balconies and common areas according to local rules. When a listing quotes a built-up area, ask what it includes before comparing it with a square footage figure you calculated yourself.</p>
+
+        <div class="table-scroll">
+          <table class="data-table">
+            <caption>Square footage of common room sizes</caption>
+            <thead><tr><th>Dimensions (feet)</th><th>Square feet</th><th>Square metres</th></tr></thead>
+            <tbody>
+          <tr><td><strong>10 × 10</strong></td><td>100 ft²</td><td>9.29 m²</td></tr>
+          <tr><td><strong>10 × 12</strong></td><td>120 ft²</td><td>11.15 m²</td></tr>
+          <tr><td><strong>12 × 12</strong></td><td>144 ft²</td><td>13.38 m²</td></tr>
+          <tr><td><strong>12 × 15</strong></td><td>180 ft²</td><td>16.72 m²</td></tr>
+          <tr><td><strong>14 × 16</strong></td><td>224 ft²</td><td>20.81 m²</td></tr>
+          <tr><td><strong>15 × 20</strong></td><td>300 ft²</td><td>27.87 m²</td></tr>
+          <tr><td><strong>20 × 20</strong></td><td>400 ft²</td><td>37.16 m²</td></tr>
+          <tr><td><strong>20 × 30</strong></td><td>600 ft²</td><td>55.74 m²</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ, related tools and a note about who publishes this -->
+  <section class="section">
+    <div class="container">
+      <div class="tool-content">
+        <h2>Frequently asked questions</h2>
+        <div class="tool-faq">
+          <details>
+            <summary>How do I calculate square feet from inches?</summary>
+            <div class="faq-body">Multiply the length in inches by the width in inches, then divide by 144. There are 144 square inches in a square foot. This calculator does it for you — set the unit dropdowns beside the length and width fields to inches and enter the raw measurements.</div>
+          </details>
+          <details>
+            <summary>How do I work out the square footage of an irregular room?</summary>
+            <div class="faq-body">Break it into shapes you can measure. An L-shaped room is two rectangles: measure each and add them. A room that is wider at one end than the other is a trapezoid — measure both widths and the distance between them and use the trapezoid shape here. For a curved bay or an angled corner, a triangle plus a rectangle is usually close enough.</div>
+          </details>
+          <details>
+            <summary>Is square footage the same as square metres?</summary>
+            <div class="faq-body">No. One square metre is 10.7639104 square feet, so a 100 square metre apartment is about 1,076 square feet. If a floor plan is in square metres and a price is quoted per square foot, convert first — the two numbers differ by more than ten times, which is an easy and expensive mistake to make.</div>
+          </details>
+          <details>
+            <summary>Why is my calculated area different from the listing?</summary>
+            <div class="faq-body">Listings often quote a built-up or carpet area rather than a true floor area, and rules on what those include vary by country and by developer. Walls, balconies, stairwells and shared corridors are treated differently in each. Treat your own measurement as the accurate one for ordering materials, and the listing figure as a marketing number.</div>
+          </details>
+          <details>
+            <summary>Do I add a waste allowance for flooring?</summary>
+            <div class="faq-body">Yes, and this calculator gives you the bare area. Add 5–10% for a straightforward rectangular room with a simple laying pattern, and 10–15% for a diagonal or herringbone pattern, a room with many corners, or a large-format tile where every cut wastes more of the tile. The dedicated flooring and tile calculators on this site apply the allowance for you.</div>
+          </details>
+        </div>
+
+        <h2>Related tools</h2>
+        <div class="related-grid">
+          <a class="related-link" href="/tools/area-converter">
+            <span class="rl-icon">🔁</span>
+            <span class="rl-text">Area Converter</span>
+          </a>
+          <a class="related-link" href="/tools/land-area-calculator">
+            <span class="rl-icon">🌍</span>
+            <span class="rl-text">Land Area Calculator</span>
+          </a>
+          <a class="related-link" href="/tools/plot-area-calculator">
+            <span class="rl-icon">🏡</span>
+            <span class="rl-text">Plot Area Calculator</span>
+          </a>
+          <a class="related-link" href="/tools/tile-calculator">
+            <span class="rl-icon">◼️</span>
+            <span class="rl-text">Tile Calculator</span>
+          </a>
+        </div>
+
+        <div class="tool-cta">
+          <h3>About the company that publishes these tools</h3>
+          <p>Al Sadat Builders is a construction contractor based in Islamabad, Pakistan, led on site by <strong style="color:#fff;">Syed Mujtaba Shah</strong>. These calculators are free to use wherever you are — they print no currency and assume no country. If you are building in Islamabad, Rawalpindi or Bani Gala, we can survey the plot, price the job and hand you an itemised BOQ.</p>
+          <div class="tool-cta-btns">
+            <a href="/contact" class="btn btn-primary">Book a free site visit</a>
+            <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20was%20using%20the%20Square%20Footage%20Calculator%20on%20your%20website%20and%20would%20like%20to%20discuss%20a%20construction%20project." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">💬 WhatsApp us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <img src="/images/icon.png" alt="Al Sadat Builders" class="logo-icon-img">
+          <div class="logo-text">
+            <strong>AL SADAT BUILDERS</strong>
+            <span>30+ Years Construction Experience</span>
+          </div>
+        </div>
+        <p>
+          Construction company in Islamabad, Rawalpindi &amp; Bani Gala. Founded and led by <strong>Syed Mujtaba Shah</strong>. Turnkey residential villas, grey structures, renovation and finishing across CDA sectors, DHA, Bahria Town, Gulberg Greens and B-17.
+        </p>
+        <div class="footer-social">
+          <a href="https://wa.me/923469607349" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">💬</a>
+          <a href="tel:0335549384" aria-label="Call Us">📞</a>
+          <a href="mailto:info@alsadatbuilders.com" aria-label="Email Us">✉️</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/pages/construction-company-islamabad">Construction in Islamabad</a></li>
+          <li><a href="/pages/house-construction-islamabad">Turnkey House Construction</a></li>
+          <li><a href="/pages/grey-structure-islamabad">Grey Structure Construction</a></li>
+          <li><a href="/pages/house-renovation-islamabad">Renovation &amp; Remodeling</a></li>
+          <li><a href="/pages/marble-tile-fixing-islamabad">Marble &amp; Tile Fixing</a></li>
+          <li><a href="/pages/boundary-wall-construction-islamabad">Boundary Wall Construction</a></li>
+          <li><a href="/pages/plaster-work-islamabad">Plaster Work &amp; Waterproofing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Areas We Serve</h4>
+        <ul>
+          <li><a href="/pages/construction-company-bani-gala">Bani Gala</a></li>
+          <li><a href="/pages/construction-company-dha-islamabad">DHA Islamabad</a></li>
+          <li><a href="/pages/construction-company-bahria-town-islamabad">Bahria Town</a></li>
+          <li><a href="/pages/construction-company-gulberg-greens-islamabad">Gulberg Greens</a></li>
+          <li><a href="/pages/construction-company-b-17-multi-gardens-islamabad">B-17 Multi Gardens</a></li>
+          <li><a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors</a></li>
+          <li><a href="/pages/construction-company-overseas-pakistanis">Overseas Pakistanis</a></li>
+          <li><a href="/pages/construction-company-f-7-islamabad">F-7 Islamabad</a></li>
+          <li><a href="/pages/construction-company-f-8-islamabad">F-8 Islamabad</a></li>
+          <li><a href="/pages/construction-company-g-6-islamabad">G-6 Islamabad</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact &amp; Hours</h4>
+        <ul>
+          <li><strong>CEO:</strong> Syed Mujtaba Shah</li>
+          <li><a href="tel:0335549384">📞 0335-5549384</a></li>
+          <li><a href="https://wa.me/923469607349" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 0346-9607349</a></li>
+          <li><a href="mailto:info@alsadatbuilders.com">✉️ info@alsadatbuilders.com</a></li>
+          <li>📍 Islamabad, Rawalpindi &amp; Bani Gala</li>
+          <li>⏱️ Mon - Sat: 8:00 AM - 8:00 PM</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Al Sadat Builders. All rights reserved. Construction Company in Islamabad.</p>
+      <div class="footer-bottom-links">
+        <a href="/">Home</a>
+        <a href="/pages/construction-cost-islamabad">Cost Guide</a>
+        <a href="/pages/projects">Projects</a>
+        <a href="/pages/contact">Contact</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/923469607349?text=Hello%20Al%20Sadat%20Builders%2C%20I%20would%20like%20to%20discuss%20a%20construction%20project." class="float-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <span class="tooltip">Chat with Syed Mujtaba Shah</span>
+    💬
+  </a>
+
+  <!-- JavaScript -->
+  <script src="/js/main.js"></script>
+
+  <!-- Calculator engine — builds the form and the results panel -->
+  <script src="/js/tools.js"></script>
+  <script>AlsadatTools.init('square-footage-calculator');</script>
+</body>
+</html>
