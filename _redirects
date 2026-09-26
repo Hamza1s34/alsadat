@@ -1,0 +1,46 @@
+# Cloudflare Pages rewrites — keeps the original extensionless URLs working
+# (/contact, /projects, ...) now that the files live in /pages/.
+#
+# Format:  <source>  <destination>  <code>
+#   200 = rewrite (proxy). The visitor's URL bar keeps showing /contact,
+#         so the existing canonical tags and sitemap.xml stay valid.
+#
+# !! Do NOT replace this list with a blanket  /*  /pages/:splat  200  rule.
+#    On Cloudflare Pages redirects take precedence over static assets and
+#    are followed even when a real file matches, so /*  would hijack
+#    /css/style.css, /images/*, /js/main.js, /sitemap.xml and the homepage.
+#
+# Destination is the extension-less path (not .html) on purpose: Pages
+# 301-redirects *.html to its extension-less form, so pointing a 200
+# rewrite at a .html path can surface that redirect instead of the page.
+
+/boundary-wall-construction-islamabad               /pages/boundary-wall-construction-islamabad  200
+/construction-company-b-17-multi-gardens-islamabad  /pages/construction-company-b-17-multi-gardens-islamabad  200
+/construction-company-bahria-town-islamabad         /pages/construction-company-bahria-town-islamabad  200
+/construction-company-bani-gala                     /pages/construction-company-bani-gala  200
+/construction-company-cda-sectors-islamabad         /pages/construction-company-cda-sectors-islamabad  200
+/construction-company-dha-islamabad                 /pages/construction-company-dha-islamabad  200
+/construction-company-e-11-islamabad                /pages/construction-company-e-11-islamabad  200
+/construction-company-f-10-islamabad                /pages/construction-company-f-10-islamabad  200
+/construction-company-f-11-islamabad                /pages/construction-company-f-11-islamabad  200
+/construction-company-f-6-islamabad                 /pages/construction-company-f-6-islamabad  200
+/construction-company-f-7-islamabad                 /pages/construction-company-f-7-islamabad  200
+/construction-company-f-8-islamabad                 /pages/construction-company-f-8-islamabad  200
+/construction-company-g-10-islamabad                /pages/construction-company-g-10-islamabad  200
+/construction-company-g-11-islamabad                /pages/construction-company-g-11-islamabad  200
+/construction-company-g-6-islamabad                 /pages/construction-company-g-6-islamabad  200
+/construction-company-g-9-islamabad                 /pages/construction-company-g-9-islamabad  200
+/construction-company-gulberg-greens-islamabad      /pages/construction-company-gulberg-greens-islamabad  200
+/construction-company-islamabad                     /pages/construction-company-islamabad  200
+/construction-company-overseas-pakistanis           /pages/construction-company-overseas-pakistanis  200
+/construction-cost-islamabad                        /pages/construction-cost-islamabad  200
+/contact                                            /pages/contact  200
+/grey-structure-islamabad                           /pages/grey-structure-islamabad  200
+/house-construction-islamabad                       /pages/house-construction-islamabad  200
+/house-renovation-islamabad                         /pages/house-renovation-islamabad  200
+/marble-tile-fixing-islamabad                       /pages/marble-tile-fixing-islamabad  200
+/plaster-work-islamabad                             /pages/plaster-work-islamabad  200
+/projects                                           /pages/projects  200
+
+# Homepage (/), /css/, /images/, /js/, /sitemap.xml, /robots.txt and
+# /pages/* are real files and are served normally — no rules needed.

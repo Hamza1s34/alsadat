@@ -35,11 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Highlight Active Nav Link (Supports Clean URLs & .html) ---
+  // --- Highlight Active Nav Link (Supports Clean URLs, .html & /pages/ paths) ---
+  // Both sides are reduced to their last path segment, so "/pages/contact",
+  // "/contact" and "contact.html" all compare equal.
   const rawPath = window.location.pathname.replace(/\/$/, '').replace(/\.html$/, '').split('/').pop() || '';
   document.querySelectorAll('.nav a, .mobile-nav-links a').forEach(link => {
     const rawHref = (link.getAttribute('href') || '').split('?')[0].split('#')[0];
-    const cleanHref = rawHref.replace(/^\//, '').replace(/\/$/, '').replace(/\.html$/, '');
+    const cleanHref = rawHref.replace(/\/$/, '').replace(/\.html$/, '').split('/').pop() || '';
 
     if (
       (rawPath === '' && (cleanHref === '' || cleanHref === 'index')) ||

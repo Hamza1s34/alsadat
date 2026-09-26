@@ -25,6 +25,12 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://alsadatbuilders.com"
 TODAY = "2026-09-22"
 
+# Every page except index.html lives in a "pages/" subfolder. Page links stay
+# root-absolute (/pages/contact) so they work from either depth; assets in the
+# shared chrome are root-absolute for the same reason, while the area-page
+# <head> uses "../" because it is only ever emitted inside pages/.
+PAGES_SUBDIR = "pages"
+
 COMPANY = "Al Sadat Builders"
 CEO = "Syed Mujtaba Shah"
 PHONE_DISPLAY = "0335-5549384"
@@ -96,14 +102,14 @@ def nav_areas_dropdown(active_slug):
     items = []
     for a in SOCIETY_AREAS + [OVERSEAS]:
         cls = ' class="active"' if a["slug"] == active_slug else ""
-        items.append('            <a href="/%s"%s>%s</a>' % (a["slug"], cls, a["short"]))
+        items.append('            <a href="/pages/%s"%s>%s</a>' % (a["slug"], cls, a["short"]))
     if active_slug in BY_SLUG and BY_SLUG[active_slug]["group"] == "sector":
-        items.append('            <a href="/construction-company-cda-sectors-islamabad">CDA Sectors (F, G, E, I)</a>')
+        items.append('            <a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors (F, G, E, I)</a>')
     else:
-        items.append('            <a href="/construction-company-cda-sectors-islamabad">CDA Sectors (F, G, E, I)</a>')
+        items.append('            <a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors (F, G, E, I)</a>')
     return (
         '        <div class="nav-item">\n'
-        '          <a href="/construction-company-cda-sectors-islamabad">Areas ▾</a>\n'
+        '          <a href="/pages/construction-company-cda-sectors-islamabad">Areas ▾</a>\n'
         '          <div class="dropdown">\n'
         + "\n".join(items) + "\n"
         '          </div>\n'
@@ -128,27 +134,33 @@ def mobile_nav_links(active_slug):
     out = []
     for href, label, _ in lines:
         cls = ' class="active"' if href.lstrip('/') == active_slug else ""
-        out.append('      <a href="%s"%s>%s</a>' % (href, cls, label))
+        out.append('      <a href="%s"%s>%s</a>' % (page_link(href.lstrip('/')), cls, label))
     out.append('      <div class="mobile-nav-sub">Popular Areas</div>')
     for a in SOCIETY_AREAS + [OVERSEAS]:
         cls = ' class="active"' if a["slug"] == active_slug else ""
-        out.append('      <a href="/%s" class="mobile-nav-sub-link"%s>%s %s</a>'
+        out.append('      <a href="/pages/%s" class="mobile-nav-sub-link"%s>%s %s</a>'
                    % (a["slug"], cls, a["icon"], a["short"]))
     out.append('      <div class="mobile-nav-sub">CDA Sectors</div>')
     for a in SECTORS:
         cls = ' class="active"' if a["slug"] == active_slug else ""
-        out.append('      <a href="/%s" class="mobile-nav-sub-link"%s>Sector %s</a>'
+        out.append('      <a href="/pages/%s" class="mobile-nav-sub-link"%s>Sector %s</a>'
                    % (a["slug"], cls, a["name"]))
-    out.append('      <a href="/contact">📍 Contact &amp; Free Estimate</a>')
+    out.append('      <a href="/pages/contact">📍 Contact &amp; Free Estimate</a>')
     return "\n".join(out)
 
 
+def page_link(slug):
+    """Root-absolute URL for a page. index.html is the homepage ('/'); every
+    other page lives under PAGES_SUBDIR."""
+    return "/" if not slug else "/%s/%s" % (PAGES_SUBDIR, slug)
+
+
 def footer_area_links():
-    links = [("/%s" % a["slug"], a["short"]) for a in SOCIETY_AREAS + [OVERSEAS]]
+    links = [(page_link(a["slug"]), a["short"]) for a in SOCIETY_AREAS + [OVERSEAS]]
     links += [
-        ("/construction-company-f-7-islamabad", "F-7 Islamabad"),
-        ("/construction-company-f-8-islamabad", "F-8 Islamabad"),
-        ("/construction-company-g-6-islamabad", "G-6 Islamabad"),
+        (page_link("construction-company-f-7-islamabad"), "F-7 Islamabad"),
+        (page_link("construction-company-f-8-islamabad"), "F-8 Islamabad"),
+        (page_link("construction-company-g-6-islamabad"), "G-6 Islamabad"),
     ]
     return "\n".join('          <li><a href="%s">%s</a></li>' % (h, t) for h, t in links)
 
@@ -201,7 +213,7 @@ HEADER_TMPL = """  <!-- Top Bar -->
   <header class="header">
     <div class="header-inner">
       <a href="/" class="logo" aria-label="Al Sadat Builders Home">
-        <img src="images/icon.png" alt="Al Sadat Builders Icon" class="logo-icon-img">
+        <img src="/images/icon.png" alt="Al Sadat Builders Icon" class="logo-icon-img">
         <div class="logo-text">
           <strong>AL SADAT BUILDERS</strong>
           <span>30+ Years Construction Excellence</span>
@@ -212,21 +224,21 @@ HEADER_TMPL = """  <!-- Top Bar -->
       <nav class="nav" aria-label="Primary Navigation">
         <a href="/">Home</a>
         <div class="nav-item">
-          <a href="/construction-company-islamabad">Services ▾</a>
+          <a href="/pages/construction-company-islamabad">Services ▾</a>
           <div class="dropdown">
-            <a href="/construction-company-islamabad">Construction in Islamabad</a>
-            <a href="/house-construction-islamabad">House Construction</a>
-            <a href="/grey-structure-islamabad">Grey Structure</a>
-            <a href="/house-renovation-islamabad">Renovation &amp; Repairs</a>
-            <a href="/marble-tile-fixing-islamabad">Marble &amp; Tile Fixing</a>
-            <a href="/boundary-wall-construction-islamabad">Boundary Wall Construction</a>
-            <a href="/plaster-work-islamabad">Plaster Work &amp; Waterproofing</a>
+            <a href="/pages/construction-company-islamabad">Construction in Islamabad</a>
+            <a href="/pages/house-construction-islamabad">House Construction</a>
+            <a href="/pages/grey-structure-islamabad">Grey Structure</a>
+            <a href="/pages/house-renovation-islamabad">Renovation &amp; Repairs</a>
+            <a href="/pages/marble-tile-fixing-islamabad">Marble &amp; Tile Fixing</a>
+            <a href="/pages/boundary-wall-construction-islamabad">Boundary Wall Construction</a>
+            <a href="/pages/plaster-work-islamabad">Plaster Work &amp; Waterproofing</a>
           </div>
         </div>
 ${NAV_AREAS}
-        <a href="/construction-cost-islamabad">Construction Cost</a>
-        <a href="/projects">Projects</a>
-        <a href="/contact">Contact Us</a>
+        <a href="/pages/construction-cost-islamabad">Construction Cost</a>
+        <a href="/pages/projects">Projects</a>
+        <a href="/pages/contact">Contact Us</a>
       </nav>
 
       <!-- Header CTAs -->
@@ -248,7 +260,7 @@ ${NAV_AREAS}
   <div class="mobile-nav">
     <div class="mobile-nav-header">
       <div class="logo">
-        <img src="images/icon.png" alt="Al Sadat Builders" class="logo-icon-img">
+        <img src="/images/icon.png" alt="Al Sadat Builders" class="logo-icon-img">
         <div class="logo-text">
           <strong>AL SADAT BUILDERS</strong>
           <span>Islamabad, Rawalpindi &amp; Bani Gala</span>
@@ -274,7 +286,7 @@ FOOTER_TMPL = """  <!-- Footer -->
     <div class="container footer-top">
       <div class="footer-brand">
         <div class="logo">
-          <img src="images/icon.png" alt="Al Sadat Builders" class="logo-icon-img">
+          <img src="/images/icon.png" alt="Al Sadat Builders" class="logo-icon-img">
           <div class="logo-text">
             <strong>AL SADAT BUILDERS</strong>
             <span>30+ Years Construction Experience</span>
@@ -293,13 +305,13 @@ FOOTER_TMPL = """  <!-- Footer -->
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="/construction-company-islamabad">Construction in Islamabad</a></li>
-          <li><a href="/house-construction-islamabad">Turnkey House Construction</a></li>
-          <li><a href="/grey-structure-islamabad">Grey Structure Construction</a></li>
-          <li><a href="/house-renovation-islamabad">Renovation &amp; Remodeling</a></li>
-          <li><a href="/marble-tile-fixing-islamabad">Marble &amp; Tile Fixing</a></li>
-          <li><a href="/boundary-wall-construction-islamabad">Boundary Wall Construction</a></li>
-          <li><a href="/plaster-work-islamabad">Plaster Work &amp; Waterproofing</a></li>
+          <li><a href="/pages/construction-company-islamabad">Construction in Islamabad</a></li>
+          <li><a href="/pages/house-construction-islamabad">Turnkey House Construction</a></li>
+          <li><a href="/pages/grey-structure-islamabad">Grey Structure Construction</a></li>
+          <li><a href="/pages/house-renovation-islamabad">Renovation &amp; Remodeling</a></li>
+          <li><a href="/pages/marble-tile-fixing-islamabad">Marble &amp; Tile Fixing</a></li>
+          <li><a href="/pages/boundary-wall-construction-islamabad">Boundary Wall Construction</a></li>
+          <li><a href="/pages/plaster-work-islamabad">Plaster Work &amp; Waterproofing</a></li>
         </ul>
       </div>
 
@@ -327,10 +339,10 @@ ${FOOTER_AREAS}
       <p>&copy; 2026 Al Sadat Builders. All rights reserved. Construction Company in Islamabad.</p>
       <div class="footer-bottom-links">
         <a href="/">Home</a>
-        <a href="/construction-cost-islamabad">Cost Guide</a>
-        <a href="/projects">Projects</a>
-        <a href="/contact">Contact</a>
-        <a href="sitemap.xml">Sitemap</a>
+        <a href="/pages/construction-cost-islamabad">Cost Guide</a>
+        <a href="/pages/projects">Projects</a>
+        <a href="/pages/contact">Contact</a>
+        <a href="/sitemap.xml">Sitemap</a>
       </div>
     </div>
   </footer>
@@ -342,7 +354,7 @@ ${FOOTER_AREAS}
   </a>
 
   <!-- JavaScript -->
-  <script src="js/main.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>"""
 
@@ -360,8 +372,8 @@ AREA_PAGE = Template("""<!DOCTYPE html>
   <meta name="keywords" content="${keywords}">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="${site}/${slug}">
-  <link rel="icon" type="image/png" href="images/icon.png">
-  <link rel="apple-touch-icon" href="images/icon.png">
+  <link rel="icon" type="image/png" href="../images/icon.png">
+  <link rel="apple-touch-icon" href="../images/icon.png">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -378,7 +390,7 @@ AREA_PAGE = Template("""<!DOCTYPE html>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -403,7 +415,7 @@ ${header}
   <section class="page-hero">
     <div class="container">
       <div class="breadcrumb">
-        <a href="/">Home</a> <span>/</span> <a href="/construction-company-islamabad">Construction Company Islamabad</a> <span>/</span> <strong>${name}</strong>
+        <a href="/">Home</a> <span>/</span> <a href="/pages/construction-company-islamabad">Construction Company Islamabad</a> <span>/</span> <strong>${name}</strong>
       </div>
       <h1>${h1}</h1>
       <p>${hero_sub}</p>
@@ -423,7 +435,7 @@ ${intro_html}
         </div>
 
         <div class="hero-btns" style="margin-top: 24px;">
-          <a href="/contact" class="btn btn-primary">Book Free Site Visit</a>
+          <a href="/pages/contact" class="btn btn-primary">Book Free Site Visit</a>
           <a href="https://wa.me/${wa_number}?text=${wa_text}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">💬 WhatsApp Consultation</a>
         </div>
       </div>
@@ -501,7 +513,7 @@ ${plots_html}
         <ul class="service-list" style="margin-bottom: 24px;">
 ${bylaws_html}
         </ul>
-        <a href="/contact" class="btn btn-dark">Ask About Approvals in ${name}</a>
+        <a href="/pages/contact" class="btn btn-dark">Ask About Approvals in ${name}</a>
       </div>
 
       <div class="contact-form-card animate-on-scroll">
@@ -667,7 +679,7 @@ def build_services(area):
     out = []
     for slug, icon, title, desc in SERVICES:
         out.append(
-            '        <a class="service-card animate-on-scroll" href="/%s" style="display:block; text-decoration:none; color:inherit;">\n'
+            '        <a class="service-card animate-on-scroll" href="/pages/%s" style="display:block; text-decoration:none; color:inherit;">\n'
             '          <div class="service-icon">%s</div>\n'
             '          <h3>%s</h3>\n'
             '          <p>%s Available across %s, with site supervision by %s.</p>\n'
@@ -714,7 +726,7 @@ def build_nearby(area):
         if not other:
             continue
         out.append(
-            '        <a class="service-card animate-on-scroll" href="/%s" style="display:block; text-decoration:none; color:inherit;">\n'
+            '        <a class="service-card animate-on-scroll" href="/pages/%s" style="display:block; text-decoration:none; color:inherit;">\n'
             '          <div class="service-icon">%s</div>\n'
             '          <h3>Construction Company in %s</h3>\n'
             '          <p>%s</p>\n'
@@ -728,14 +740,14 @@ def build_all_areas(area):
     out = []
     for a in ALL_AREAS:
         cur = ' style="border-color: var(--yellow); font-weight: 700;"' if a["slug"] == area["slug"] else ""
-        out.append('        <a class="area-chip" href="/%s"%s>%s %s</a>'
+        out.append('        <a class="area-chip" href="/pages/%s"%s>%s %s</a>'
                    % (a["slug"], cur, a["icon"], esc(a["short"])))
     return "\n".join(out)
 
 
 def build_all_services(area):
     return "\n".join(
-        '        <a class="area-chip" href="/%s">%s %s</a>' % (slug, icon, esc(title))
+        '        <a class="area-chip" href="/pages/%s">%s %s</a>' % (slug, icon, esc(title))
         for slug, icon, title, _ in SERVICES
     )
 
@@ -839,7 +851,7 @@ def render_area_page(area):
         phone_tel=PHONE_TEL,
         phone_display=PHONE_DISPLAY,
         ceo=CEO,
-        img=area["img"],
+        img="../" + area["img"],
         img_alt=esc(area["img_alt"]),
         schema_contractor=schema_contractor(area),
         schema_breadcrumb=schema_breadcrumb(area),
@@ -854,15 +866,15 @@ def render_area_page(area):
 # ============================================================
 AREAS_NAV_BLOCK = (
     '        <div class="nav-item">\n'
-    '          <a href="/construction-company-cda-sectors-islamabad">Areas ▾</a>\n'
+    '          <a href="/pages/construction-company-cda-sectors-islamabad">Areas ▾</a>\n'
     '          <div class="dropdown">\n'
-    '            <a href="/construction-company-bani-gala">Bani Gala</a>\n'
-    '            <a href="/construction-company-dha-islamabad">DHA Islamabad</a>\n'
-    '            <a href="/construction-company-bahria-town-islamabad">Bahria Town &amp; Enclave</a>\n'
-    '            <a href="/construction-company-gulberg-greens-islamabad">Gulberg Greens</a>\n'
-    '            <a href="/construction-company-b-17-multi-gardens-islamabad">B-17 Multi Gardens</a>\n'
-    '            <a href="/construction-company-cda-sectors-islamabad">CDA Sectors (F, G, E, I)</a>\n'
-    '            <a href="/construction-company-overseas-pakistanis">Overseas Pakistanis</a>\n'
+    '            <a href="/pages/construction-company-bani-gala">Bani Gala</a>\n'
+    '            <a href="/pages/construction-company-dha-islamabad">DHA Islamabad</a>\n'
+    '            <a href="/pages/construction-company-bahria-town-islamabad">Bahria Town &amp; Enclave</a>\n'
+    '            <a href="/pages/construction-company-gulberg-greens-islamabad">Gulberg Greens</a>\n'
+    '            <a href="/pages/construction-company-b-17-multi-gardens-islamabad">B-17 Multi Gardens</a>\n'
+    '            <a href="/pages/construction-company-cda-sectors-islamabad">CDA Sectors (F, G, E, I)</a>\n'
+    '            <a href="/pages/construction-company-overseas-pakistanis">Overseas Pakistanis</a>\n'
     '          </div>\n'
     '        </div>\n'
 )
@@ -871,7 +883,9 @@ AREAS_NAV_BLOCK = (
 def patch_existing_pages():
     changed = []
     for fname in ALL_HTML_PAGES:
-        path = os.path.join(ROOT, fname)
+        # index.html stays at the site root; everything else lives in pages/.
+        path = (os.path.join(ROOT, fname) if fname == "index.html"
+                else os.path.join(ROOT, PAGES_SUBDIR, fname))
         if not os.path.exists(path):
             print("  ! missing, skipped: %s" % fname)
             continue
@@ -880,9 +894,9 @@ def patch_existing_pages():
         orig = html
 
         # 1. Desktop nav — insert Areas dropdown before the Construction Cost link
-        if 'href="/construction-company-cda-sectors-islamabad">Areas' not in html:
+        if 'href="/pages/construction-company-cda-sectors-islamabad">Areas' not in html:
             html, n = re.subn(
-                r'([ \t]*)<a href="/construction-cost-islamabad"[^>]*>Construction Cost</a>',
+                r'([ \t]*)<a href="/pages/construction-cost-islamabad"[^>]*>Construction Cost</a>',
                 lambda m: AREAS_NAV_BLOCK.rstrip("\n") + "\n" + m.group(0),
                 html,
                 count=1,
@@ -973,7 +987,8 @@ def _homepage_areas_grid():
     lines = ['<div class="areas-grid animate-on-scroll">']
     for label, href in CHIP_MAP:
         star = ' style="border-color: var(--yellow); font-weight: 700;"' if label.startswith("⭐") else ""
-        lines.append('        <a class="area-chip" href="%s"%s>%s</a>' % (href, star, label))
+        lines.append('        <a class="area-chip" href="%s"%s>%s</a>'
+                     % (page_link(href.lstrip('/')), star, label))
     lines.append('      </div>')
     return "\n".join(lines)
 
@@ -1083,11 +1098,14 @@ def main():
     print("Al Sadat Builders — site build\n")
 
     print("Generating area pages:")
+    out_dir = os.path.join(ROOT, PAGES_SUBDIR)
+    os.makedirs(out_dir, exist_ok=True)
     for a in ALL_AREAS:
-        out = os.path.join(ROOT, a["slug"] + ".html")
+        out = os.path.join(out_dir, a["slug"] + ".html")
         with open(out, "w", encoding="utf-8") as fh:
             fh.write(render_area_page(a))
-        print("  + %-52s %6.1f KB" % (a["slug"] + ".html", os.path.getsize(out) / 1024))
+        print("  + %-52s %6.1f KB" % (PAGES_SUBDIR + "/" + a["slug"] + ".html",
+                                      os.path.getsize(out) / 1024))
 
     print("\nPatching existing pages:")
     changed = patch_existing_pages()
