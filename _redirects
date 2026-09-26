@@ -1,18 +1,26 @@
-# Cloudflare Pages rewrites — keeps the original extensionless URLs working
-# (/contact, /projects, ...) now that the files live in /pages/.
+# Cloudflare WORKERS static-asset rewrites — keeps the original extensionless
+# URLs (/contact, /projects, ...) working now that the files live in /pages/.
+#
+# This file must sit in the ASSETS DIRECTORY configured for the Worker (the
+# wrangler.toml [assets] "directory", or whatever folder was uploaded as
+# assets). Cloudflare parses it and does not serve it.
 #
 # Format:  <source>  <destination>  <code>
-#   200 = rewrite (proxy). The visitor's URL bar keeps showing /contact,
-#         so the existing canonical tags and sitemap.xml stay valid.
+#   200 = proxy. The visitor's URL bar keeps showing /contact, so the existing
+#         canonical tags and sitemap.xml stay valid.
 #
 # !! Do NOT replace this list with a blanket  /*  /pages/:splat  200  rule.
-#    On Cloudflare Pages redirects take precedence over static assets and
-#    are followed even when a real file matches, so /*  would hijack
-#    /css/style.css, /images/*, /js/main.js, /sitemap.xml and the homepage.
+#    A splat also matches /css/style.css, /images/*, /js/main.js, /sitemap.xml
+#    and the homepage, and these rules are applied to static asset responses --
+#    so every asset would be proxied to a non-existent /pages/... path and the
+#    site would render unstyled and imageless.
 #
-# Destination is the extension-less path (not .html) on purpose: Pages
-# 301-redirects *.html to its extension-less form, so pointing a 200
-# rewrite at a .html path can surface that redirect instead of the page.
+# Destination is deliberately extension-less: Workers' default html_handling
+# ("auto-trailing-slash") serves /pages/contact from pages/contact.html, and
+# requesting a *.html path directly triggers a 307 to the extension-less form.
+#
+# CAVEAT: _redirects is NOT applied to requests handled by Worker script code,
+# and not applied at all when run_worker_first is enabled for the Worker.
 
 /boundary-wall-construction-islamabad               /pages/boundary-wall-construction-islamabad  200
 /construction-company-b-17-multi-gardens-islamabad  /pages/construction-company-b-17-multi-gardens-islamabad  200
@@ -42,5 +50,5 @@
 /plaster-work-islamabad                             /pages/plaster-work-islamabad  200
 /projects                                           /pages/projects  200
 
-# Homepage (/), /css/, /images/, /js/, /sitemap.xml, /robots.txt and
-# /pages/* are real files and are served normally — no rules needed.
+# Homepage (/), /css/, /images/, /js/, /sitemap.xml, /robots.txt and /pages/*
+# are real files and are served normally -- no rules needed for those.
