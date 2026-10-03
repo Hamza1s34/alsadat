@@ -31,7 +31,7 @@ from urllib.parse import quote
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from build_site import (  # noqa: E402  (path is set up above)
-    ROOT, SITE, TODAY, PAGES_SUBDIR, COMPANY, CEO, WA_NUMBER,
+    ROOT, SITE, PAGES_SUBDIR, COMPANY, CEO, WA_NUMBER,
     esc, header_html, footer_html,
 )
 from data_tools import TOOL_CATEGORIES, CATEGORY_NAMES  # noqa: E402
@@ -39,6 +39,8 @@ from tools_content_area import AREA_TOOLS  # noqa: E402
 from tools_content_build import BUILD_TOOLS  # noqa: E402
 from tools_content_home import HOME_TOOLS  # noqa: E402
 from tools_content_land import LAND_TOOLS  # noqa: E402
+from seo import normalize_site, write_redirects
+from tools_search_content import apply_search_content
 
 TOOLS_SUBDIR = "tools"
 OUT_REL = PAGES_SUBDIR + "/" + TOOLS_SUBDIR          # pages/tools
@@ -49,6 +51,7 @@ HUB_URL = SITE + "/tools/"
 HUB_SLUG = "tools"
 
 ALL_TOOLS = AREA_TOOLS + BUILD_TOOLS + HOME_TOOLS + LAND_TOOLS
+apply_search_content(ALL_TOOLS)
 BY_SLUG = {t["slug"]: t for t in ALL_TOOLS}
 
 
@@ -129,6 +132,7 @@ ${header}
       </nav>
       <h1>${h1}</h1>
       <p>${tagline}</p>
+${quick_answer}
     </div>
   </section>
 
@@ -310,7 +314,7 @@ HUB_META_KEYWORDS = ("construction calculator, property calculator, area calcula
                      "building materials calculator, free construction tools, "
                      "land area calculator, marla calculator")
 
-HUB_TAGLINE = ("Twenty calculators for measuring land, pricing materials and checking "
+HUB_TAGLINE = ("Nineteen calculators for measuring land, pricing materials and checking "
                "quantities before you order. Free, no sign-up, and written to work in "
                "any country — no currency is assumed and no price is hard-coded.")
 
@@ -642,6 +646,8 @@ def render_tool(t):
         site=SITE,
         h1=esc(t["h1"]),
         tagline=esc(t["tagline"]),
+        quick_answer=('<div class="tool-quick-answer">%s</div>' % t['quick_answer']
+                      if t.get('quick_answer') else ''),
         catkey=cat,
         catname=CATEGORY_NAMES[cat],
         intro_html=intro_html(t),
@@ -755,10 +761,9 @@ def patch_sitemap():
     body = "\n".join(
         '  <url>\n'
         '    <loc>%s/%s</loc>\n'
-        '    <lastmod>%s</lastmod>\n'
         '    <changefreq>%s</changefreq>\n'
         '    <priority>%s</priority>\n'
-        '  </url>' % (SITE, loc, TODAY, freq, p)
+        '  </url>' % (SITE, loc, freq, p)
         for loc, p, freq in entries
     )
     xml = xml.replace("</urlset>", body + "\n</urlset>")
@@ -832,8 +837,9 @@ def main():
         fh.write(render_hub())
     print("  + %-56s %6.1f KB" % (OUT_REL + "/index.html", os.path.getsize(hub) / 1024))
 
-    n = patch_redirects()
-    print("\n_redirects updated — %d new rule(s)" % n)
+    normalize_site()
+    write_redirects()
+    print("\n_redirects updated — canonical URLs and permanent aliases")
 
     n = patch_sitemap()
     print("sitemap.xml updated — %d tool URL(s)" % n)

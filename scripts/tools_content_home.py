@@ -127,7 +127,7 @@ HOME_TOOLS = [
             {
                 "h": "Worked example",
                 "body": "<p>A room 12 feet by 12 feet with 9 foot walls. The wall area is 2 × (12 + 12) × 9 = 432 square feet. Deduct one door at 21 square feet and two windows at 15 square feet each, and the paintable area is 381 square feet — 35.4 square metres.</p>"
-                        "<p>At 10 square metres per litre for interior emulsion that is 3.54 litres per coat; two coats need 7.08 litres. In cans, that is two 4 litre cans with a little to spare, or one 20 litre drum. If you buy the same volume as five 1 US gallon (3.785 litre) cans you will pay noticeably more per litre for the same paint — the smaller the container, the higher the price per litre, on essentially every product.</p>"
+                        "<p>At 10 square metres per litre for interior emulsion that is 3.54 litres per coat; two coats need 7.08 litres. In cans, that is two 4 litre cans, or two 1 US gallon cans (about 7.57 litres in total). Round up to a pack size sold for your chosen product and compare its actual price.</p>"
                         "<p>Now suppose the ceiling is included. Adding 12 × 12 = 144 square feet brings the total to 525 square feet, or 48.8 square metres — 9.75 litres for two coats, which is three 4 litre cans. Including the ceiling changes the order, which is why it is a checkbox rather than an assumption.</p>"
             },
             {

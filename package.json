@@ -1,0 +1,12 @@
+{
+  "name": "alsadat-builders",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "python3 -B scripts/build_site.py && python3 -B scripts/build_tools.py && python3 -B scripts/verify_seo.py && node scripts/test_calculators.cjs && python3 -B scripts/build_public.py",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.147.0"
+  }
+}

@@ -1,55 +1,280 @@
-# Cloudflare WORKERS static-asset rewrites — keeps the original extensionless
-# URLs (/contact, /projects, ...) working now that the files live in /pages/.
-#
-# This file must sit in the ASSETS DIRECTORY configured for the Worker (the
-# wrangler.toml [assets] "directory", or whatever folder was uploaded as
-# assets). Cloudflare parses it and does not serve it.
-#
-# Format:  <source>  <destination>  <code>
-#   200 = proxy. The visitor's URL bar keeps showing /contact, so the existing
-#         canonical tags and sitemap.xml stay valid.
-#
-# !! Do NOT replace this list with a blanket  /*  /pages/:splat  200  rule.
-#    A splat also matches /css/style.css, /images/*, /js/main.js, /sitemap.xml
-#    and the homepage, and these rules are applied to static asset responses --
-#    so every asset would be proxied to a non-existent /pages/... path and the
-#    site would render unstyled and imageless.
-#
-# Destination is deliberately extension-less: Workers' default html_handling
-# ("auto-trailing-slash") serves /pages/contact from pages/contact.html, and
-# requesting a *.html path directly triggers a 307 to the extension-less form.
-#
-# CAVEAT: _redirects is NOT applied to requests handled by Worker script code,
-# and not applied at all when run_worker_first is enabled for the Worker.
+# Canonical public URLs for Cloudflare Workers static assets.
+# Generate with scripts/build_site.py or scripts/build_tools.py.
+# Legacy /pages/, .html and trailing-slash URLs redirect permanently.
+# Canonical requests are rewritten to the stored asset once.
+# Keep assets, robots.txt, sitemap.xml and unknown URLs untouched.
+# HTTPS enforcement belongs in Cloudflare Always Use HTTPS;
+# Workers _redirects does not support domain/protocol redirects.
+# Requires assets routing; run_worker_first bypasses this file.
 
-/boundary-wall-construction-islamabad               /pages/boundary-wall-construction-islamabad  200
+/boundary-wall-construction-islamabad.html  /boundary-wall-construction-islamabad  301
+/boundary-wall-construction-islamabad/  /boundary-wall-construction-islamabad  301
+/construction-company-b-17-multi-gardens-islamabad.html  /construction-company-b-17-multi-gardens-islamabad  301
+/construction-company-b-17-multi-gardens-islamabad/  /construction-company-b-17-multi-gardens-islamabad  301
+/construction-company-bahria-town-islamabad.html  /construction-company-bahria-town-islamabad  301
+/construction-company-bahria-town-islamabad/  /construction-company-bahria-town-islamabad  301
+/construction-company-bani-gala.html  /construction-company-bani-gala  301
+/construction-company-bani-gala/  /construction-company-bani-gala  301
+/construction-company-cda-sectors-islamabad.html  /construction-company-cda-sectors-islamabad  301
+/construction-company-cda-sectors-islamabad/  /construction-company-cda-sectors-islamabad  301
+/construction-company-dha-islamabad.html  /construction-company-dha-islamabad  301
+/construction-company-dha-islamabad/  /construction-company-dha-islamabad  301
+/construction-company-e-11-islamabad.html  /construction-company-e-11-islamabad  301
+/construction-company-e-11-islamabad/  /construction-company-e-11-islamabad  301
+/construction-company-f-10-islamabad.html  /construction-company-f-10-islamabad  301
+/construction-company-f-10-islamabad/  /construction-company-f-10-islamabad  301
+/construction-company-f-11-islamabad.html  /construction-company-f-11-islamabad  301
+/construction-company-f-11-islamabad/  /construction-company-f-11-islamabad  301
+/construction-company-f-6-islamabad.html  /construction-company-f-6-islamabad  301
+/construction-company-f-6-islamabad/  /construction-company-f-6-islamabad  301
+/construction-company-f-7-islamabad.html  /construction-company-f-7-islamabad  301
+/construction-company-f-7-islamabad/  /construction-company-f-7-islamabad  301
+/construction-company-f-8-islamabad.html  /construction-company-f-8-islamabad  301
+/construction-company-f-8-islamabad/  /construction-company-f-8-islamabad  301
+/construction-company-g-10-islamabad.html  /construction-company-g-10-islamabad  301
+/construction-company-g-10-islamabad/  /construction-company-g-10-islamabad  301
+/construction-company-g-11-islamabad.html  /construction-company-g-11-islamabad  301
+/construction-company-g-11-islamabad/  /construction-company-g-11-islamabad  301
+/construction-company-g-6-islamabad.html  /construction-company-g-6-islamabad  301
+/construction-company-g-6-islamabad/  /construction-company-g-6-islamabad  301
+/construction-company-g-9-islamabad.html  /construction-company-g-9-islamabad  301
+/construction-company-g-9-islamabad/  /construction-company-g-9-islamabad  301
+/construction-company-gulberg-greens-islamabad.html  /construction-company-gulberg-greens-islamabad  301
+/construction-company-gulberg-greens-islamabad/  /construction-company-gulberg-greens-islamabad  301
+/construction-company-islamabad.html  /construction-company-islamabad  301
+/construction-company-islamabad/  /construction-company-islamabad  301
+/construction-company-overseas-pakistanis.html  /construction-company-overseas-pakistanis  301
+/construction-company-overseas-pakistanis/  /construction-company-overseas-pakistanis  301
+/construction-cost-islamabad.html  /construction-cost-islamabad  301
+/construction-cost-islamabad/  /construction-cost-islamabad  301
+/contact.html  /contact  301
+/contact/  /contact  301
+/grey-structure-islamabad.html  /grey-structure-islamabad  301
+/grey-structure-islamabad/  /grey-structure-islamabad  301
+/house-construction-islamabad.html  /house-construction-islamabad  301
+/house-construction-islamabad/  /house-construction-islamabad  301
+/house-renovation-islamabad.html  /house-renovation-islamabad  301
+/house-renovation-islamabad/  /house-renovation-islamabad  301
+/index  /  301
+/index.html  /  301
+/marble-tile-fixing-islamabad.html  /marble-tile-fixing-islamabad  301
+/marble-tile-fixing-islamabad/  /marble-tile-fixing-islamabad  301
+/pages/boundary-wall-construction-islamabad  /boundary-wall-construction-islamabad  301
+/pages/boundary-wall-construction-islamabad.html  /boundary-wall-construction-islamabad  301
+/pages/boundary-wall-construction-islamabad/  /boundary-wall-construction-islamabad  301
+/pages/construction-company-b-17-multi-gardens-islamabad  /construction-company-b-17-multi-gardens-islamabad  301
+/pages/construction-company-b-17-multi-gardens-islamabad.html  /construction-company-b-17-multi-gardens-islamabad  301
+/pages/construction-company-b-17-multi-gardens-islamabad/  /construction-company-b-17-multi-gardens-islamabad  301
+/pages/construction-company-bahria-town-islamabad  /construction-company-bahria-town-islamabad  301
+/pages/construction-company-bahria-town-islamabad.html  /construction-company-bahria-town-islamabad  301
+/pages/construction-company-bahria-town-islamabad/  /construction-company-bahria-town-islamabad  301
+/pages/construction-company-bani-gala  /construction-company-bani-gala  301
+/pages/construction-company-bani-gala.html  /construction-company-bani-gala  301
+/pages/construction-company-bani-gala/  /construction-company-bani-gala  301
+/pages/construction-company-cda-sectors-islamabad  /construction-company-cda-sectors-islamabad  301
+/pages/construction-company-cda-sectors-islamabad.html  /construction-company-cda-sectors-islamabad  301
+/pages/construction-company-cda-sectors-islamabad/  /construction-company-cda-sectors-islamabad  301
+/pages/construction-company-dha-islamabad  /construction-company-dha-islamabad  301
+/pages/construction-company-dha-islamabad.html  /construction-company-dha-islamabad  301
+/pages/construction-company-dha-islamabad/  /construction-company-dha-islamabad  301
+/pages/construction-company-e-11-islamabad  /construction-company-e-11-islamabad  301
+/pages/construction-company-e-11-islamabad.html  /construction-company-e-11-islamabad  301
+/pages/construction-company-e-11-islamabad/  /construction-company-e-11-islamabad  301
+/pages/construction-company-f-10-islamabad  /construction-company-f-10-islamabad  301
+/pages/construction-company-f-10-islamabad.html  /construction-company-f-10-islamabad  301
+/pages/construction-company-f-10-islamabad/  /construction-company-f-10-islamabad  301
+/pages/construction-company-f-11-islamabad  /construction-company-f-11-islamabad  301
+/pages/construction-company-f-11-islamabad.html  /construction-company-f-11-islamabad  301
+/pages/construction-company-f-11-islamabad/  /construction-company-f-11-islamabad  301
+/pages/construction-company-f-6-islamabad  /construction-company-f-6-islamabad  301
+/pages/construction-company-f-6-islamabad.html  /construction-company-f-6-islamabad  301
+/pages/construction-company-f-6-islamabad/  /construction-company-f-6-islamabad  301
+/pages/construction-company-f-7-islamabad  /construction-company-f-7-islamabad  301
+/pages/construction-company-f-7-islamabad.html  /construction-company-f-7-islamabad  301
+/pages/construction-company-f-7-islamabad/  /construction-company-f-7-islamabad  301
+/pages/construction-company-f-8-islamabad  /construction-company-f-8-islamabad  301
+/pages/construction-company-f-8-islamabad.html  /construction-company-f-8-islamabad  301
+/pages/construction-company-f-8-islamabad/  /construction-company-f-8-islamabad  301
+/pages/construction-company-g-10-islamabad  /construction-company-g-10-islamabad  301
+/pages/construction-company-g-10-islamabad.html  /construction-company-g-10-islamabad  301
+/pages/construction-company-g-10-islamabad/  /construction-company-g-10-islamabad  301
+/pages/construction-company-g-11-islamabad  /construction-company-g-11-islamabad  301
+/pages/construction-company-g-11-islamabad.html  /construction-company-g-11-islamabad  301
+/pages/construction-company-g-11-islamabad/  /construction-company-g-11-islamabad  301
+/pages/construction-company-g-6-islamabad  /construction-company-g-6-islamabad  301
+/pages/construction-company-g-6-islamabad.html  /construction-company-g-6-islamabad  301
+/pages/construction-company-g-6-islamabad/  /construction-company-g-6-islamabad  301
+/pages/construction-company-g-9-islamabad  /construction-company-g-9-islamabad  301
+/pages/construction-company-g-9-islamabad.html  /construction-company-g-9-islamabad  301
+/pages/construction-company-g-9-islamabad/  /construction-company-g-9-islamabad  301
+/pages/construction-company-gulberg-greens-islamabad  /construction-company-gulberg-greens-islamabad  301
+/pages/construction-company-gulberg-greens-islamabad.html  /construction-company-gulberg-greens-islamabad  301
+/pages/construction-company-gulberg-greens-islamabad/  /construction-company-gulberg-greens-islamabad  301
+/pages/construction-company-islamabad  /construction-company-islamabad  301
+/pages/construction-company-islamabad.html  /construction-company-islamabad  301
+/pages/construction-company-islamabad/  /construction-company-islamabad  301
+/pages/construction-company-overseas-pakistanis  /construction-company-overseas-pakistanis  301
+/pages/construction-company-overseas-pakistanis.html  /construction-company-overseas-pakistanis  301
+/pages/construction-company-overseas-pakistanis/  /construction-company-overseas-pakistanis  301
+/pages/construction-cost-islamabad  /construction-cost-islamabad  301
+/pages/construction-cost-islamabad.html  /construction-cost-islamabad  301
+/pages/construction-cost-islamabad/  /construction-cost-islamabad  301
+/pages/contact  /contact  301
+/pages/contact.html  /contact  301
+/pages/contact/  /contact  301
+/pages/grey-structure-islamabad  /grey-structure-islamabad  301
+/pages/grey-structure-islamabad.html  /grey-structure-islamabad  301
+/pages/grey-structure-islamabad/  /grey-structure-islamabad  301
+/pages/house-construction-islamabad  /house-construction-islamabad  301
+/pages/house-construction-islamabad.html  /house-construction-islamabad  301
+/pages/house-construction-islamabad/  /house-construction-islamabad  301
+/pages/house-renovation-islamabad  /house-renovation-islamabad  301
+/pages/house-renovation-islamabad.html  /house-renovation-islamabad  301
+/pages/house-renovation-islamabad/  /house-renovation-islamabad  301
+/pages/marble-tile-fixing-islamabad  /marble-tile-fixing-islamabad  301
+/pages/marble-tile-fixing-islamabad.html  /marble-tile-fixing-islamabad  301
+/pages/marble-tile-fixing-islamabad/  /marble-tile-fixing-islamabad  301
+/pages/plaster-work-islamabad  /plaster-work-islamabad  301
+/pages/plaster-work-islamabad.html  /plaster-work-islamabad  301
+/pages/plaster-work-islamabad/  /plaster-work-islamabad  301
+/pages/projects  /projects  301
+/pages/projects.html  /projects  301
+/pages/projects/  /projects  301
+/pages/tools  /tools/  301
+/pages/tools/  /tools/  301
+/pages/tools/acres-to-hectares  /tools/acres-to-hectares  301
+/pages/tools/acres-to-hectares.html  /tools/acres-to-hectares  301
+/pages/tools/acres-to-hectares/  /tools/acres-to-hectares  301
+/pages/tools/area-converter  /tools/area-converter  301
+/pages/tools/area-converter.html  /tools/area-converter  301
+/pages/tools/area-converter/  /tools/area-converter  301
+/pages/tools/brick-calculator  /tools/brick-calculator  301
+/pages/tools/brick-calculator.html  /tools/brick-calculator  301
+/pages/tools/brick-calculator/  /tools/brick-calculator  301
+/pages/tools/concrete-calculator  /tools/concrete-calculator  301
+/pages/tools/concrete-calculator.html  /tools/concrete-calculator  301
+/pages/tools/concrete-calculator/  /tools/concrete-calculator  301
+/pages/tools/fence-calculator  /tools/fence-calculator  301
+/pages/tools/fence-calculator.html  /tools/fence-calculator  301
+/pages/tools/fence-calculator/  /tools/fence-calculator  301
+/pages/tools/flooring-calculator  /tools/flooring-calculator  301
+/pages/tools/flooring-calculator.html  /tools/flooring-calculator  301
+/pages/tools/flooring-calculator/  /tools/flooring-calculator  301
+/pages/tools/gravel-calculator  /tools/gravel-calculator  301
+/pages/tools/gravel-calculator.html  /tools/gravel-calculator  301
+/pages/tools/gravel-calculator/  /tools/gravel-calculator  301
+/pages/tools/hectares-to-acres  /tools/hectares-to-acres  301
+/pages/tools/hectares-to-acres.html  /tools/hectares-to-acres  301
+/pages/tools/hectares-to-acres/  /tools/hectares-to-acres  301
+/pages/tools/index  /tools/  301
+/pages/tools/index.html  /tools/  301
+/pages/tools/kanal-to-marla  /tools/kanal-to-marla  301
+/pages/tools/kanal-to-marla.html  /tools/kanal-to-marla  301
+/pages/tools/kanal-to-marla/  /tools/kanal-to-marla  301
+/pages/tools/land-area-calculator  /tools/land-area-calculator  301
+/pages/tools/land-area-calculator.html  /tools/land-area-calculator  301
+/pages/tools/land-area-calculator/  /tools/land-area-calculator  301
+/pages/tools/marla-to-square-feet  /tools/marla-to-square-feet  301
+/pages/tools/marla-to-square-feet.html  /tools/marla-to-square-feet  301
+/pages/tools/marla-to-square-feet/  /tools/marla-to-square-feet  301
+/pages/tools/paint-calculator  /tools/paint-calculator  301
+/pages/tools/paint-calculator.html  /tools/paint-calculator  301
+/pages/tools/paint-calculator/  /tools/paint-calculator  301
+/pages/tools/plot-area-calculator  /tools/plot-area-calculator  301
+/pages/tools/plot-area-calculator.html  /tools/plot-area-calculator  301
+/pages/tools/plot-area-calculator/  /tools/plot-area-calculator  301
+/pages/tools/roofing-calculator  /tools/roofing-calculator  301
+/pages/tools/roofing-calculator.html  /tools/roofing-calculator  301
+/pages/tools/roofing-calculator/  /tools/roofing-calculator  301
+/pages/tools/square-feet-to-marla  /tools/square-feet-to-marla  301
+/pages/tools/square-feet-to-marla.html  /tools/square-feet-to-marla  301
+/pages/tools/square-feet-to-marla/  /tools/square-feet-to-marla  301
+/pages/tools/square-feet-to-square-meters  /tools/square-feet-to-square-meters  301
+/pages/tools/square-feet-to-square-meters.html  /tools/square-feet-to-square-meters  301
+/pages/tools/square-feet-to-square-meters/  /tools/square-feet-to-square-meters  301
+/pages/tools/square-footage-calculator  /tools/square-footage-calculator  301
+/pages/tools/square-footage-calculator.html  /tools/square-footage-calculator  301
+/pages/tools/square-footage-calculator/  /tools/square-footage-calculator  301
+/pages/tools/square-meters-to-square-feet  /tools/square-meters-to-square-feet  301
+/pages/tools/square-meters-to-square-feet.html  /tools/square-meters-to-square-feet  301
+/pages/tools/square-meters-to-square-feet/  /tools/square-meters-to-square-feet  301
+/pages/tools/tile-calculator  /tools/tile-calculator  301
+/pages/tools/tile-calculator.html  /tools/tile-calculator  301
+/pages/tools/tile-calculator/  /tools/tile-calculator  301
+/plaster-work-islamabad.html  /plaster-work-islamabad  301
+/plaster-work-islamabad/  /plaster-work-islamabad  301
+/projects.html  /projects  301
+/projects/  /projects  301
+/tools  /tools/  301
+/tools/acres-to-hectares.html  /tools/acres-to-hectares  301
+/tools/acres-to-hectares/  /tools/acres-to-hectares  301
+/tools/area-converter.html  /tools/area-converter  301
+/tools/area-converter/  /tools/area-converter  301
+/tools/brick-calculator.html  /tools/brick-calculator  301
+/tools/brick-calculator/  /tools/brick-calculator  301
+/tools/concrete-calculator.html  /tools/concrete-calculator  301
+/tools/concrete-calculator/  /tools/concrete-calculator  301
+/tools/fence-calculator.html  /tools/fence-calculator  301
+/tools/fence-calculator/  /tools/fence-calculator  301
+/tools/flooring-calculator.html  /tools/flooring-calculator  301
+/tools/flooring-calculator/  /tools/flooring-calculator  301
+/tools/gravel-calculator.html  /tools/gravel-calculator  301
+/tools/gravel-calculator/  /tools/gravel-calculator  301
+/tools/hectares-to-acres.html  /tools/hectares-to-acres  301
+/tools/hectares-to-acres/  /tools/hectares-to-acres  301
+/tools/index  /tools/  301
+/tools/index.html  /tools/  301
+/tools/kanal-to-marla.html  /tools/kanal-to-marla  301
+/tools/kanal-to-marla/  /tools/kanal-to-marla  301
+/tools/land-area-calculator.html  /tools/land-area-calculator  301
+/tools/land-area-calculator/  /tools/land-area-calculator  301
+/tools/marla-to-square-feet.html  /tools/marla-to-square-feet  301
+/tools/marla-to-square-feet/  /tools/marla-to-square-feet  301
+/tools/paint-calculator.html  /tools/paint-calculator  301
+/tools/paint-calculator/  /tools/paint-calculator  301
+/tools/plot-area-calculator.html  /tools/plot-area-calculator  301
+/tools/plot-area-calculator/  /tools/plot-area-calculator  301
+/tools/roofing-calculator.html  /tools/roofing-calculator  301
+/tools/roofing-calculator/  /tools/roofing-calculator  301
+/tools/square-feet-to-marla.html  /tools/square-feet-to-marla  301
+/tools/square-feet-to-marla/  /tools/square-feet-to-marla  301
+/tools/square-feet-to-square-meters.html  /tools/square-feet-to-square-meters  301
+/tools/square-feet-to-square-meters/  /tools/square-feet-to-square-meters  301
+/tools/square-footage-calculator.html  /tools/square-footage-calculator  301
+/tools/square-footage-calculator/  /tools/square-footage-calculator  301
+/tools/square-meters-to-square-feet.html  /tools/square-meters-to-square-feet  301
+/tools/square-meters-to-square-feet/  /tools/square-meters-to-square-feet  301
+/tools/tile-calculator.html  /tools/tile-calculator  301
+/tools/tile-calculator/  /tools/tile-calculator  301
+
+# Serve canonical URLs from their stored HTML assets.
+/boundary-wall-construction-islamabad  /pages/boundary-wall-construction-islamabad  200
 /construction-company-b-17-multi-gardens-islamabad  /pages/construction-company-b-17-multi-gardens-islamabad  200
-/construction-company-bahria-town-islamabad         /pages/construction-company-bahria-town-islamabad  200
-/construction-company-bani-gala                     /pages/construction-company-bani-gala  200
-/construction-company-cda-sectors-islamabad         /pages/construction-company-cda-sectors-islamabad  200
-/construction-company-dha-islamabad                 /pages/construction-company-dha-islamabad  200
-/construction-company-e-11-islamabad                /pages/construction-company-e-11-islamabad  200
-/construction-company-f-10-islamabad                /pages/construction-company-f-10-islamabad  200
-/construction-company-f-11-islamabad                /pages/construction-company-f-11-islamabad  200
-/construction-company-f-6-islamabad                 /pages/construction-company-f-6-islamabad  200
-/construction-company-f-7-islamabad                 /pages/construction-company-f-7-islamabad  200
-/construction-company-f-8-islamabad                 /pages/construction-company-f-8-islamabad  200
-/construction-company-g-10-islamabad                /pages/construction-company-g-10-islamabad  200
-/construction-company-g-11-islamabad                /pages/construction-company-g-11-islamabad  200
-/construction-company-g-6-islamabad                 /pages/construction-company-g-6-islamabad  200
-/construction-company-g-9-islamabad                 /pages/construction-company-g-9-islamabad  200
-/construction-company-gulberg-greens-islamabad      /pages/construction-company-gulberg-greens-islamabad  200
-/construction-company-islamabad                     /pages/construction-company-islamabad  200
-/construction-company-overseas-pakistanis           /pages/construction-company-overseas-pakistanis  200
-/construction-cost-islamabad                        /pages/construction-cost-islamabad  200
-/contact                                            /pages/contact  200
-/grey-structure-islamabad                           /pages/grey-structure-islamabad  200
-/house-construction-islamabad                       /pages/house-construction-islamabad  200
-/house-renovation-islamabad                         /pages/house-renovation-islamabad  200
-/marble-tile-fixing-islamabad                       /pages/marble-tile-fixing-islamabad  200
-/plaster-work-islamabad                             /pages/plaster-work-islamabad  200
-/projects                                           /pages/projects  200
-/tools  /pages/tools/  200
+/construction-company-bahria-town-islamabad  /pages/construction-company-bahria-town-islamabad  200
+/construction-company-bani-gala  /pages/construction-company-bani-gala  200
+/construction-company-cda-sectors-islamabad  /pages/construction-company-cda-sectors-islamabad  200
+/construction-company-dha-islamabad  /pages/construction-company-dha-islamabad  200
+/construction-company-e-11-islamabad  /pages/construction-company-e-11-islamabad  200
+/construction-company-f-10-islamabad  /pages/construction-company-f-10-islamabad  200
+/construction-company-f-11-islamabad  /pages/construction-company-f-11-islamabad  200
+/construction-company-f-6-islamabad  /pages/construction-company-f-6-islamabad  200
+/construction-company-f-7-islamabad  /pages/construction-company-f-7-islamabad  200
+/construction-company-f-8-islamabad  /pages/construction-company-f-8-islamabad  200
+/construction-company-g-10-islamabad  /pages/construction-company-g-10-islamabad  200
+/construction-company-g-11-islamabad  /pages/construction-company-g-11-islamabad  200
+/construction-company-g-6-islamabad  /pages/construction-company-g-6-islamabad  200
+/construction-company-g-9-islamabad  /pages/construction-company-g-9-islamabad  200
+/construction-company-gulberg-greens-islamabad  /pages/construction-company-gulberg-greens-islamabad  200
+/construction-company-islamabad  /pages/construction-company-islamabad  200
+/construction-company-overseas-pakistanis  /pages/construction-company-overseas-pakistanis  200
+/construction-cost-islamabad  /pages/construction-cost-islamabad  200
+/contact  /pages/contact  200
+/grey-structure-islamabad  /pages/grey-structure-islamabad  200
+/house-construction-islamabad  /pages/house-construction-islamabad  200
+/house-renovation-islamabad  /pages/house-renovation-islamabad  200
+/marble-tile-fixing-islamabad  /pages/marble-tile-fixing-islamabad  200
+/plaster-work-islamabad  /pages/plaster-work-islamabad  200
+/projects  /pages/projects  200
 /tools/  /pages/tools/  200
 /tools/acres-to-hectares  /pages/tools/acres-to-hectares  200
 /tools/area-converter  /pages/tools/area-converter  200
@@ -70,6 +295,3 @@
 /tools/square-footage-calculator  /pages/tools/square-footage-calculator  200
 /tools/square-meters-to-square-feet  /pages/tools/square-meters-to-square-feet  200
 /tools/tile-calculator  /pages/tools/tile-calculator  200
-
-# Homepage (/), /css/, /images/, /js/, /sitemap.xml, /robots.txt and /pages/*
-# are real files and are served normally -- no rules needed for those.

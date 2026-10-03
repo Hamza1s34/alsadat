@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "billowing-boat-4a5b",
+  "account_id": "a74b09ed937fb9296f84e04e7b67849d",
+  "compatibility_date": "2026-10-03",
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  }
+}

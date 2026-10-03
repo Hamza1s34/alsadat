@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.DS_Store
+dist/
+.wrangler/
+node_modules/
+# Private Search Console exports and audit evidence are local only.
+reports/

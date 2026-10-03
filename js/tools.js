@@ -945,7 +945,7 @@
         card('Area to cover', fmt(area, 2), 'ft²'),
         card('Area to cover', fmt(area / AREA.sqm, 2), 'm²'),
         card('Depth', fmt(depthFt * 12, 1), 'in'),
-        card('Cubic yards', fmt(cft / VOLUME.cuyd, 3), 'yd³'),
+        card('Cubic yards', fmt(cft * (1 + waste) / VOLUME.cuyd, 3), 'yd³'),
         card('Cubic metres', fmt(cumWaste, 3), 'm³'),
         card('Cubic feet', fmt(cft * (1 + waste), 2), 'ft³'),
         card('Weight', fmt(tonnes, 2), 'tonnes'),
@@ -1073,8 +1073,13 @@
         ['10', 'Interior emulsion — 10 m² per litre'],
         ['14', 'Gloss / enamel trim — 14 m² per litre'],
         ['8', 'Exterior masonry — 8 m² per litre'],
-        ['12', 'Primer / sealer — 12 m² per litre']
+        ['12', 'Primer / sealer — 12 m² per litre'],
+        ['custom', 'Custom product coverage']
       ] },
+      { id: 'coverage', label: 'Product coverage per coat', type: 'number', def: 10,
+        step: 'any', unitLabel: 'm² per litre',
+        hint: 'Enter the coverage on the paint tin or product sheet.',
+        showIf: function (v) { return v.paint === 'custom'; } },
       { id: 'pricePerLitre', label: 'Price per litre (optional)', type: 'number', def: 0, step: 'any' }
     ],
     compute: function (v) {
@@ -1094,7 +1099,12 @@
       }
 
       var sqm = sqft / AREA.sqm;
-      var coverage = parseFloat(pick(v, 'paint')) || 10;
+      var coverage = pick(v, 'paint') === 'custom'
+        ? n(v, 'coverage') : (parseFloat(pick(v, 'paint')) || 10);
+      if (!(coverage > 0)) {
+        return { primary: card('Enter positive product coverage', '—'),
+          note: 'Enter a coverage rate greater than zero in m² per litre, as stated on the paint tin or product sheet.' };
+      }
       var coats = Math.max(1, Math.round(n(v, 'coats') || 1));
       var litresPerCoat = sqm / coverage;
       var litres = litresPerCoat * coats;

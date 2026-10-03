@@ -41,14 +41,14 @@ AREA_TOOLS = [
                         "</ul>"
             },
             {
-                "h": "Why marla needs a selector and kanal does not",
-                "body": "<p>Kanal is defined as exactly 20 marla wherever it is used, and traditionally as 605 square yards — 5,445 square feet. Kanal therefore has a fixed square-foot value and no selector.</p>"
+                "h": "How the marla standard changes kanal area",
+                "body": "<p>Kanal is defined as exactly 20 marla wherever it is used, and traditionally as 605 square yards — 5,445 square feet. At a 250 square foot marla, one kanal is 5,000 square feet. Both units follow your selected marla standard.</p>"
                         "<p>Marla is the variable one. In traditional revenue records and older city schemes it is 272.25 square feet (30.25 square yards), which is what makes 20 marla equal a 5,445 square foot kanal and 8 kanal equal an acre. In many newer housing societies a marla is rounded to 250 square feet, and some regions and older schemes use 225 square feet. If you are buying or selling land, confirm the standard in writing before you agree a price.</p>"
             },
             {
                 "h": "Worked example",
                 "body": "<p>You are comparing two listings: one plots out at 1,200 square feet and the other at 111 square metres. Enter 1,200 with the from-unit set to square feet and the result is 111.484 square metres — so the two plots are the same size, give or take a rounding difference in the listing.</p>"
-                        "<p>Now enter 10 with the from-unit set to acres. The table returns 4.0468564 hectares, 43,560 square feet, 4,840 square yards, 160 marla and 8 kanal — the last two only at the 272.25 square foot marla standard. Switch the marla standard to 250 and the same acre reads 174.24 marla.</p>"
+                        "<p>Now enter 10 with the from-unit set to acres. The table returns 4.0468564 hectares, 435,600 square feet, 48,400 square yards, 1,600 marla and 80 kanal — the last two only at the 272.25 square foot marla standard. Switch the marla standard to 250 and the same ten acres reads 1,742.4 marla.</p>"
             },
             {
                 "h": "Where each unit is used",
@@ -389,7 +389,7 @@ AREA_TOOLS = [
         "tagline": "Convert square metres to square feet exactly — multiply by 10.7639104, or divide by 0.09290304.",
         "blurb": "Convert m² to ft² with the exact factor and a reference table.",
         "intro": [
-            "<p>Going from square metres to square feet multiplies your number by about ten and three quarters, so the answer is always much larger than the figure you started with. The exact factor is <strong>10.7639104</strong>: one square metre covers 10.7639104 square feet, because one metre is 3.280839895 feet and 3.280839895² = 10.7639104.</p>",
+            "<p>Going from square metres to square feet multiplies your number by about ten and three quarters, so the answer is always much larger than the figure you started with. The factor rounded to eight decimal places is <strong>10.7639104</strong>: one square metre covers 10.7639104 square feet, because one metre is 3.280839895 feet and 3.280839895² = 10.7639104.</p>",
             "<p>This direction is the one you need when a floor plan is drawn in square metres but the market you are selling into quotes prices per square foot, or when a construction rate is given per square metre and you want to compare it with a per-square-foot quote from somewhere else.</p>"
         ],
         "formula": "<p><strong>square feet = square metres × 10.7639104</strong> &nbsp;·&nbsp; <strong>square metres = square feet ÷ 10.7639104</strong> (or × 0.09290304)</p>",
@@ -443,7 +443,7 @@ AREA_TOOLS = [
         },
         "faqs": [
             ("How many square feet is 1 square metre?",
-             "Exactly 10.7639104 square feet. An international foot is defined as exactly 0.3048 metres, so one metre is 1 ÷ 0.3048 = 3.280839895 feet, and squaring that gives 10.7639104 square feet per square metre."),
+             "Approximately 10.7639104 square feet. An international foot is defined as exactly 0.3048 metres, so one metre is 1 ÷ 0.3048 = 3.280839895 feet, and squaring that gives 10.7639104 square feet per square metre."),
             ("How do I convert square metres to square feet quickly?",
              "Multiply by 10.764. For a rough mental estimate, multiply by 10 and add 7.6% — so 100 m² is 1,000 plus 76, or about 1,076 square feet. The exact figure is 1,076.391, so the shortcut is accurate enough for estimating but not for a quotation."),
             ("Is 100 square metres the same as 100 square feet?",
